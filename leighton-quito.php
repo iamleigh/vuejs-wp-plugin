@@ -165,4 +165,4 @@ if ( version_compare( get_bloginfo( 'version' ), LQ_WP_VERSION, '<' ) ) {
 	return;
 }
 
-require_once dirname( __FILE__ ) . '/src/Core.php';
+require_once dirname( __FILE__ ) . '/leighton-quito-loader.php';
