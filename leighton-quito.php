@@ -62,7 +62,33 @@ if ( function_exists( 'leighton_quito' ) ) {
 
 	add_action( 'admin_init', 'leighton_quito_deactivate' );
 
+	// Stop processing the plugin code
 	return;
+}
+
+if ( function_exists( 'leighton_quito_insecure_php_version_notice' ) ) {
+	/**
+	 * PHP Notice
+	 *
+	 * Check if the server is using an old/insecure PHP version
+	 * and display a notification if true
+	 *
+	 * @since 1.0.0
+	 */
+	function leighton_quito_insecure_php_version_notice() {
+		?>
+		<div class="notice notice-error">
+			<p>Your site is running an <strong>insecure version</strong> of PHP that is no longer supported. Please contact your web hosting provider to update your PHP version or switch to a <a href="#" target="_blank" rel="noopener noreferrer">recommended WordPress hosting company</a>.</p>
+
+			<p><strong>Leighton Quito plugin is disabled</strong> on your site until you fix the issue.</p>
+		</div>
+
+		<?php
+		// In case this is on plugin activation.
+		if ( isset( $_GET['activate'] ) ) {
+			unset( $_GET['activate'] );
+		}
+	}
 }
 
 if ( ! function_exists( 'leighton_quito_plugin_url' ) ) {
