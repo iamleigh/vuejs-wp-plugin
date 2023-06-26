@@ -1,0 +1,16 @@
+{
+  "name": "leighton-quito",
+  "version": "1.0.0",
+  "description": "Awesome Motive Developer Applicant Challenge, Part 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Leighton Quito",
+    "email": "hello@iamleigh.com",
+    "url": "https://iamleigh.com/"
+  },
+  "license": "MIT"
+}
