@@ -1,5 +1,12 @@
+# Ignore mac-only files
+.DS_Store
+__DS_STORE
+.DS_STORE
+
+# Ignore development folder(s)
 node_modules
 
+# Ignore composer
 /composer
 /composer.json
 /composer.lock
