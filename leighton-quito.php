@@ -66,25 +66,47 @@ if ( function_exists( 'leighton_quito' ) ) {
 	return;
 }
 
-if ( function_exists( 'leighton_quito_insecure_php_version_notice' ) ) {
+if ( ! function_exists( 'leighton_quito_notice_php' ) ) {
 	/**
 	 * PHP Notice
 	 *
 	 * Check if the server is using an old/insecure PHP version
-	 * and display a notification if true
+	 * and display a notification if true.
 	 *
 	 * @since 1.0.0
 	 */
-	function leighton_quito_insecure_php_version_notice() {
+	function leighton_quito_notice_php() {
 		?>
 		<div class="notice notice-error">
-			<p>Your site is running an <strong>insecure version</strong> of PHP that is no longer supported. Please contact your web hosting provider to update your PHP version or switch to a <a href="#" target="_blank" rel="noopener noreferrer">recommended WordPress hosting company</a>.</p>
+			<p>Your site is running PHP <?php echo phpversion(); ?>, an <strong>insecure version</strong> that is no longer supported by this plugin. Please, contact your web hosting provider to update your site to PHP <?php echo LQ_PHP_VERSION; ?> or later version, or switch to a <a href="https://www.wpbeginner.com/wordpress-hosting/" target="_blank" rel="noopener noreferrer">recommended WordPress hosting company</a>.</p>
 
 			<p><strong>Leighton Quito plugin is disabled</strong> on your site until you fix the issue.</p>
 		</div>
 
 		<?php
-		// In case this is on plugin activation.
+		if ( isset( $_GET['activate'] ) ) {
+			unset( $_GET['activate'] );
+		}
+	}
+}
+
+if ( ! function_exists( 'leighton_quito_notice_wp' ) ) {
+	/**
+	 * WP Notice
+	 *
+	 * Check if the site is using an unsupported WordPress version
+	 * and display a notification if true.
+	 *
+	 * @since 1.0.0
+	 */
+	function leighton_quito_notice_wp() {
+		?>
+		<div class="notice notice-error">
+			<p>Your site is running an <strong>old version</strong> of WordPress that is no longer supported by this plugin. Please update your WordPress site to WordPress 5.2 or later version.</p>
+
+			<p><strong>Leighton Quito plugin is disabled</strong> on your site until WordPress is updated to the required version.</p>
+		</div>
+		<?php
 		if ( isset( $_GET['activate'] ) ) {
 			unset( $_GET['activate'] );
 		}
@@ -114,3 +136,33 @@ if ( ! function_exists( 'leighton_quito_plugin_dir' ) ) {
 		return trailingslashit( plugin_dir_path( __FILE__ ) );
 	}
 }
+
+/**
+ * PHP Notice
+ *
+ * Prevent code execution if the server is using an old PHP version and
+ * display an admin notice to notify user.
+ *
+ * @version 1.0.0
+ */
+if ( version_compare( phpversion(), LQ_PHP_VERSION, '<=' ) ) {
+	add_action( 'admin_notices', 'leighton_quito_notice_php' );
+
+	return;
+}
+
+/**
+ * WordPres Notice
+ *
+ * Prevent code execution if the server is using an old WordPress version
+ * and display an admin notice to notify user.
+ *
+ * @version 1.0.0
+ */
+if ( version_compare( get_bloginfo( 'version' ), LQ_WP_VERSION, '<' ) ) {
+	add_action( 'admin_notices', 'leighton_quito_notice_wp' );
+
+	return;
+}
+
+require_once dirname( __FILE__ ) . '/src/Core.php';
