@@ -1,3 +1,5 @@
+node_modules
+
 /composer
 /composer.json
 /composer.lock
