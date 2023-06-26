@@ -32,6 +32,18 @@ if ( ! defined('ABSPATH') ) {
 	die();
 }
 
+if ( ! defined( 'LQ_PLUGIN_VERSION' ) ) {
+	define( 'LQ_PLUGIN_VERSION', '1.0.0' );
+}
+
+if ( ! defined( 'LQ_PHP_VERSION' ) ) {
+	define( 'LQ_PHP_VERSION', '7.2' );
+}
+
+if ( ! defined( 'LQ_WP_VERSION' ) ) {
+	define( 'LQ_WP_VERSION', '5.2' );
+}
+
 if ( ! defined( 'LEIGHTON_QUITO_PLUGIN_BASENAME' ) ) {
 	define( 'LEIGHTON_QUITO_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 }
