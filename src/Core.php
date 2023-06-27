@@ -51,14 +51,16 @@ class Core {
 	}
 
 	/**
-	 * Initilize plugin
+	 * Initilize class
 	 *
 	 * @since 1.0.0
 	 */
 	public function init() {
 		$this->load_textdomain();
 
-		if ( is_admin() ) {}
+		if ( is_admin() ) {
+			$this->get_admin();
+		}
 	}
 
 	/**
@@ -68,5 +70,23 @@ class Core {
 	 */
 	private function load_textdomain() {
 		load_plugin_textdomain( 'leighton-quito', false, LEIGHTON_QUITO_PLUGIN_BASENAME . '/assets/languages' );
+	}
+
+	/**
+	 * Load admin area
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return Admin\Area
+	 */
+	public function get_admin() {
+
+		static $admin;
+
+		if ( ! isset( $admin ) ) {
+			$admin = apply_filters( 'leighton_quito_core_get_admin', new Admin\Area() );
+		}
+
+		return $admin;
 	}
 }
