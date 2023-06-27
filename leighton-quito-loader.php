@@ -19,7 +19,7 @@ function leighton_quito() {
 	static $core;
 
 	if ( ! isset( $core ) ) {
-		$core = new \LeightonQuito\Core();
+		$core = new \LeightonQuito\Core\Core();
 	}
 
 	return $core;
