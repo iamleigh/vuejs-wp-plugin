@@ -1,6 +1,6 @@
 <?php
 
-namespace LeightonQuito;
+namespace LeightonQuito\Core;
 
 /**
  * Class Core
