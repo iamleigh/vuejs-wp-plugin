@@ -4,6 +4,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Autoloader
+ *
+ * @since 1.0.0
+ */
+require_once 'vendor/autoload.php';
+
+/**
  * Global Function Holder
  *
  * Similar behaviour to singleton's instance().
