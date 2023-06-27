@@ -4,8 +4,7 @@ __DS_STORE
 .DS_STORE
 
 # Other file(s) and folder(s)
+composer.phar
+composer.lock
 node_modules
-/composer
-/composer.json
-/composer.lock
-/vendor/
+vendor
