@@ -12,5 +12,9 @@
     "email": "hello@iamleigh.com",
     "url": "https://iamleigh.com/"
   },
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.2"
+  }
 }
