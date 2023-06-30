@@ -82,9 +82,40 @@ if ( ! function_exists( 'leighton_quito_notice_php' ) ) {
 	function leighton_quito_notice_php() {
 		?>
 		<div class="notice notice-error">
-			<p>Your site is running PHP <?php echo phpversion(); ?>, an <strong>insecure version</strong> that is no longer supported by this plugin. Please, contact your web hosting provider to update your site to PHP <?php echo LQ_PHP_VERSION; ?> or later version, or switch to a <a href="https://www.wpbeginner.com/wordpress-hosting/" target="_blank" rel="noopener noreferrer">recommended WordPress hosting company</a>.</p>
+			<p>
+				<?php
+				printf(
+					wp_kses( /* translators: %1$s - Site PHP version.; %2$s - Recommended PHP version.; %3$s WPBeginner URL for recommended WordPress hosting.  */
+						__( 'Your site is running PHP %1$s, an <strong>insecure version</strong> that is no longer supported by this plugin. Please, contact your web hosting provider to update your site to PHP %2$s or later version, or switch to a <a href="%3$s" target="_blank" rel="noopener noreferrer">recommended WordPress hosting company</a>.', 'leighton-quito' ),
+						array(
+							'a'      => array(
+								'href'   => array(),
+								'target' => array(),
+								'rel'    => array(),
+							),
+							'strong' => array(),
+						)
+					),
+					phpversion(),
+					LQ_PHP_VERSION,
+					esc_url( 'https://www.wpbeginner.com/wordpress-hosting/' )
+				);
+				?>
+			</p>
 
-			<p><strong>Leighton Quito plugin is disabled</strong> on your site until you fix the issue.</p>
+			<p>
+				<?php
+				printf(
+					wp_kses( /* translators: %s - Plugin name.  */
+						__( '<strong>%s plugin is disabled</strong> on your site until you fix the issue.', 'leighton-quito' ),
+						array(
+							'strong' => array(),
+						)
+					),
+					LQ_PLUGIN_NAME
+				);
+				?>
+			</p>
 		</div>
 
 		<?php
@@ -106,9 +137,33 @@ if ( ! function_exists( 'leighton_quito_notice_wp' ) ) {
 	function leighton_quito_notice_wp() {
 		?>
 		<div class="notice notice-error">
-			<p>Your site is running an <strong>old version</strong> of WordPress that is no longer supported by this plugin. Please update your WordPress site to WordPress 5.2 or later version.</p>
+			<p>
+				<?php
+				printf(
+					wp_kses( /* translators: %s - Recommended WordPress version.  */
+						__( 'Your site is running an <strong>old version</strong> of WordPress that is no longer supported by this plugin. Please update your WordPress site to WordPress %s or later version.', 'leighton-quito' ),
+						array(
+							'strong' => array(),
+						)
+					),
+					LQ_WP_VERSION
+				);
+				?>
+			</p>
 
-			<p><strong>Leighton Quito plugin is disabled</strong> on your site until WordPress is updated to the required version.</p>
+			<p>
+				<?php
+				printf(
+					wp_kses( /* translators: %s - Plugin name.  */
+						__( '<strong>%s plugin is disabled</strong> on your site until WordPress is updated to the required version.', 'leighton-quito' ),
+						array(
+							'strong' => array(),
+						)
+					),
+					LQ_PLUGIN_NAME
+				);
+				?>
+			</p>
 		</div>
 		<?php
 		if ( isset( $_GET['activate'] ) ) {
