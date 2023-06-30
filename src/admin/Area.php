@@ -110,7 +110,7 @@ class Area {
 		?>
 
 		<div class="wrap" id="lq-app">
-			<p>Hello</p>
+			<h1>Leighton Quito</h1>
 		</div>
 
 		<?php
