@@ -37,7 +37,6 @@ class Core {
 		$this->assets_url  = $this->plugin_url . '/assets';
 
 		$this->hooks();
-		$this->init();
 	}
 
 	/**
@@ -48,14 +47,45 @@ class Core {
 	public function hooks() {
 		// Register activation hook
 		register_activation_hook( __FILE__, [ $this, 'activate' ] );
+
+		// Register deactivation hook
+		register_deactivation_hook( __FILE__, [ $this, 'deactivate' ] );
+
+		// Initialize plugin
+		add_action( 'init', [ $this, 'init_plugin' ] );
 	}
 
 	/**
-	 * Initilize class
+	 * On plugin activation
 	 *
 	 * @since 1.0.0
 	 */
-	public function init() {
+	public function activate() {
+		$is_installed = get_option( 'lq_is_installed' );
+
+		if ( ! $is_installed ) {
+			update_option( 'lq_is_installed', time() );
+		}
+
+		update_option( 'lq_is_installed', LQ_VERSION );
+	}
+
+	/**
+	 * On plugin deactivation
+	 *
+	 * @since 1.0.0
+	 */
+	public function deactivate() {
+		// Do nothing.
+	}
+
+	/**
+	 * Initilize plugin
+	 *
+	 * @since 1.0.0
+	 */
+	public function init_plugin() {
+		// Load translations
 		$this->load_textdomain();
 
 		if ( is_admin() ) {
