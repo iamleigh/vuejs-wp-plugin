@@ -18,6 +18,15 @@ class Area {
 	const SLUG = 'leighton-quito';
 
 	/**
+	 * Admin page access capability
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var string
+	 */
+	const ACCESS = 'manage_options';
+
+	/**
 	 * Admin page unique hook
 	 *
 	 * @since 1.0.0
