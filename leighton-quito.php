@@ -32,6 +32,10 @@ if ( ! defined('ABSPATH') ) {
 	die();
 }
 
+if ( ! defined( 'LQ_PLUGIN_NAME' ) ) {
+	define( 'LQ_PLUGIN_NAME', 'Leighton Quito' );
+}
+
 if ( ! defined( 'LQ_PLUGIN_VERSION' ) ) {
 	define( 'LQ_PLUGIN_VERSION', '1.0.0' );
 }
