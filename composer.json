@@ -4,10 +4,10 @@
   "authors": [
     {
       "name": "Leighton Quito",
-      "email": "hello@iamleigh.com",
-      "homepage": "https://iamleigh.com/"
+      "email": "hello@iamleigh.com"
     }
   ],
+  "require": {},
   "require-dev": {
     "phpunit/phpunit": "^8"
   },
