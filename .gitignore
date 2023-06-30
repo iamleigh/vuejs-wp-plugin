@@ -3,8 +3,18 @@
 __DS_STORE
 .DS_STORE
 
-# Other file(s) and folder(s)
+# Ignore node dependency directories
+node_modules
+
+# Ignore composer files and directories
 composer.phar
 composer.lock
-node_modules
-vendor
+
+# Ignore everything in the "vendor" directory, except:
+# "composer" and "autoload"
+vendor/*
+!vendor/autoload.php
+!vendor/composer/
+
+# Ignore log files
+*.log
