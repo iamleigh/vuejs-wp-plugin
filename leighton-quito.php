@@ -32,12 +32,12 @@ if ( ! defined('ABSPATH') ) {
 	die();
 }
 
-if ( ! defined( 'LQ_PLUGIN_NAME' ) ) {
-	define( 'LQ_PLUGIN_NAME', 'Leighton Quito' );
+if ( ! defined( 'LQ_NAME' ) ) {
+	define( 'LQ_NAME', 'Leighton Quito' );
 }
 
-if ( ! defined( 'LQ_PLUGIN_VERSION' ) ) {
-	define( 'LQ_PLUGIN_VERSION', '1.0.0' );
+if ( ! defined( 'LQ_VERSION' ) ) {
+	define( 'LQ_VERSION', '1.0.0' );
 }
 
 if ( ! defined( 'LQ_PHP_VERSION' ) ) {
@@ -112,7 +112,7 @@ if ( ! function_exists( 'leighton_quito_notice_php' ) ) {
 							'strong' => array(),
 						)
 					),
-					LQ_PLUGIN_NAME
+					LQ_NAME
 				);
 				?>
 			</p>
@@ -160,7 +160,7 @@ if ( ! function_exists( 'leighton_quito_notice_wp' ) ) {
 							'strong' => array(),
 						)
 					),
-					LQ_PLUGIN_NAME
+					LQ_NAME
 				);
 				?>
 			</p>
