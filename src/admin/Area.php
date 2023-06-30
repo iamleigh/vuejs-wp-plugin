@@ -67,5 +67,52 @@ class Area {
 	 *
 	 * @since 1.0.0
 	 */
-	protected function hooks() {}
+	protected function hooks() {
+		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
+		// add_action( 'admin_enqueue_scripts', [ $this, 'register_scripts_styles' ] );
+	}
+
+	/**
+	 * Register menu page
+	 *
+	 * @since 1.0.0
+	 */
+	public function admin_menu() {
+		global $submenu;
+
+		$this->$hook = add_menu_page(
+			__( 'Leighton Quito', 'leighton-quito' ),
+			__( 'Leighton Quito', 'leighton-quito' ),
+			self::ACCESS,
+			self::SLUG,
+			[ $this, 'template' ],
+			'dashicons-superhero'
+		);
+
+		if ( current_user_can( self::ACCESS ) ) {
+			add_submenu_page(
+				self::SLUG,
+				esc_html__( 'Settings', 'leighton-quito' ),
+				esc_html__( 'Settings', 'leighton-quito' ),
+				self::ACCESS,
+				self::SLUG,
+				[ $this, 'template' ]
+			);
+		}
+	}
+
+	/**
+	 * Render admin page
+	 *
+	 * @since 1.0.0
+	 */
+	public function template() {
+		?>
+
+		<div class="wrap" id="lq-app">
+			<p>Hello</p>
+		</div>
+
+		<?php
+	}
 }
