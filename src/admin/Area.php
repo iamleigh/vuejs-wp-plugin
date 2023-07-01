@@ -135,7 +135,7 @@ class Area {
 			__( 'Leighton Quito', 'leighton-quito' ),
 			self::ACCESS,
 			self::SLUG,
-			[ $this, 'template' ],
+			[ $this, 'page_template' ],
 			'dashicons-superhero'
 		);
 
@@ -146,7 +146,7 @@ class Area {
 				esc_html__( 'Settings', 'leighton-quito' ),
 				self::ACCESS,
 				self::SLUG,
-				[ $this, 'template' ]
+				[ $this, 'page_template' ]
 			);
 		}
 	}
@@ -156,10 +156,10 @@ class Area {
 	 *
 	 * @since 1.0.0
 	 */
-	public function template() {
+	public function page_template() {
 		?>
 
-		<div class="wrap" id="lq-app">
+		<div class="wrap" id="leighton-quito">
 			<h1>Leighton Quito</h1>
 		</div>
 
