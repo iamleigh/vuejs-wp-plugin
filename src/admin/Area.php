@@ -159,7 +159,11 @@ class Area {
 	public function page_template() {
 		?>
 
-		<div class="wrap" id="leighton-quito"></div>
+		<div class="wrap lq-plugin">
+			<h1>Leighton Quito</h1>
+
+			<div id="lq-admin-app"></div>
+		</div>
 
 		<?php
 	}
