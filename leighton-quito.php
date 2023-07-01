@@ -1,7 +1,7 @@
 <?php
 /**
  * Version: 1.0.0
- * Requires PHP: 5.6
+ * Requires PHP: 7.2
  * Plugin Name: Leighton Quito
  * Plugin URI: https://github.com/iamleigh/leighton-quito-amp
  * Description: Awesome Motive Developer Applicant Challenge, Part 1.
@@ -9,6 +9,8 @@
  * Author URI: https://github.com/iamleigh
  * Text Domain: leighton-quito
  * Domain Path: /languages/
+ *
+ * @package Leighton_Quito
  */
 
 /**
