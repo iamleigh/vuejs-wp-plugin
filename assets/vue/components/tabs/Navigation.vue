@@ -1,5 +1,5 @@
 <template>
-	<ul class="tab-menu">
+	<ul class="lq-tabs__menu">
 		<li><router-link to="/">Table</router-link></li>
 		<li><router-link to="/">Graph</router-link></li>
 		<li><router-link to="/">Settings</router-link></li>
