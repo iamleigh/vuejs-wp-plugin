@@ -21,14 +21,11 @@ mix.autoload({
  *
  * @since 1.0.0
  */
-mix
-  .js("assets/vue/admin.js", "assets/js/admin.js")
-  .sourceMaps(false)
-  .extract(["vue"]);
+mix.js("assets/vue/admin.js", "assets/js").vue({ version: 2 });
 
 /**
  * Compile Sass
  *
  * @since 1.0.0
  */
-mix.sass("assets/scss/admin.css", "assets/css/admin.css");
+mix.sass("assets/scss/admin.scss", "assets/css/admin.css");
