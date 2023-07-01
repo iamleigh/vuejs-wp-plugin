@@ -59,6 +59,10 @@ class Area {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
+		$this->plugin_path = leighton_quito_plugin_dir();
+		$this->plugin_url = leighton_quito_plugin_url();
+		$this->assets_url  = $this->plugin_url . '/assets';
+
 		$this->hooks();
 	}
 
@@ -69,7 +73,53 @@ class Area {
 	 */
 	protected function hooks() {
 		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
-		// add_action( 'admin_enqueue_scripts', [ $this, 'register_scripts_styles' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'register_assets' ] );
+	}
+
+	/**
+	 * Register assets
+	 *
+	 * @since 1.0.0
+	 */
+	public function register_assets() {
+		$this->load_styles();
+		$this->load_scripts();
+	}
+
+	/**
+	 * Load scripts
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function load_scripts() {
+		wp_register_script( 'lq-manifest', $this->assets_url . '/js/manifest.js', [], rand(), true );
+		wp_register_script( 'lq-vendor', $this->assets_url . '/js/vendor.js', [ 'lq-manifest' ], rand(), true );
+		wp_register_script( 'lq-admin', $this->assets_url . '/js/admin.js', [ 'lq-vendor' ], rand(), true );
+
+		wp_enqueue_script( 'lq-manifest' );
+		wp_enqueue_script( 'lq-vendor' );
+		wp_enqueue_script( 'lq-admin' );
+
+		wp_localize_script( 'lq-admin', 'lqAdminLocalizer', [
+			'adminUrl'  => admin_url( '/' ),
+			'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
+			'apiUrl'    => home_url( '/wp-json' ),
+		] );
+	}
+
+	/**
+	 * Load styles
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function load_styles() {
+		wp_register_style( 'lq-admin', $this->assets_url . '/css/admin.css' );
+
+		wp_enqueue_style( 'lq-admin' );
 	}
 
 	/**
