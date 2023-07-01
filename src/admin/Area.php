@@ -159,9 +159,7 @@ class Area {
 	public function page_template() {
 		?>
 
-		<div class="wrap" id="leighton-quito">
-			<h1>Leighton Quito</h1>
-		</div>
+		<div class="wrap" id="leighton-quito"></div>
 
 		<?php
 	}
