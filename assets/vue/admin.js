@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import Router from "vue-router";
-// import store from "../store/index";
+import store from "../store/index";
 import App from "./App.vue";
 import TabNavigation from "./components/tabs/Navigation.vue";
 import TableTab from "./components/tabs/TableTab.vue";
@@ -33,7 +33,7 @@ const router = new VueRouter({
 
 new Vue({
 	el: "#lq-admin-app",
-	//   store,
+	store,
 	router,
 	render: (h) => h(App),
 });
