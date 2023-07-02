@@ -1,0 +1,52 @@
+/// -----------------------------------------------------------------------------
+/// 🟢 Form Field
+///
+/// Give styles to the form field component.
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+#leighton-quito-plugin .leighton-quito-field {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0 solid #dcdcde;
+
+	&:not(:last-child) {
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		border-bottom-width: 1px;
+		box-shadow: 0 1px 0 0 #f6f7f7;
+	}
+
+	&__label,
+	&__desc {
+		display: block;
+		margin: 0;
+
+		&:not(:first-child) {
+			margin-top: 10px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__desc {
+		color: #555;
+		font-style: italic;
+	}
+
+	&--inline {
+		display: flex;
+		flex-flow: row wrap;
+
+		.leighton-quito-field__item {
+			margin: 0;
+
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
+	}
+}
