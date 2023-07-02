@@ -1,9 +1,9 @@
 <template>
 	<div
-		v-if="hasLeftContent || hasRightContent || hasTitle"
+		v-if="hasTitle || hasLeftContent || hasRightContent"
 		class="leighton-quito-settings-row">
 		<div
-			v-if="hasLeftContent || hasTitle"
+			v-if="hasTitle || hasLeftContent"
 			role="presentation"
 			class="leighton-quito-settings-row__left">
 			<div v-if="hasTitle" class="leighton-quito-settings-row__title">{{ title }}</div>
