@@ -33,6 +33,7 @@
 		}
 
 		&.active {
+			pointer-events: none;
 			border-color: #e27730;
 			color: #666;
 		}
