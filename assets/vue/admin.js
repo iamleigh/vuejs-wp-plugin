@@ -3,10 +3,10 @@ import Vuex from 'vuex';
 import Router from 'vue-router';
 import store from '../store/index';
 import App from './App.vue';
-import TabNavigation from './components/tabs/Navigation.vue';
-import TableTab from './components/tabs/TableTab.vue';
-import GraphTab from './components/tabs/GraphTab.vue';
-import SettingsTab from './components/tabs/SettingsTab.vue';
+import TabNavigation from './tabs/Navigation.vue';
+import TableTab from './tabs/TableTab.vue';
+import GraphTab from './tabs/GraphTab.vue';
+import SettingsTab from './tabs/SettingsTab.vue';
 import VueRouter from 'vue-router';
 import SettingsRow from './components/SettingsRow.vue';
 

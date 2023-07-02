@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import TabNavigation from './components/tabs/Navigation.vue'
+import TabNavigation from './tabs/Navigation.vue'
 
 export default {
     name: 'App',
