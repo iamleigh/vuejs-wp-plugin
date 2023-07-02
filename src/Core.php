@@ -34,7 +34,6 @@ class Core {
 	public function __construct() {
 		$this->plugin_path = leighton_quito_plugin_dir();
 		$this->plugin_url = leighton_quito_plugin_url();
-		$this->assets_url  = $this->plugin_url . '/assets';
 
 		$this->hooks();
 	}
