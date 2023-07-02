@@ -201,14 +201,14 @@ class Area {
 		do_action( 'leighton_quito_header_template_before' );
 		?>
 
-			<div class="lq-header">
-				<div class="lq-header__image lq-logo" aria-hidden="true">
-					<img src="<?php echo esc_url( $this->images_url ); ?>logo.svg" alt="Leighton Quito" class="lq-logo__image" />
+			<div class="leighton-quito-header">
+				<div class="leighton-quito-logo" aria-hidden="true">
+					<img src="<?php echo esc_url( $this->images_url ); ?>logo.svg" alt="Leighton Quito" class="leighton-quito-logo__image" />
 				</div>
 
-				<div class="lq-header__slogan">
-					<h1 class="lq-header__title">Leighton Quito</h1>
-					<p class="lq-header__subtitle">a <strong>vue<span>js</span></strong> developer applicant challenge</p>
+				<div class="leighton-quito-header__slogan">
+					<h1 class="leighton-quito-header__title">Leighton Quito</h1>
+					<p class="leighton-quito-header__subtitle">a <strong>vue<span>js</span></strong> developer applicant challenge</p>
 				</div>
 			</div>
 
