@@ -1,0 +1,49 @@
+/// -----------------------------------------------------------------------------
+/// 🟢 Tabs
+///
+/// Give styles to the tabs component.
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+.leighton-quito-tabs {
+	&__menu {
+		min-height: 58px;
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0;
+		padding: 0 20px;
+		background: #fff;
+		font-size: 14px;
+	}
+
+	&__item {
+		display: block;
+		flex: 0 0 auto;
+		margin: 0;
+		margin-right: 30px;
+		padding: 20px 0 18px 0;
+		border: 0 solid #fff;
+		border-bottom-width: 2px;
+		box-shadow: none;
+		color: #666;
+		text-decoration: none;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.active {
+			border-color: #e27730;
+			color: #666;
+		}
+
+		&:hover {
+			border-color: #999;
+			color: #666;
+		}
+	}
+
+	&__content {
+		padding: 0 20px;
+	}
+}
