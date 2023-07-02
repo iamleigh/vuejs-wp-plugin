@@ -33,15 +33,11 @@
 		font-weight: 400;
 	}
 
-	&__title,
-	&__subtitle {
-		letter-spacing: 0.5px;
-	}
-
 	&__title {
 		color: #23282C;
 		font-size: 28px;
 		line-height: 32px;
+		letter-spacing: 0.5px;
 	}
 
 	&__subtitle {
@@ -55,6 +51,7 @@
 			font-family: 'Signika', sans-serif;
 			font-weight: 400;
 			font-size: 18px;
+			letter-spacing: -1px;
 
 			span {
 				color: #5F5E5E;
