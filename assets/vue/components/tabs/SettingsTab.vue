@@ -1,6 +1,6 @@
 <template>
 	<div id="leighton-quito-tab-settings" class="leighton-quito-tabs__content">
-		<p>Settings tab</p>
+		<h2>Settings Tab</h2>
 	</div>
 </template>
 
