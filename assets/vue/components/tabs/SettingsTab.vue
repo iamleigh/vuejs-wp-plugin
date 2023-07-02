@@ -1,5 +1,8 @@
 <template>
-	<div id="leighton-quito-tab-settings" class="leighton-quito-tabs__content">
+	<div
+		id="leighton-quito-tab-settings"
+		class="leighton-quito-tabs__content"
+		aria-labelledby="leighton-quito-settings">
 		<h2>Settings Tab</h2>
 	</div>
 </template>

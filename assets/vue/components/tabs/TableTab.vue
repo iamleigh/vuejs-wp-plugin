@@ -1,5 +1,8 @@
 <template>
-	<div id="leighton-quito-tab-table" class="leighton-quito-tabs__content">
+	<div
+		id="leighton-quito-tab-table"
+		class="leighton-quito-tabs__content"
+		aria-labelledby="leighton-quito-table">
 		<h2>Table Tab</h2>
 	</div>
 </template>
