@@ -17,7 +17,8 @@
   },
   "autoload": {
     "psr-4": {
-      "LeightonQuito\\": "src/"
+      "LeightonQuito\\": "src/",
+      "LeightonQuito\\Api\\": "api/"
     }
   },
   "config": {
