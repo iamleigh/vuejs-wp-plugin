@@ -19,7 +19,7 @@
 	}
 
 	&__label,
-	&__desc {
+	&__helper {
 		display: block;
 		margin: 0;
 
@@ -32,21 +32,12 @@
 		}
 	}
 
-	&__desc {
-		color: #555;
-		font-style: italic;
+	&__label {
+		font-weight: 400;
 	}
 
-	&--inline {
-		display: flex;
-		flex-flow: row wrap;
-
-		.leighton-quito-field__item {
-			margin: 0;
-
-			&:not(:last-child) {
-				margin-right: 10px;
-			}
-		}
+	&__helper {
+		color: #555;
+		font-style: italic;
 	}
 }
