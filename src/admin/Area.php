@@ -130,7 +130,7 @@ class Area {
 	public function admin_menu() {
 		global $submenu;
 
-		$this->$hook = add_menu_page(
+		$this->hook = add_menu_page(
 			__( 'Leighton Quito', 'leighton-quito' ),
 			__( 'Leighton Quito', 'leighton-quito' ),
 			self::ACCESS,
