@@ -1,11 +1,11 @@
-let mix = require("laravel-mix");
+let mix = require('laravel-mix');
 
 /**
  * Public path to generate assets
  *
  * @since 1.0.0
  */
-mix.setPublicPath("assets");
+mix.setPublicPath('assets');
 
 /**
  * Autload jQuery
@@ -13,7 +13,7 @@ mix.setPublicPath("assets");
  * @since 1.0.0
  */
 mix.autoload({
-	jquery: ["$", "window.jQuery", "jQuery"],
+	jquery: ['$', 'window.jQuery', 'jQuery'],
 });
 
 /**
@@ -21,11 +21,11 @@ mix.autoload({
  *
  * @since 1.0.0
  */
-mix.js("assets/vue/admin.js", "assets/js").vue({ version: 2 });
+mix.js('assets/vue/admin.js', 'assets/js').vue({ version: 2 });
 
 /**
  * Compile Sass
  *
  * @since 1.0.0
  */
-mix.sass("assets/scss/leighton-quito-admin.scss", "assets/css/leighton-quito-admin.css");
+mix.sass('assets/scss/leighton-quito-admin.scss', 'assets/css/leighton-quito-admin.css');

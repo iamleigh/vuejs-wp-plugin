@@ -18,7 +18,11 @@ tab_width = 4
 indent_style = space
 indent_size = 2
 
+# Overwrite configs for specific "js" files:
+[webpack.mix.js]
+quote_type = single
+
 # Overwrite configs for all "js" files inside directories:
 # "assets/store" and "assets/vue"
-[{assets/store/**.js,assets/vue/**.js}]
+[{webpack.mix.js, assets/store/**.js,assets/vue/**.js}]
 quote_type = single
