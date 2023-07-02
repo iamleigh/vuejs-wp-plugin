@@ -16,4 +16,20 @@
 #leighton-quito-plugin {
 	margin: 0 0 20px;
 	color: #3c434a;
+
+	h2, label {
+		color: #222;
+		font-weight: 600;
+	}
+
+	h2 {
+		margin: 0 0 30px;
+		font-size: 20px;
+	}
+
+	label {
+		display: block;
+		font-size: 14px;
+		line-height: 1.3;
+	}
 }
