@@ -6,7 +6,8 @@
 			:to={path:tab.router}
 			role="tab"
 			class="leighton-quito-tabs__item"
-			activeClass="active"
+			activeClass=""
+			exactActiveClass="active"
 			:aria-controls="tab.controls"
 			ariaCurrentValue="true">
 			{{ tab.name }}
