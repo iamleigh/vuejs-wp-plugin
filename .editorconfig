@@ -3,6 +3,7 @@
 # top-most EditorConfig file
 root = true
 
+# Main configs for all files
 [*]
 charset = utf-8
 end_of_line = lf
@@ -12,6 +13,12 @@ insert_final_newline = true
 max_line_length = 120
 tab_width = 4
 
+# Overwrite configs for all "json" and "yml" files
 [{*.json,*.yml}]
 indent_style = space
 indent_size = 2
+
+# Overwrite configs for all "js" files inside directories:
+# "assets/store" and "assets/vue"
+[{assets/store/**.js,assets/vue/**.js}]
+quote_type = single
