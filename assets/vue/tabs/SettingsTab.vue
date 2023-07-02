@@ -5,62 +5,49 @@
 		aria-labelledby="leighton-quito-settings">
 		<h2>Edit Settings</h2>
 
-		<settings-row>
-			<template v-slot:left>
-				<label for="lq-table-rows" id="lq-table-rows__label">Rows</label>
-			</template>
-
+		<settings-row title="Rows">
 			<template v-slot:right>
-				<div class="leighton-quito-field">
-					<span class="leighton-quito-field__label">Limit the number of rows to display in the table.</span>
+				<field
+					label="Limit the number of rows to display at the table."
+					helper="The allowed rows value must be between 1 and 5.">
 					<input
 						type="number"
 						min="1"
 						max="5"
 						value="5"
 						id="lq-table-rows"
-						class="small-text"
-						aria-labelledby="lq-table-rows__label"
-						aria-describedby="lq-table-rows__desc" />
-					<span id="lq-table-rows__desc" class="leighton-quito-field__desc">The allowed rows value must be between 1 and 5.</span>
-				</div>
+						class="small-text" />
+				</field>
 			</template>
 		</settings-row>
 
 		<settings-row title="Timestamp">
 			<template v-slot:right>
-				<div role="radiogroup" class="leighton-quito-radio__group">
+				<field isRadioGroup="true">
 					<label class="leighton-quito-radio">
-						<input type="radio" id="custom" name="timestamp" value="custom">
-						Date
+						<input type="radio" id="unix" name="timestamp" value="unix">
+						Unix Time
 					</label>
 
 					<label class="leighton-quito-radio">
-						<input type="radio" id="unix" name="timestamp" value="unix">
-						Unix
+						<input type="radio" id="custom" name="timestamp" value="F j, Y g:i A">
+						Human Date
 					</label>
-				</div>
+				</field>
 			</template>
 		</settings-row>
 
 		<settings-row title="Emails">
 			<template v-slot:right>
-				<div class="leighton-quito-field">
-					<div class="leighton-quito-field leighton-quito-field--inline">
-						<input type="email" value="name@email.com" class="leighton-quito-input leighton-quito-field__item" readonly />
-						<action label="Remove email" icon="no-alt" design="secondary" />
-					</div>
-				</div>
+				<field>
+					<input type="email" value="name@email.com" class="leighton-quito-input leighton-quito-field__item" readonly />
+					<action label="Remove email" icon="no-alt" design="secondary" />
+				</field>
 
-				<div class="leighton-quito-field">
-					<span class="leighton-quito-field__label">Add an email address</span>
-					<div
-						role="none"
-						class="leighton-quito-field leighton-quito-field--inline">
-						<input type="email" class="leighton-quito-input leighton-quito-field__item" />
-						<action label="Add Email" />
-					</div>
-				</div>
+				<field label="Add an email address">
+					<input type="email" class="leighton-quito-input leighton-quito-field__item" />
+					<action label="Add Email" />
+				</field>
 			</template>
 		</settings-row>
 
