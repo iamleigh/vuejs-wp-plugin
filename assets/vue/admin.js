@@ -8,8 +8,9 @@ import TableTab from './tabs/TableTab.vue';
 import GraphTab from './tabs/GraphTab.vue';
 import SettingsTab from './tabs/SettingsTab.vue';
 import VueRouter from 'vue-router';
-import SettingsRow from './components/SettingsRow.vue';
 import Button from './components/Button.vue';
+import SettingsRow from './components/SettingsRow.vue';
+import FormField from './components/FormField.vue';
 
 Vue.use(Vuex);
 Vue.use(Router);
@@ -33,8 +34,9 @@ const router = new VueRouter({
 	routes,
 });
 
-Vue.component('settings-row', SettingsRow);
 Vue.component('action', Button);
+Vue.component('field', FormField);
+Vue.component('settings-row', SettingsRow);
 
 new Vue({
 	el: '#lq-admin-app',
