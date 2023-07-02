@@ -180,7 +180,7 @@ class Area {
 	public function page_template() {
 		?>
 
-		<div class="wrap lq-plugin">
+		<div id="leighton-quito-plugin" class="wrap">
 			<div id="lq-admin-app"></div>
 		</div>
 
