@@ -124,7 +124,7 @@ class Area {
 	 * @return void
 	 */
 	public function load_styles() {
-		wp_register_style( 'lq-admin', $this->styles_url . 'admin.css' );
+		wp_register_style( 'lq-admin', $this->styles_url . 'leighton-quito-admin.css' );
 
 		wp_enqueue_style( 'lq-admin' );
 	}
