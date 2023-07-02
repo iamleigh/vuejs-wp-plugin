@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="leighton-quito-tabs">
 		<router-view name="tab"></router-view>
 		<router-view></router-view>
 	</div>
