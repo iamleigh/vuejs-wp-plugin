@@ -1,0 +1,55 @@
+/// -----------------------------------------------------------------------------
+/// 🟢 Button
+///
+/// Give styles to the button component.
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+#leighton-quito-plugin .leighton-quito-button {
+	cursor: pointer;
+	padding: 8px 12px;
+	border: 0;
+	border-radius: 3px;
+	outline: none;
+	box-shadow: none;
+	font-size: 13px;
+	font-weight: 600;
+
+	* {
+		user-select: none;
+		pointer-events: none;
+	}
+
+	&--primary {
+		background: #e27730;
+		color: #fff;
+
+		&:hover {
+			background: #b85a1b;
+		}
+
+		&:focus {
+			background: #b85a1b;
+			box-shadow: 0 0 0 1px #fff,0 0 0 3px #b85a1b;
+		}
+	}
+
+	&--secondary {
+		background: #738e9e;
+		color: #fff;
+
+		&:hover {
+			background: #395360;
+		}
+
+		&:focus {
+			background: #395360;
+			box-shadow: 0 0 0 1px #fff,0 0 0 3px #395360;
+		}
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
