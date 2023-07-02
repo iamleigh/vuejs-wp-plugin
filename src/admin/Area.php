@@ -61,7 +61,11 @@ class Area {
 	public function __construct() {
 		$this->plugin_path = leighton_quito_plugin_dir();
 		$this->plugin_url = leighton_quito_plugin_url();
-		$this->assets_url  = $this->plugin_url . '/assets';
+		$this->assets_url  = $this->plugin_url . 'assets/';
+
+		$this->scripts_url = $this->assets_url . 'js/';
+		$this->styles_url = $this->assets_url . 'css/';
+		$this->images_url = $this->assets_url . 'images/';
 
 		$this->hooks();
 	}
@@ -97,9 +101,9 @@ class Area {
 	 * @return void
 	 */
 	public function load_scripts() {
-		wp_register_script( 'lq-manifest', $this->assets_url . '/js/manifest.js', [], rand(), true );
-		wp_register_script( 'lq-vendor', $this->assets_url . '/js/vendor.js', [ 'lq-manifest' ], rand(), true );
-		wp_register_script( 'lq-admin', $this->assets_url . '/js/admin.js', [ 'lq-vendor' ], rand(), true );
+		wp_register_script( 'lq-manifest', $this->scripts_url . 'manifest.js', [], rand(), true );
+		wp_register_script( 'lq-vendor', $this->scripts_url . 'vendor.js', [ 'lq-manifest' ], rand(), true );
+		wp_register_script( 'lq-admin', $this->scripts_url . 'admin.js', [ 'lq-vendor' ], rand(), true );
 
 		wp_enqueue_script( 'lq-manifest' );
 		wp_enqueue_script( 'lq-vendor' );
@@ -120,7 +124,7 @@ class Area {
 	 * @return void
 	 */
 	public function load_styles() {
-		wp_register_style( 'lq-admin', $this->assets_url . '/css/admin.css' );
+		wp_register_style( 'lq-admin', $this->styles_url . 'admin.css' );
 
 		wp_enqueue_style( 'lq-admin' );
 	}
@@ -199,7 +203,7 @@ class Area {
 
 			<div class="lq-header">
 				<div class="lq-header__image lq-logo" aria-hidden="true">
-					<img src="<?php echo esc_url( $this->plugin_url ); ?>assets/images/logo.svg" alt="Leighton Quito" class="lq-logo__image" />
+					<img src="<?php echo esc_url( $this->images_url ); ?>logo.svg" alt="Leighton Quito" class="lq-logo__image" />
 				</div>
 
 				<div class="lq-header__slogan">
