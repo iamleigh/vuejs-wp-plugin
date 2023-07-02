@@ -7,6 +7,7 @@
 			role="tab"
 			class="leighton-quito-tabs__item"
 			activeClass="active"
+			:aria-controls="tab.controls"
 			ariaCurrentValue="true">
 			{{ tab.name }}
 		</router-link>
@@ -19,9 +20,9 @@ export default {
 	data () {
 		return {
 			tabsList: [
-				{name: 'Table', router: '/', id: 1},
-				{name: 'Graph', router: '/graph', id: 2},
-				{name: 'Settings', router: '/settings', id: 3}
+				{name: 'Table', router: '/', controls: 'leighton-quito-tab-table', id: 1},
+				{name: 'Graph', router: '/graph', controls: 'leighton-quito-tab-graph', id: 2},
+				{name: 'Settings', router: '/settings', controls: 'leighton-quito-tab-settings', id: 3}
 			]
 		}
 	}

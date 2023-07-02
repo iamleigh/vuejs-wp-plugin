@@ -1,5 +1,5 @@
 <template>
-	<div id="lq-settings-tab" class="lq-tabs">
+	<div id="leighton-quito-tab-settings" class="lq-tabs">
 		<p>Settings tab</p>
 	</div>
 </template>
