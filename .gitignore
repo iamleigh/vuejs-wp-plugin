@@ -16,5 +16,9 @@ vendor/*
 !vendor/autoload.php
 !vendor/composer/
 
+# Ignore "wpcs" directory
+wpcs
+wpcs/*
+
 # Ignore log files
 *.log
