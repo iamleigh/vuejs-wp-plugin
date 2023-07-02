@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css2?family=Jost:wght@500&family=Signika&display=swap);
+#wpcontent {
+  position: relative;
+  padding-left: 0 !important;
+}
+
+#leighton-quito-plugin {
+  color: #3c434a;
+}
+
+.leighton-quito-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  background: #395360;
+}
+.leighton-quito-logo__image {
+  width: 42px;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0 0 10px;
+  border: 0;
+}
+
+.leighton-quito-header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 0;
+  padding: 24px 20px;
+  border: 0 solid #E27730;
+  border-top-width: 3px;
+}
+.leighton-quito-header__image {
+  flex: 0 0 auto;
+}
+.leighton-quito-header__slogan {
+  display: block;
+  margin-left: 14px;
+}
+.leighton-quito-header__title, .leighton-quito-header__subtitle {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+}
+.leighton-quito-header__title, .leighton-quito-header__subtitle small {
+  letter-spacing: -1px;
+}
+.leighton-quito-header__title {
+  color: #23282C;
+  font-size: 28px;
+  line-height: 32px;
+}
+.leighton-quito-header__subtitle {
+  color: #999999;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0;
+}
+.leighton-quito-header__subtitle strong {
+  color: #B85A1B;
+  font-family: "Signika", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+.leighton-quito-header__subtitle strong span {
+  color: #5F5E5E;
+}

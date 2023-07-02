@@ -13,7 +13,7 @@ mix.setPublicPath("assets");
  * @since 1.0.0
  */
 mix.autoload({
-  jquery: ["$", "window.jQuery", "jQuery"],
+	jquery: ["$", "window.jQuery", "jQuery"],
 });
 
 /**
@@ -28,4 +28,4 @@ mix.js("assets/vue/admin.js", "assets/js").vue({ version: 2 });
  *
  * @since 1.0.0
  */
-mix.sass("assets/scss/admin.scss", "assets/css/admin.css");
+mix.sass("assets/scss/leighton-quito-admin.scss", "assets/css/leighton-quito-admin.css");
