@@ -1,5 +1,5 @@
 <template>
-	<div id="leighton-quito-tab-table" class="lq-tabs">
+	<div id="leighton-quito-tab-table" class="leighton-quito-tabs__content">
 		<p>Table tab</p>
 	</div>
 </template>
