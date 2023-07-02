@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&family=Signika&display=swap');
+
+/// -----------------------------------------------------------------------------
+/// 🟢 Header
+///
+/// Give styles to the plugin header.
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+.leighton-quito-header {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	margin: 0;
+	padding: 24px 20px;
+	border: 0 solid #E27730;
+	border-top-width: 3px;
+
+	&__image {
+		flex: 0 0 auto;
+	}
+
+	&__slogan {
+		display: block;
+		margin-left: 14px;
+	}
+
+	&__title,
+	&__subtitle {
+		margin: 0;
+		padding: 0;
+		font-family: 'Jost', sans-serif;
+		font-weight: 500;
+	}
+
+	&__title,
+	&__subtitle small {
+		letter-spacing: -1px;
+	}
+
+	&__title {
+		color: #23282C;
+		font-size: 28px;
+		line-height: 32px;
+	}
+
+	&__subtitle {
+		color: #999999;
+		font-size: 14px;
+		line-height: 22px;
+		letter-spacing: 0;
+
+		strong {
+			color: #B85A1B;
+			font-family: 'Signika', sans-serif;
+			font-weight: 400;
+			font-size: 18px;
+
+			span {
+				color: #5F5E5E;
+			}
+		}
+	}
+}

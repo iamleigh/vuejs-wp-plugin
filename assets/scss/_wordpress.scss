@@ -1,0 +1,18 @@
+/// -----------------------------------------------------------------------------
+/// 🟢 WordPress
+///
+/// Overwrite WordPress default styles.
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+
+// Overwrites main content area
+#wpcontent {
+	position: relative;
+	padding-left: 0 !important;
+}
+
+// Overwrites content wrapper styles
+#leighton-quito-plugin {
+	color: #3c434a;
+}
