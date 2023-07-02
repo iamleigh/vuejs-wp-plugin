@@ -5,12 +5,15 @@
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-.leighton-quito-settings-row {
+#leighton-quito-plugin .leighton-quito-settings-row {
 	display: flex;
 	flex-flow: row wrap;
 	margin: 0;
 	padding: 0;
 	border: 0 solid #dcdcde;
+	color: #222;
+	font-size: 14px;
+	line-height: 1.5em;
 
 	&:not(:last-child) {
 		margin-bottom: 30px;
