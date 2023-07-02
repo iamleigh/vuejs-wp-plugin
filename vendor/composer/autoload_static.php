@@ -11,6 +11,10 @@ class ComposerStaticInit54ba00e6a14375fbf9bc5140e169d192
     );
 
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 57,
+        ),
         'L' => 
         array (
             'LeightonQuito\\' => 14,
@@ -23,6 +27,10 @@ class ComposerStaticInit54ba00e6a14375fbf9bc5140e169d192
     );
 
     public static $prefixDirsPsr4 = array (
+        'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
+        ),
         'LeightonQuito\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
@@ -71,6 +79,7 @@ class ComposerStaticInit54ba00e6a14375fbf9bc5140e169d192
         'Doctrine\\Instantiator\\InstantiatorInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/InstantiatorInterface.php',
         'LeightonQuito\\Admin\\Area' => __DIR__ . '/../..' . '/src/Admin/Area.php',
         'LeightonQuito\\Core' => __DIR__ . '/../..' . '/src/Core.php',
+        'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin' => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src/Plugin.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/AssertionFailedError.php',
