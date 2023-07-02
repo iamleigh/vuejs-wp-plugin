@@ -18,21 +18,34 @@
 
 		<settings-row title="Timestamp">
 			<template v-slot:right>
-				<input type="radio" id="unix" name="timestamp" value="unix">
-				<label>Unix</label>
+				<div role="radiogroup" class="leighton-quito-radio__group">
+					<div class="leighton-quito-radio">
+						<input type="radio" id="unix" name="timestamp" value="unix">
+						<label>Unix</label>
+					</div>
 
-				<input type="radio" id="custom" name="timestamp" value="custom">
-				<label>Custom</label>
+					<div class="leighton-quito-radio">
+						<input type="radio" id="custom" name="timestamp" value="custom">
+						<label>Custom</label>
+					</div>
+				</div>
 			</template>
 		</settings-row>
 
-		<settings-row>
-			<template v-slot:left>
-				<label>Emails</label>
-			</template>
-
+		<settings-row title="Emails">
 			<template v-slot:right>
-				<input type="email" />
+				<div class="">
+					<div class="">
+						<input type="email" value="name@email.com" readonly />
+						<button class="leighton-quito-icon-button">X</button>
+					</div>
+				</div>
+
+				<div class="">
+					<label class="">Add an email address</label>
+					<input type="email" />
+					<button class="leighton-quito-button">Add Email</button>
+				</div>
 			</template>
 		</settings-row>
 	</div>
