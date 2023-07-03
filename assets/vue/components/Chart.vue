@@ -31,9 +31,9 @@ export default {
 			}
 		},
 		data: {
-			Type: Object,
+			Type: Array,
 			default () {
-				return {};
+				return [];
 			}
 		}
 	},
