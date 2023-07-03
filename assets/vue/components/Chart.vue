@@ -27,29 +27,13 @@ export default {
 		labels: {
 			Type: Array,
 			default () {
-				return [
-					'1686585914',
-					'1686672314',
-					'1686758714',
-					'1686845114',
-					'1686931514',
-					'1687017914',
-					'1687104314'
-				];
+				return [];
 			}
 		},
 		data: {
-			Type: Array,
+			Type: Object,
 			default () {
-				return [
-					8113,
-					9072,
-					8651,
-					1470,
-					17910,
-					6252,
-					36302
-				];
+				return {};
 			}
 		}
 	},
