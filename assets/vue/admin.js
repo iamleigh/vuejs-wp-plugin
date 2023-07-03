@@ -9,6 +9,7 @@ import GraphTab from './tabs/GraphTab.vue';
 import SettingsTab from './tabs/SettingsTab.vue';
 import VueRouter from 'vue-router';
 import Button from './components/Button.vue';
+import Chart from './components/Chart.vue';
 import SettingsRow from './components/SettingsRow.vue';
 import FormField from './components/FormField.vue';
 
@@ -35,6 +36,7 @@ const router = new VueRouter({
 });
 
 Vue.component('action', Button);
+Vue.component('chart', Chart);
 Vue.component('field', FormField);
 Vue.component('settings-row', SettingsRow);
 
