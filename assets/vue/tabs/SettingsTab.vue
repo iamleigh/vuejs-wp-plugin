@@ -30,7 +30,7 @@
 					</label>
 
 					<label class="leighton-quito-radio">
-						<input type="radio" id="custom" name="timestamp" value="F j, Y g:i A">
+						<input type="radio" id="human-date" name="timestamp" value="human">
 						Human Date
 					</label>
 				</field>
