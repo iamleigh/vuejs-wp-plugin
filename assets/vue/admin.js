@@ -36,11 +36,11 @@ const router = new VueRouter({
 	routes,
 });
 
-Vue.component('action', Button);
-Vue.component('chart', Chart);
-Vue.component('field', FormField);
-Vue.component('settings-row', SettingsRow);
-Vue.component('list', Table);
+Vue.component('lq-button', Button);
+Vue.component('lq-chart', Chart);
+Vue.component('lq-field', FormField);
+Vue.component('lq-settings', SettingsRow);
+Vue.component('lq-table', Table);
 
 new Vue({
 	el: '#lq-admin-app',

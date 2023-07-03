@@ -5,7 +5,7 @@
 		aria-labelledby="leighton-quito-graph">
 		<h2>Graph Tab</h2>
 
-		<chart
+		<lq-chart
 			:labels="pushData('labels')"
 			:data="pushData('values')" />
 	</div>

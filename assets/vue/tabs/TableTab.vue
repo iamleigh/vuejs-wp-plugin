@@ -3,11 +3,19 @@
 		id="leighton-quito-tab-table"
 		class="leighton-quito-tabs__content"
 		aria-labelledby="leighton-quito-table">
-		<h2>Table Tab</h2>
+		<div role="none" class="leighton-quito-field">
+			<h2>Pageviews List</h2>
+			<p>Display the amount of pageviews per page.</p>
 
-		<list
-			:headers="headers"
-			:rows="rows" />
+			<lq-table
+				:headers="headers"
+				:rows="rows" />
+		</div>
+
+		<div role="none" class="leighton-quito-field">
+			<h2>Allowed Emails</h2>
+			<p>Display a list of the allowed emails.</p>
+		</div>
 	</div>
 </template>
 
