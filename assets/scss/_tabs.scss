@@ -42,9 +42,14 @@
 			border-color: #999;
 			color: #666;
 		}
+
+		&:focus {
+			box-shadow: none;
+		}
 	}
 
 	&__content {
+		max-width: 1010px;
 		padding: 0 20px;
 	}
 }
