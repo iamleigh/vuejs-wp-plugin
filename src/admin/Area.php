@@ -89,6 +89,10 @@ class Area {
 	 * @since 1.0.0
 	 */
 	public function register_assets() {
+		if (!$this->is_admin_page()) {
+			return;
+		}
+
 		$this->load_styles();
 		$this->load_scripts();
 	}
