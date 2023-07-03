@@ -12,6 +12,7 @@ import Button from './components/Button.vue';
 import Chart from './components/Chart.vue';
 import SettingsRow from './components/SettingsRow.vue';
 import FormField from './components/FormField.vue';
+import Table from './components/Table.vue';
 
 Vue.use(Vuex);
 Vue.use(Router);
@@ -39,6 +40,7 @@ Vue.component('action', Button);
 Vue.component('chart', Chart);
 Vue.component('field', FormField);
 Vue.component('settings-row', SettingsRow);
+Vue.component('list', Table);
 
 new Vue({
 	el: '#lq-admin-app',
