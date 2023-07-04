@@ -5,7 +5,7 @@
 		aria-labelledby="leighton-quito-settings">
 		<h2>Edit Settings</h2>
 
-		<form>
+		<form id="leighton-quito-settings-form">
 
 			<lq-settings title="Rows">
 				<template v-slot:right>
