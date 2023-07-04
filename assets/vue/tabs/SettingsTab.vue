@@ -27,12 +27,12 @@
 				<template v-slot:right>
 					<lq-field isRadioGroup="true">
 						<label class="leighton-quito-radio">
-							<input type="radio" id="unix" name="timestamp" value="unix">
+							<input type="radio" id="unix" name="timestamp" value="true" v-model="formData.timestamp">
 							Unix Time
 						</label>
 
 						<label class="leighton-quito-radio">
-							<input type="radio" id="human-date" name="timestamp" value="human">
+							<input type="radio" id="human-date" name="timestamp" value="false" v-model="formData.timestamp">
 							Human Date
 						</label>
 					</lq-field>
