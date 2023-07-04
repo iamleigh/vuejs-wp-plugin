@@ -1,13 +1,13 @@
 <?php
 
-namespace LeightonQuito\Admin;
+namespace LeightonQuito;
 
 /**
  * Admin Area
  *
  * @since 1.0.0
  */
-class Area {
+class Admin {
 	/**
 	 * Admin page slug
 	 *

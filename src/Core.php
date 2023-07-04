@@ -111,14 +111,14 @@ class Core {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return Admin\Area
+	 * @return Admin
 	 */
 	public function get_admin() {
 
 		static $admin;
 
 		if ( ! isset( $admin ) ) {
-			$admin = apply_filters( 'leighton_quito_core_get_admin', new Admin\Area() );
+			$admin = apply_filters( 'leighton_quito_core_get_admin', new Admin() );
 		}
 
 		return $admin;
