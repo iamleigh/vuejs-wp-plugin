@@ -2,6 +2,8 @@
 
 namespace LeightonQuito;
 
+use LeightonQuito\Api\Api;
+
 /**
  * Class Core
  *
@@ -86,6 +88,9 @@ class Core {
 	public function init_plugin() {
 		// Load translations
 		$this->load_textdomain();
+
+		// Load API namespace
+		new Api();
 
 		if ( is_admin() ) {
 			$this->get_admin();
