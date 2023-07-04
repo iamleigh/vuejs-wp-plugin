@@ -1,11 +1,25 @@
-@import url(https://fonts.googleapis.com/css2?family=Jost:wght@500&family=Signika&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Jost:wght@400&family=Signika&display=swap);
 #wpcontent {
   position: relative;
   padding-left: 0 !important;
 }
 
 #leighton-quito-plugin {
+  margin: 0 0 20px;
   color: #3c434a;
+}
+#leighton-quito-plugin h2, #leighton-quito-plugin label {
+  color: #222;
+  font-weight: 600;
+}
+#leighton-quito-plugin h2 {
+  margin: 0 0 30px;
+  font-size: 20px;
+}
+#leighton-quito-plugin label {
+  display: block;
+  font-size: 14px;
+  line-height: 1.3;
 }
 
 .leighton-quito-logo {
@@ -46,15 +60,13 @@
   margin: 0;
   padding: 0;
   font-family: "Jost", sans-serif;
-  font-weight: 500;
-}
-.leighton-quito-header__title, .leighton-quito-header__subtitle small {
-  letter-spacing: -1px;
+  font-weight: 400;
 }
 .leighton-quito-header__title {
   color: #23282C;
   font-size: 28px;
   line-height: 32px;
+  letter-spacing: 0.5px;
 }
 .leighton-quito-header__subtitle {
   color: #999999;
@@ -67,7 +79,182 @@
   font-family: "Signika", sans-serif;
   font-weight: 400;
   font-size: 18px;
+  letter-spacing: -1px;
 }
 .leighton-quito-header__subtitle strong span {
   color: #5F5E5E;
+}
+
+.leighton-quito-tabs__menu {
+  min-height: 58px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 0 20px;
+  padding: 0 20px;
+  background: #fff;
+  font-size: 14px;
+}
+.leighton-quito-tabs__item {
+  display: block;
+  flex: 0 0 auto;
+  margin: 0;
+  margin-right: 30px;
+  padding: 20px 0 18px 0;
+  border: 0 solid #fff;
+  border-bottom-width: 2px;
+  box-shadow: none;
+  color: #666;
+  text-decoration: none;
+}
+.leighton-quito-tabs__item:last-child {
+  margin-right: 0;
+}
+.leighton-quito-tabs__item.active {
+  pointer-events: none;
+  border-color: #e27730;
+  color: #666;
+}
+.leighton-quito-tabs__item:hover {
+  border-color: #999;
+  color: #666;
+}
+.leighton-quito-tabs__item:focus {
+  box-shadow: none;
+}
+.leighton-quito-tabs__content {
+  max-width: 1010px;
+  padding: 0 20px;
+}
+
+#leighton-quito-plugin .leighton-quito-button {
+  cursor: pointer;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+#leighton-quito-plugin .leighton-quito-button * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+#leighton-quito-plugin .leighton-quito-button--primary {
+  background: #e27730;
+  color: #fff;
+}
+#leighton-quito-plugin .leighton-quito-button--primary:hover {
+  background: #b85a1b;
+}
+#leighton-quito-plugin .leighton-quito-button--primary:focus {
+  background: #b85a1b;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px #b85a1b;
+}
+#leighton-quito-plugin .leighton-quito-button--secondary {
+  background: #738e9e;
+  color: #fff;
+}
+#leighton-quito-plugin .leighton-quito-button--secondary:hover {
+  background: #395360;
+}
+#leighton-quito-plugin .leighton-quito-button--secondary:focus {
+  background: #395360;
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px #395360;
+}
+#leighton-quito-plugin .leighton-quito-button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#leighton-quito-plugin .leighton-quito-input {
+  width: 400px;
+  margin: 0 0 10px;
+  padding: 7px 12px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: none;
+  color: #555;
+  line-height: 19px;
+}
+#leighton-quito-plugin .leighton-quito-input:last-child {
+  margin-bottom: 0;
+}
+#leighton-quito-plugin .leighton-quito-input:-moz-read-only {
+  opacity: 0.5;
+  pointer-events: none;
+}
+#leighton-quito-plugin .leighton-quito-input:read-only {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#leighton-quito-plugin .leighton-quito-field {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0 solid #dcdcde;
+}
+#leighton-quito-plugin .leighton-quito-field:not(:last-child) {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom-width: 1px;
+  box-shadow: 0 1px 0 0 #f6f7f7;
+}
+#leighton-quito-plugin .leighton-quito-field__label, #leighton-quito-plugin .leighton-quito-field__helper {
+  display: block;
+  margin: 0;
+}
+#leighton-quito-plugin .leighton-quito-field__label:not(:first-child), #leighton-quito-plugin .leighton-quito-field__helper:not(:first-child) {
+  margin-top: 10px;
+}
+#leighton-quito-plugin .leighton-quito-field__label:not(:last-child), #leighton-quito-plugin .leighton-quito-field__helper:not(:last-child) {
+  margin-bottom: 12px;
+}
+#leighton-quito-plugin .leighton-quito-field__label {
+  font-weight: 400;
+}
+#leighton-quito-plugin .leighton-quito-field__helper {
+  color: #555;
+  font-style: italic;
+}
+
+#leighton-quito-plugin .leighton-quito-settings-row {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+  padding: 0;
+  border: 0 solid #dcdcde;
+  color: #222;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+#leighton-quito-plugin .leighton-quito-settings-row:not(:last-child) {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom-width: 1px;
+  box-shadow: 0 1px 0 0 #f6f7f7;
+}
+#leighton-quito-plugin .leighton-quito-settings-row__left {
+  width: 205px;
+  display: block;
+  flex: 0 0 auto;
+}
+#leighton-quito-plugin .leighton-quito-settings-row__right {
+  min-width: 1px;
+  display: block;
+  flex: 1;
+}
+#leighton-quito-plugin .leighton-quito-settings-row__right:not(:only-child) {
+  margin-left: 20px;
+}
+#leighton-quito-plugin .leighton-quito-settings-row__title {
+  display: block;
+  color: #222;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.3;
 }
