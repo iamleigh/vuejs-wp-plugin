@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import Router from 'vue-router';
 import store from '../store/index';
+// import Router from 'vue-router';
+import VueRouter from 'vue-router';
 import App from './App.vue';
-import TabNavigation from './tabs/Navigation.vue';
+import Navigation from './tabs/Navigation.vue';
 import TableTab from './tabs/TableTab.vue';
 import GraphTab from './tabs/GraphTab.vue';
 import SettingsTab from './tabs/SettingsTab.vue';
-import VueRouter from 'vue-router';
 import Button from './components/Button.vue';
 import Chart from './components/Chart.vue';
 import SettingsRow from './components/SettingsRow.vue';
@@ -16,23 +16,24 @@ import Table from './components/Table.vue';
 import List from './components/List.vue';
 
 Vue.use(Vuex);
-Vue.use(Router);
+Vue.use(VueRouter);
 
 const routes = [
 	{
 		path: '/',
-		components: { default: TableTab, tab: TabNavigation },
+		components: { default: TableTab, tab: Navigation },
 	},
 	{
 		path: '/graph',
-		components: { default: GraphTab, tab: TabNavigation },
+		components: { default: GraphTab, tab: Navigation },
 	},
 	{
 		path: '/settings',
-		components: { default: SettingsTab, tab: TabNavigation },
+		components: { default: SettingsTab, tab: Navigation },
 	},
 ];
 
+// Register router
 const router = new VueRouter({
 	routes,
 });
