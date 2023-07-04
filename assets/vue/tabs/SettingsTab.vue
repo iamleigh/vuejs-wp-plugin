@@ -52,9 +52,7 @@
 				</template>
 			</lq-settings>
 
-			<button type="submit" class="leighton-quito-button leighton-quito-button--primary leighton-quito-button--orange">
-				Save Settings
-			</button>
+			<lq-button type="submit" label="Save Settings" design="primary" />
 
 		</form>
 	</div>
