@@ -11,11 +11,11 @@ export default new Vuex.Store({
 	state: {
 		settings: {
 			general: {
-				rowsnumber: '',
-				timestamp: '',
+				tablerows: '5',
+				timestamp: 'unix',
+				emails: '',
 			},
 		},
-		loadingText: 'Save Settings',
 	},
 	actions,
 	getters,
