@@ -12,7 +12,7 @@ export default new Vuex.Store({
 		settings: {
 			general: {
 				tablerows: '5',
-				timestamp: 'unix',
+				timestamp: true,
 				emails: '',
 			},
 		},
