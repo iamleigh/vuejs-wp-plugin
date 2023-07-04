@@ -1,5 +1,5 @@
 <template>
-	<button :class="setClass">
+	<button :type="type" :class="setClass">
 		<span v-if="hasIcon" :class="setIconClass" aria-hidden="true"></span>
 		<span v-if="hasIcon" class="screen-reader-text">{{ label }}</span>
 		<span v-if="!hasIcon" role="none" class="leighton-quito-button__label">{{ label }}</span>
@@ -21,6 +21,10 @@ export default {
 		design: {
 			Type: String,
 			default: 'primary'
+		},
+		type: {
+			Type: String,
+			default: 'button'
 		}
 	},
 	computed: {
