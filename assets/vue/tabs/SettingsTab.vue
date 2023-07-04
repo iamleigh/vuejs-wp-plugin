@@ -5,55 +5,58 @@
 		aria-labelledby="leighton-quito-settings">
 		<h2>Edit Settings</h2>
 
-		<lq-settings title="Rows">
-			<template v-slot:right>
-				<lq-field
-					label="Limit the number of rows to display at the table."
-					helper="The allowed rows value must be between 1 and 5.">
-					<input
-						type="number"
-						min="1"
-						max="5"
-						value="5"
-						id="lq-table-rows"
-						class="small-text" />
-				</lq-field>
-			</template>
-		</lq-settings>
+		<form>
 
-		<lq-settings title="Timestamp">
-			<template v-slot:right>
-				<lq-field isRadioGroup="true">
-					<label class="leighton-quito-radio">
-						<input type="radio" id="unix" name="timestamp" value="unix">
-						Unix Time
-					</label>
+			<lq-settings title="Rows">
+				<template v-slot:right>
+					<lq-field
+						label="Limit the number of rows to display at the table."
+						helper="The allowed rows value must be between 1 and 5.">
+						<input
+							type="number"
+							min="1"
+							max="5"
+							id="lq-table-rows"
+							class="small-text" />
+					</lq-field>
+				</template>
+			</lq-settings>
 
-					<label class="leighton-quito-radio">
-						<input type="radio" id="human-date" name="timestamp" value="human">
-						Human Date
-					</label>
-				</lq-field>
-			</template>
-		</lq-settings>
+			<lq-settings title="Timestamp">
+				<template v-slot:right>
+					<lq-field isRadioGroup="true">
+						<label class="leighton-quito-radio">
+							<input type="radio" id="unix" name="timestamp" value="unix">
+							Unix Time
+						</label>
 
-		<lq-settings title="Emails">
-			<template v-slot:right>
-				<lq-field>
-					<input type="email" value="name@email.com" class="leighton-quito-input leighton-quito-field__item" readonly />
-					<lq-button label="Remove email" icon="no-alt" design="secondary" />
-				</lq-field>
+						<label class="leighton-quito-radio">
+							<input type="radio" id="human-date" name="timestamp" value="human">
+							Human Date
+						</label>
+					</lq-field>
+				</template>
+			</lq-settings>
 
-				<lq-field label="Add an email address">
-					<input type="email" class="leighton-quito-input leighton-quito-field__item" />
-					<lq-button label="Add Email" />
-				</lq-field>
-			</template>
-		</lq-settings>
+			<lq-settings title="Emails">
+				<template v-slot:right>
+					<lq-field>
+						<input type="email" value="name@email.com" class="leighton-quito-input leighton-quito-field__item" readonly />
+						<lq-button label="Remove email" icon="no-alt" design="secondary" />
+					</lq-field>
 
-		<button class="leighton-quito-button leighton-quito-button--primary leighton-quito-button--orange">
-			Save Settings
-		</button>
+					<lq-field label="Add an email address">
+						<input type="email" class="leighton-quito-input leighton-quito-field__item" />
+						<lq-button label="Add Email" />
+					</lq-field>
+				</template>
+			</lq-settings>
+
+			<button type="submit" class="leighton-quito-button leighton-quito-button--primary leighton-quito-button--orange">
+				Save Settings
+			</button>
+
+		</form>
 	</div>
 </template>
 
