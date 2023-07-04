@@ -18,7 +18,7 @@
 
 <script>
 export default {
-	name: 'TabNavigation',
+	name: 'Navigation',
 	data () {
 		return {
 			tabsList: [
