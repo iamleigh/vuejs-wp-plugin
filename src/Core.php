@@ -37,6 +37,7 @@ class Core {
 	public function __construct() {
 		$this->plugin_path = leighton_quito_plugin_dir();
 		$this->plugin_url = leighton_quito_plugin_url();
+		$this->assets_url = $this->plugin_url . 'assets/';
 
 		$this->hooks();
 	}
@@ -87,12 +88,9 @@ class Core {
 	 * @since 1.0.0
 	 */
 	public function init_plugin() {
-		// Load translations
 		$this->load_textdomain();
-
-		// Load API namespace
-		new Admin();
-		new Api();
+		$this->get_admin();
+		$this->get_api();
 	}
 
 	/**
@@ -101,6 +99,42 @@ class Core {
 	 * @since 1.0.0
 	 */
 	private function load_textdomain() {
-		load_plugin_textdomain( 'leighton-quito', false, LEIGHTON_QUITO_PLUGIN_BASENAME . '/assets/languages' );
+		load_plugin_textdomain( 'leighton-quito', false, $this->assets_url . 'languages/' );
+	}
+
+	/**
+	 * Load admin area
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return LeightonQuito\Admin
+	 */
+	public function get_admin() {
+
+		static $admin;
+
+		if ( ! isset( $admin ) ) {
+			$admin = new Admin();
+		}
+
+		return $admin;
+	}
+
+	/**
+	 * Load api settings
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return LeightonQuito\Api\Api
+	 */
+	public function get_api() {
+
+		static $api;
+
+		if ( ! isset( $api ) ) {
+			$api = new Api();
+		}
+
+		return $api;
 	}
 }
