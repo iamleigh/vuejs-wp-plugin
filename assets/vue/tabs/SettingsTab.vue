@@ -17,7 +17,8 @@
 							min="1"
 							max="5"
 							id="lq-table-rows"
-							class="small-text" />
+							class="small-text"
+							v-model="formData.tablerows" />
 					</lq-field>
 				</template>
 			</lq-settings>
@@ -59,13 +60,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
 	name: 'SettingsTab',
 	data () {
 		return {}
 	},
 	mounted () {},
-	computed: {},
+	computed: {
+		...mapGetters([ 'GET_GENERAL_SETTINGS' ]),
+		formData: {
+			get() {
+				return this.GET_GENERAL_SETTINGS
+			}
+		}
+	},
 	methods: {}
 }
 </script>
