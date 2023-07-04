@@ -17,6 +17,7 @@ class ComposerStaticInit54ba00e6a14375fbf9bc5140e169d192
         ),
         'L' => 
         array (
+            'LeightonQuito\\Api\\' => 18,
             'LeightonQuito\\' => 14,
         ),
         'D' => 
@@ -30,6 +31,10 @@ class ComposerStaticInit54ba00e6a14375fbf9bc5140e169d192
         'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
         array (
             0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
+        ),
+        'LeightonQuito\\Api\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/api',
         ),
         'LeightonQuito\\' => 
         array (
