@@ -76,6 +76,10 @@ class Admin {
 	 * @since 1.0.0
 	 */
 	protected function hooks() {
+		if (!$this->is_admin_page()) {
+			return;
+		}
+
 		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'register_assets' ] );
 
