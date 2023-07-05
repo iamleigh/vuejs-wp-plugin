@@ -71,12 +71,7 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
 	name: 'SettingsTab',
-	data () {
-		return {
-			errors: [],
-			tableRowsError: false
-		}
-	},
+	data () {},
 	mounted () {
 		this.fetchSettings()
 	},
