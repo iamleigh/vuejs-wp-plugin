@@ -42,8 +42,14 @@
 			<lq-settings title="Emails">
 				<template v-slot:right>
 					<lq-field>
-						<input type="email" value="name@email.com" class="leighton-quito-input leighton-quito-field__item" readonly />
-						<lq-button label="Remove email" icon="no-alt" design="secondary" />
+						<div v-for="(email, index) in formData.emails" v-bind:key="`allowed-email-${index}`">
+							<input
+								type="email"
+								:value="email"
+								class="leighton-quito-input leighton-quito-field__item"
+								readonly />
+							<lq-button label="Remove email" icon="no-alt" design="secondary" />
+						</div>
 					</lq-field>
 
 					<lq-field label="Add an email address">
