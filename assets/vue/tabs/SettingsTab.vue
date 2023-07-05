@@ -60,14 +60,19 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
 	name: 'SettingsTab',
 	data () {
-		return {}
+		return {
+			errors: [],
+			tableRowsError: false
+		}
 	},
-	mounted () {},
+	mounted () {
+		this.fetchSettings()
+	},
 	computed: {
 		...mapGetters([ 'GET_GENERAL_SETTINGS' ]),
 		formData: {
@@ -76,6 +81,15 @@ export default {
 			}
 		}
 	},
-	methods: {}
+	methods: {
+		...mapActions([ 'SAVE_SETTINGS', 'FETCH_SETTINGS' ]),
+		saveSettings: function (e) {
+			this.SAVE_SETTINGS( this.formData );
+			e.preventDefault();
+		},
+		fetchSettings: function () {
+			this.FETCH_SETTINGS();
+		}
+	}
 }
 </script>
