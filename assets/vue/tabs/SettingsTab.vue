@@ -18,6 +18,7 @@
 							max="5"
 							id="lq-table-rows"
 							class="small-text"
+							required
 							v-model="formData.tablerows" />
 					</lq-field>
 				</template>
