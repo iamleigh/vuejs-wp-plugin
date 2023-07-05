@@ -11,7 +11,7 @@
 		</thead>
 
 		<tbody v-if="hasRows">
-			<tr v-for="item in rows" v-bind:key="item.id">
+			<tr v-for="(item, index) in rows" v-bind:key="`row-${index}--${item.id}`">
 				<td>{{ item.id }}</td>
 				<td>
 					<a :href="item.url" target="_blank" rel="nofollow noreferrer">
@@ -22,7 +22,7 @@
 					<strong>{{ item.title }}</strong>
 				</td>
 				<td>{{ item.pageviews }}</td>
-				<td>{{ humanDate(item.date) }}</td>
+				<td>{{ unix ? item.date : humanDate(item.date) }}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -42,6 +42,10 @@ export default {
 			default () {
 				return {};
 			}
+		},
+		unix: {
+			Type: Boolean,
+			default: true
 		}
 	},
 	computed: {
