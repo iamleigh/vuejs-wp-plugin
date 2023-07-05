@@ -76,10 +76,6 @@ class Admin {
 	 * @since 1.0.0
 	 */
 	protected function hooks() {
-		if (!$this->is_admin_page()) {
-			return;
-		}
-
 		add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'register_assets' ] );
 
@@ -109,6 +105,10 @@ class Admin {
 	 * @return void
 	 */
 	public function load_scripts() {
+		if (!$this->is_admin_page()) {
+			return;
+		}
+
 		wp_register_script( 'lq-manifest', $this->scripts_url . 'manifest.js', [], rand(), true );
 		wp_register_script( 'lq-vendor', $this->scripts_url . 'vendor.js', [ 'lq-manifest' ], rand(), true );
 		wp_register_script( 'lq-admin', $this->scripts_url . 'admin.js', [ 'lq-vendor' ], rand(), true );
@@ -132,6 +132,10 @@ class Admin {
 	 * @return void
 	 */
 	public function load_styles() {
+		if (!$this->is_admin_page()) {
+			return;
+		}
+
 		wp_register_style( 'lq-admin', $this->styles_url . 'leighton-quito-admin.css' );
 
 		wp_enqueue_style( 'lq-admin' );
