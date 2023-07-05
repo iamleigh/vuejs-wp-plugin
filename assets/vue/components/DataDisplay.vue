@@ -34,12 +34,14 @@
 import Vue from 'vue';
 import axios from 'axios';
 import Table from './Table.vue';
+import Chart from './Chart.vue';
 import List from './List.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
 	components: {
 		'lq-table': Table,
+		'lq-chart': Chart,
 		'lq-list': List
 	},
 	props: {

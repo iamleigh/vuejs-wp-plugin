@@ -9,7 +9,6 @@ import TableTab from './tabs/TableTab.vue';
 import GraphTab from './tabs/GraphTab.vue';
 import SettingsTab from './tabs/SettingsTab.vue';
 import Button from './components/Button.vue';
-import Chart from './components/Chart.vue';
 import SettingsRow from './components/SettingsRow.vue';
 import FormField from './components/FormField.vue';
 
@@ -38,7 +37,6 @@ const router = new VueRouter({
 
 // Register components
 Vue.component('lq-button', Button);
-Vue.component('lq-chart', Chart);
 Vue.component('lq-field', FormField);
 Vue.component('lq-settings', SettingsRow);
 
