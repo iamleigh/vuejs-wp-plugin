@@ -1,11 +1,11 @@
 <template>
 	<div role="none" class="leighton-quito-field">
 		<div v-if="error" class="leighton-quito-notice leighton-quito-notice--error">
-			<p>Whoops! Something an error just happened. Check on the console for more info.</p>
+			<p>Whoops! Something just happened. Check on the console for more info.</p>
 		</div>
 
 		<div v-if="!error && loading" class="leighton-quito-notice leighton-quito-notice--loading">
-			<p>Loading content...</p>
+			<p>Loading content</p>
 		</div>
 
 		<div v-if="!error && !loading && type === 'table'">
