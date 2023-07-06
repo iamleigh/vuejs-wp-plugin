@@ -76,12 +76,12 @@ export default {
 		},
 		tableData: {
 			get() {
-				return this.table;
+				return JSON.parse(this.table);
 			}
 		},
 		chartData: {
 			get() {
-				return this.chart;
+				return JSON.parse(this.chart);
 			}
 		}
 	},
@@ -91,9 +91,37 @@ export default {
 			this.FETCH_SETTINGS();
 		},
 		getAwesomeData: async function () {
+			const lqCachedChart = localStorage.getItem('lqCachedChart');
+			const lqCachedTable = localStorage.getItem('lqCachedTable');
+			const lqCachedStamp = localStorage.getItem('lqCachedStamp');
+
+			if (lqCachedChart && lqCachedTable && lqCachedStamp) {
+				const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+				const currentTime = new Date().getTime();
+				const isDataValid = currentTime - lqCachedStamp < oneHour;
+
+				if (isDataValid) {
+					// Remove the loading state
+					this.loading = false;
+
+					// Use the cached data
+					this.chart = lqCachedChart;
+					this.table = lqCachedTable;
+
+					return;
+				}
+			}
+
+			// Make the API call
 			await axios
 				.get('https://miusage.com/v1/challenge/2/static/')
 				.then((res) => {
+					// Cache the response and timestamp
+					localStorage.setItem('lqCachedChart', JSON.stringify(res.data.graph));
+					localStorage.setItem('lqCachedTable', JSON.stringify(res.data.table));
+					localStorage.setItem('lqCachedStamp', new Date().getTime());
+
+					// Use the fetched data
 					this.chart = res.data.graph;
 					this.table = res.data.table;
 				})
