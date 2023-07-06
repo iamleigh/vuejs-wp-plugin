@@ -5,7 +5,11 @@
 		aria-labelledby="leighton-quito-settings">
 		<h2>Edit Settings</h2>
 
-		<form id="leighton-quito-settings-form" @submit="saveSettings">
+		<form
+			id="leighton-quito-settings-form"
+			:class="`leighton-quito-form${isSaving ? ' leighton-quito--disabled' : ''}`"
+			:disabled="isSaving"
+			@submit="saveSettings">
 
 			<lq-settings title="Rows">
 				<template v-slot:right>
@@ -60,7 +64,12 @@
 				</template>
 			</lq-settings>
 
-			<lq-button type="submit" label="Save Settings" design="primary" />
+			<lq-button
+				type="submit"
+				design="primary"
+				:label="buttonLabel"
+				:loading="isSaving"
+				:disabled="isSaving" />
 
 		</form>
 	</div>
@@ -78,15 +87,25 @@ export default {
 		this.fetchSettings()
 	},
 	computed: {
-		...mapGetters([ 'GET_GENERAL_SETTINGS' ]),
+		...mapGetters([ 'GET_GENERAL_SETTINGS', 'GET_BUTTON_LABEL', 'GET_SAVING_STATE' ]),
 		formData: {
 			get() {
-				return this.GET_GENERAL_SETTINGS
+				return this.GET_GENERAL_SETTINGS;
+			}
+		},
+		buttonLabel: {
+			get() {
+				return this.GET_BUTTON_LABEL;
+			}
+		},
+		isSaving: {
+			get() {
+				return this.GET_SAVING_STATE;
 			}
 		}
 	},
 	methods: {
-		...mapActions([ 'SAVE_SETTINGS', 'FETCH_SETTINGS' ]),
+		...mapActions([ 'FETCH_SETTINGS', 'SAVE_SETTINGS' ]),
 		saveSettings: function (e) {
 			this.SAVE_SETTINGS( this.formData );
 			e.preventDefault();

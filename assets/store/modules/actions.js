@@ -4,7 +4,7 @@ export const actions = {
 	SAVE_SETTINGS: async ({ commit }, payload) => {
 		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/settings`;
 
-		commit('SAVING');
+		commit('SAVING_SETTINGS');
 
 		axios
 			.post(url, {
@@ -13,7 +13,7 @@ export const actions = {
 				emails: payload.emails,
 			})
 			.then((res) => {
-				commit('SAVED');
+				commit('SAVED_SETTINGS');
 			})
 			.catch((err) => {
 				console.log(err);

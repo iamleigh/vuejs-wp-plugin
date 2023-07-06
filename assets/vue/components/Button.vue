@@ -25,6 +25,10 @@ export default {
 		type: {
 			Type: String,
 			default: 'button'
+		},
+		loading: {
+			Type: Boolean,
+			default: false
 		}
 	},
 	computed: {
