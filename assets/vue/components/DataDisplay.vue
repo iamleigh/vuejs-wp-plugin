@@ -40,6 +40,7 @@ import List from './List.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
+	name: 'DataDisplay',
 	components: {
 		'lq-table': Table,
 		'lq-chart': Chart,
@@ -123,8 +124,8 @@ export default {
 					localStorage.setItem('lqCachedStamp', new Date().getTime());
 
 					// Use the fetched data
-					this.chart = res.data.graph;
-					this.table = res.data.table;
+					this.chart = JSON.stringify(res.data.graph);
+					this.table = JSON.stringify(res.data.table);
 				})
 				.catch((err) => {
 					console.log(err);
