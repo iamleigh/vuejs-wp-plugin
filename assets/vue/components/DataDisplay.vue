@@ -12,6 +12,7 @@
 			<h3>{{ tableData.title }}</h3>
 			<lq-table
 				:unix="JSON.parse(formData.timestamp)"
+				:limit="JSON.parse(formData.tablerows)"
 				:headers="tableData.data.headers"
 				:rows="tableData.data.rows" />
 		</div>

@@ -11,7 +11,7 @@
 		</thead>
 
 		<tbody v-if="hasRows">
-			<tr v-for="(item, index) in rows" v-bind:key="`row-${index}--${item.id}`">
+			<tr v-for="(item, index) in rows.slice(0, limit)" v-bind:key="`row-${index}--${item.id}`">
 				<td>{{ item.id }}</td>
 				<td>
 					<a :href="item.url" target="_blank" rel="nofollow noreferrer">
@@ -46,6 +46,11 @@ export default {
 		unix: {
 			Type: Boolean,
 			default: true
+		},
+		limit: {
+			Type: Number,
+			default: null,
+			required: true
 		}
 	},
 	computed: {
@@ -66,7 +71,7 @@ export default {
 			}
 
 			return false;
-		}
+		},
 	},
 	methods: {
 		humanDate(timestamp) {
