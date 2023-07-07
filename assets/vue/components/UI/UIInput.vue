@@ -14,6 +14,10 @@ export default {
 		event: 'changeValue'
 	},
 	props: {
+		type: {
+			Type: String,
+			default: 'text'
+		},
 		value: {
 			Type: String,
 			default: ''
@@ -21,11 +25,11 @@ export default {
 	},
 	computed: {
 		setInputClass: function () {
-			if ('radio' === this.type) {
+			if ('number' === this.type) {
 				return 'small-text';
 			}
 
-			return;
+			return '';
 		}
 	}
 }
