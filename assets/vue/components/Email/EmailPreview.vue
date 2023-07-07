@@ -1,6 +1,11 @@
 <template>
 	<div>
-		<span>{{ emailItem.value }}</span>
+		<UIInput
+			type="email"
+			:value="emailItem.value"
+			placeholder="Add a new email"
+			readonly />
+
 		<UIButton
 			type="button"
 			buttonIcon="trash"
@@ -14,11 +19,13 @@
 <script>
 import { mapActions } from 'vuex';
 import UIButton from '../UI/UIButton';
+import UIInput from '../UI/UIInput.vue';
 
 export default {
 	name: 'EmailPreview',
 	components: {
-		UIButton
+		UIButton,
+		UIInput
 	},
 	props: {
 		emailItem: {
