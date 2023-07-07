@@ -77,12 +77,13 @@ export default {
 			switch (this.buttonDesign) {
 				case 'primary':
 				case 'secondary':
+				case 'tertiary':
 					setClass += 'leighton-quito-button--' + this.buttonDesign;
 					break;
 
 				default:
 					throw new Error(
-						`The only available "design" values for the UIButton component are "primary" and "secondary".`
+						`The only available "design" values for the UIButton component are "primary", "secondary", and "tertiary".`
 					);
 					break;
 			}
