@@ -53,23 +53,33 @@
 								:value="email.value"
 								class="leighton-quito-input leighton-quito-field__item"
 								readonly />
-							<lq-button label="Remove email" icon="no-alt" design="secondary" />
+							<UIButton
+								type="button"
+								buttonIcon="no-alt"
+								buttonDesign="secondary">
+								Remove Email
+							</UIButton>
 						</div>
 					</lq-field>
 
 					<lq-field label="Add an email address">
 						<input type="email" class="leighton-quito-input leighton-quito-field__item" />
-						<lq-button label="Add Email" />
+						<UIButton
+							type="button"
+							buttonDesign="primary">
+							Add Email
+						</UIButton>
 					</lq-field>
 				</template>
 			</lq-settings>
 
-			<lq-button
+			<UIButton
 				type="submit"
-				design="primary"
-				:label="buttonLabel"
-				:loading="isSaving"
-				:disabled="isSaving" />
+				buttonDesign="primary"
+				:buttonLoading="isSaving"
+				:disabled="isSaving">
+				{{ buttonLabel }}
+			</UIButton>
 
 		</form>
 	</div>
@@ -77,9 +87,13 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import UIButton from '../components/UI/UIButton.vue';
 
 export default {
 	name: 'SettingsTab',
+	components: {
+		UIButton
+	},
 	data () {
 		return {}
 	},
