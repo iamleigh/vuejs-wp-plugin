@@ -43,7 +43,9 @@
 			<UISection title="Emails">
 				<template v-slot:right>
 					<EmailList ref="emailList" />
-					<EmailNew @add-task="scrollToBottom()" />
+					<EmailNew
+						v-if="!hideEmail"
+						@add-task="scrollToBottom()" />
 				</template>
 			</UISection>
 
@@ -87,7 +89,12 @@ export default {
 		this.fetchSettings()
 	},
 	computed: {
-		...mapGetters([ 'GET_GENERAL_SETTINGS', 'GET_BUTTON_LABEL', 'GET_SAVING_STATE' ]),
+		...mapGetters([
+			'GET_GENERAL_SETTINGS',
+			'GET_TOTAL_EMAIL_LIST',
+			'GET_BUTTON_LABEL',
+			'GET_SAVING_STATE'
+		]),
 		formData: {
 			get() {
 				return this.GET_GENERAL_SETTINGS;
@@ -102,6 +109,13 @@ export default {
 			get() {
 				return this.GET_SAVING_STATE;
 			}
+		},
+		hideEmail: function () {
+			if (parseInt(this.GET_TOTAL_EMAIL_LIST) === 5) {
+				return true;
+			}
+
+			return false;
 		}
 	},
 	methods: {
