@@ -3,6 +3,14 @@ export const getters = {
 		return state.settings.general;
 	},
 
+	GET_EMAIL_LIST: (state) => {
+		return state.settings.general.emails;
+	},
+
+	GET_TOTAL_EMAIL_LIST: (state) => {
+		return state.settings.general.emails.length;
+	},
+
 	GET_EMAIL_LAST: (state) => {
 		return state.settings.general.emails[state.settings.general.emails.length - 1];
 	},
