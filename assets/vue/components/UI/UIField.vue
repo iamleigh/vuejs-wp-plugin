@@ -1,10 +1,29 @@
 <template>
-	<div role="none" class="leighton-quito-field">
-		<label v-if="label" class="leighton-quito-field__label">{{ label }}</label>
-		<div class="leighton-quito-field__content" v-bind="$attrs">
+	<div
+		role="none"
+		class="leighton-quito-field"
+		:class="hasError ? 'leighton-quito-field--error' : ''">
+		<label v-if="label" class="leighton-quito-field__label">
+			{{ label }}
+		</label>
+
+		<div
+			class="leighton-quito-field__content"
+			v-bind="$attrs">
 			<slot />
 		</div>
-		<span v-if="helper" class="leighton-quito-field__helper">{{ helper }}</span>
+
+		<span
+			v-if="hasError && errorMessage"
+			class="leighton-quito-field__error">
+			{{ errorMessage }}
+		</span>
+
+		<span
+			v-if="helper"
+			class="leighton-quito-field__helper">
+			{{ helper }}
+		</span>
 	</div>
 </template>
 
@@ -20,6 +39,14 @@ export default {
 		helper: {
 			Type: String,
 			default: null
+		},
+		errorMessage: {
+			Type: String,
+			default: null
+		},
+		hasError: {
+			Type: Boolean,
+			default: false
 		}
 	},
 	computed: {
