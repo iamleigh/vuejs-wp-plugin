@@ -26,7 +26,7 @@
 
 		<div v-if="!error && !loading && type === 'list'">
 			<h3>Allowed Emails</h3>
-			<lq-list :items="formData.emails" />
+			<EmailList :emails="formData.emails" />
 		</div>
 	</div>
 </template>
@@ -36,7 +36,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import Table from './Table.vue';
 import Chart from './Chart.vue';
-import List from './List.vue';
+import EmailList from './Email/EmailList.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
@@ -44,7 +44,7 @@ export default {
 	components: {
 		'lq-table': Table,
 		'lq-chart': Chart,
-		'lq-list': List
+		EmailList
 	},
 	props: {
 		type: {
