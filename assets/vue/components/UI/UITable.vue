@@ -30,6 +30,7 @@
 
 <script>
 export default {
+	name: 'UITable',
 	props: {
 		headers: {
 			Type: Array,

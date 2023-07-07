@@ -11,7 +11,7 @@
 		<DataBlock
 			v-else
 			:title="setBlockTitle">
-			<lq-table
+			<UITable
 				v-if="'table' === type"
 				:unix="JSON.parse(formData.timestamp)"
 				:limit="JSON.parse(formData.tablerows)"
@@ -34,18 +34,19 @@
 <script>
 import Vue from 'vue';
 import axios from 'axios';
+import { mapGetters, mapActions } from 'vuex';
 import UINotice from './UI/UINotice.vue';
 import UIChart from './UI/UIChart.vue';
-import DataBlock from './Data/DataBlock.vue';
-import Table from './Table.vue';
+import UITable from './UI/UITable.vue';
 import EmailList from './Email/EmailList.vue';
-import { mapGetters, mapActions } from 'vuex';
+import DataBlock from './Data/DataBlock.vue';
 
 export default {
 	name: 'DataDisplay',
 	components: {
-		'lq-table': Table,
+		UINotice,
 		UIChart,
+		UITable,
 		EmailList,
 		DataBlock
 	},
