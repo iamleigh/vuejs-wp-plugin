@@ -58,7 +58,7 @@ export default {
 
 			const email = {
 				id: emailId,
-				name: emailValue
+				value: emailValue
 			}
 
 			if ('' !== emailValue) {
