@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<span>{{ emailItem.value }}</span>
-		<span>{{ emailItem }}</span>
 		<UIButton
 			type="button"
 			buttonIcon="trash"
