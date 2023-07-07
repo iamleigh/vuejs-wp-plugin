@@ -1,5 +1,6 @@
 <template>
 	<input
+		:type="type"
 		:value="value"
 		class="leighton-quito-input"
 		:class="setInputClass"
