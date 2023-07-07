@@ -18,6 +18,7 @@ ChartJS.register(
 );
 
 export default {
+	name: 'UIChart',
 	components: {
 		Bar
 	},
