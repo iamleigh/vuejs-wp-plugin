@@ -50,7 +50,7 @@
 						<div v-for="(email, index) in formData.emails" v-bind:key="`allowed-email-${index}`">
 							<input
 								type="email"
-								:value="email"
+								:value="email.value"
 								class="leighton-quito-input leighton-quito-field__item"
 								readonly />
 							<lq-button label="Remove email" icon="no-alt" design="secondary" />

@@ -85,8 +85,9 @@ class Settings_Route extends WP_REST_Controller {
 		$timestamp = isset( $request['timestamp'] ) ? sanitize_text_field( $request['timestamp'] ) : '';
 
 		if ( isset( $request['emails'] ) && is_array( $request['emails'] ) ) {
-			foreach ( $request['emails'] as $key => $email ) {
-				$emails[ $key ] = isset( $request['emails'][ $key ] ) ? sanitize_email( $email ) : '';
+			foreach( $request['emails'] as $key => $email ) {
+				$email[ 'id' ] = isset( $request['email'][ 'id' ] ) ? sanitize_email( $email ) : '';
+				$email[ 'value' ] = isset( $request['email'][ 'value' ] ) ? sanitize_email( $email ) : '';
 			}
 		} else {
 			$emails = array( $this->admin_email );
