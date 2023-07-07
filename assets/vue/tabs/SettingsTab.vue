@@ -13,7 +13,7 @@
 
 			<lq-settings title="Rows">
 				<template v-slot:right>
-					<lq-field
+					<UIField
 						label="Limit the number of rows to display at the table."
 						helper="The allowed rows value must be between 1 and 5.">
 						<UIInput
@@ -22,13 +22,13 @@
 							max="5"
 							required
 							v-model="formData.tablerows" />
-					</lq-field>
+					</UIField>
 				</template>
 			</lq-settings>
 
 			<lq-settings title="Timestamp">
 				<template v-slot:right>
-					<lq-field isRadioGroup="true">
+					<UIField role="radiogroup">
 						<UIRadio name="timestamp" value="true" v-model="formData.timestamp">
 							Unix Time
 						</UIRadio>
@@ -36,13 +36,13 @@
 						<UIRadio name="timestamp" value="false" v-model="formData.timestamp">
 							Human Date
 						</UIRadio>
-					</lq-field>
+					</UIField>
 				</template>
 			</lq-settings>
 
 			<lq-settings title="Emails">
 				<template v-slot:right>
-					<lq-field>
+					<UIField>
 						<div v-for="(email, index) in formData.emails" v-bind:key="`allowed-email-${index}`">
 							<UIInput
 								type="email"
@@ -57,9 +57,9 @@
 								Remove Email
 							</UIButton>
 						</div>
-					</lq-field>
+					</UIField>
 
-					<lq-field label="Add an email address">
+					<UIField label="Add an email address">
 						<UIInput type="email" placeholder="Add a new email" />
 
 						<UIButton
@@ -67,7 +67,7 @@
 							buttonDesign="primary">
 							Add Email
 						</UIButton>
-					</lq-field>
+					</UIField>
 				</template>
 			</lq-settings>
 
@@ -88,13 +88,15 @@ import { mapGetters, mapActions } from 'vuex';
 import UIButton from '../components/UI/UIButton.vue';
 import UIInput from '../components/UI/UIInput.vue';
 import UIRadio from '../components/UI/UIRadio.vue';
+import UIField from '../components/UI/UIField.vue';
 
 export default {
 	name: 'SettingsTab',
 	components: {
 		UIButton,
 		UIInput,
-		UIRadio
+		UIRadio,
+		UIField
 	},
 	data () {
 		return {}
