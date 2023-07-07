@@ -1,12 +1,12 @@
 <template>
 	<div role="none" class="leighton-quito-field">
-		<div v-if="error" class="leighton-quito-notice leighton-quito-notice--error">
+		<UINotice v-if="error" mode="error">
 			<p>Whoops! Something just happened. Check on the console for more info.</p>
-		</div>
+		</UINotice>
 
-		<div v-else-if="loading" class="leighton-quito-notice leighton-quito-notice--loading">
+		<UINotice v-else-if="loading" mode="loading">
 			<p>Loading content</p>
-		</div>
+		</UINotice>
 
 		<DataBlock
 			v-else
@@ -34,9 +34,10 @@
 <script>
 import Vue from 'vue';
 import axios from 'axios';
+import UINotice from './UI/UINotice.vue';
+import UIChart from './UI/UIChart.vue';
 import DataBlock from './Data/DataBlock.vue';
 import Table from './Table.vue';
-import UIChart from './UI/UIChart.vue';
 import EmailList from './Email/EmailList.vue';
 import { mapGetters, mapActions } from 'vuex';
 
