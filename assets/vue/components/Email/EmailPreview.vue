@@ -10,6 +10,7 @@
 			type="button"
 			buttonIcon="trash"
 			buttonDesign="tertiary"
+			:disabled="hideRemove"
 			@button-click="REMOVE_EMAIL(emailItem.id)">
 			Remove Email
 		</UIButton>
@@ -17,7 +18,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import UIButton from '../UI/UIButton';
 import UIInput from '../UI/UIInput.vue';
 
@@ -31,6 +32,16 @@ export default {
 		emailItem: {
 			Type: Object,
 			required: true
+		}
+	},
+	computed: {
+		...mapGetters([ 'GET_TOTAL_EMAIL_LIST' ]),
+		hideRemove: function () {
+			if (parseInt(this.GET_TOTAL_EMAIL_LIST) === 1) {
+				return true;
+			}
+
+			return false;
 		}
 	},
 	methods: {
