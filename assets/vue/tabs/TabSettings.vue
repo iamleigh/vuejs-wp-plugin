@@ -42,23 +42,7 @@
 
 			<UISection title="Emails">
 				<template v-slot:right>
-					<UIField>
-						<div v-for="(email, index) in formData.emails" v-bind:key="`allowed-email-${index}`">
-							<UIInput
-								type="email"
-								:value="email.value"
-								placeholder="Add a new email"
-								readonly />
-
-							<UIButton
-								type="button"
-								buttonIcon="no-alt"
-								buttonDesign="secondary">
-								Remove Email
-							</UIButton>
-						</div>
-					</UIField>
-
+					<EmailList ref="emailList" />
 					<EmailNew @add-task="scrollToBottom()" />
 				</template>
 			</UISection>
@@ -82,6 +66,7 @@ import UIButton from '../components/UI/UIButton.vue';
 import UIInput from '../components/UI/UIInput.vue';
 import UIRadio from '../components/UI/UIRadio.vue';
 import UIField from '../components/UI/UIField.vue';
+import EmailList from '../components/Email/EmailList.vue';
 import EmailNew from '../components/Email/EmailNew.vue';
 
 export default {
@@ -92,6 +77,7 @@ export default {
 		UIInput,
 		UIRadio,
 		UIField,
+		EmailList,
 		EmailNew
 	},
 	data () {
