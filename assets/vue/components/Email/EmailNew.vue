@@ -38,7 +38,7 @@ export default {
 		...mapGetters(['GET_EMAIL_LAST']),
 		createEmailId: function () {
 			if ('undefined' !== typeof this.GET_EMAIL_LAST) {
-				return this.GET_EMAIL_LAST + 1;
+				return parseInt(this.GET_EMAIL_LAST.id) + 1;
 			}
 
 			return 1;
