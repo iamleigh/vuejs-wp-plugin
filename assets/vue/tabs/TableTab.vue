@@ -5,19 +5,19 @@
 		aria-labelledby="leighton-quito-table">
 		<h2>Table Tab</h2>
 
-		<lq-data type="table" />
+		<DataPreview type="table" />
 
-		<lq-data type="list" />
+		<DataPreview type="list" />
 	</div>
 </template>
 
 <script>
-import DataDisplay from '../components/DataDisplay.vue';
+import DataPreview from '../components/Data/DataPreview.vue';
 
 export default {
 	name: 'TableTab',
 	components: {
-		'lq-data': DataDisplay
+		DataPreview
 	}
 }
 </script>

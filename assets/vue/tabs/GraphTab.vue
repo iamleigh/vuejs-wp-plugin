@@ -5,17 +5,17 @@
 		aria-labelledby="leighton-quito-graph">
 		<h2>Graph Tab</h2>
 
-		<lq-data type="chart" />
+		<DataPreview type="chart" />
 	</div>
 </template>
 
 <script>
-import DataDisplay from '../components/DataDisplay.vue';
+import DataPreview from '../components/Data/DataPreview.vue';
 
 export default {
 	name: 'GraphTab',
 	components: {
-		'lq-data': DataDisplay
+		DataPreview
 	}
 }
 </script>

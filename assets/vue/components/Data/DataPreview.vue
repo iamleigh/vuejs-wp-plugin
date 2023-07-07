@@ -35,14 +35,14 @@
 import Vue from 'vue';
 import axios from 'axios';
 import { mapGetters, mapActions } from 'vuex';
-import UINotice from './UI/UINotice.vue';
-import UIChart from './UI/UIChart.vue';
-import UITable from './UI/UITable.vue';
-import EmailList from './Email/EmailList.vue';
-import DataBlock from './Data/DataBlock.vue';
+import DataBlock from './DataBlock.vue';
+import EmailList from '../Email/EmailList.vue';
+import UINotice from '../UI/UINotice.vue';
+import UIChart from '../UI/UIChart.vue';
+import UITable from '../UI/UITable.vue';
 
 export default {
-	name: 'DataDisplay',
+	name: 'DataPreview',
 	components: {
 		UINotice,
 		UIChart,
