@@ -1,10 +1,8 @@
 <template>
-	<div>
-		<Bar
-			id="leighton-quito-chart"
-			:options="chartOptions"
-			:data="chartData" />
-	</div>
+	<Bar
+		id="leighton-quito-chart"
+		:options="chartOptions"
+		:data="chartData" />
 </template>
 
 <script>

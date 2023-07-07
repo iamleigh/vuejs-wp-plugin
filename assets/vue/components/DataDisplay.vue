@@ -18,7 +18,7 @@
 		</div>
 
 		<div v-if="!error && !loading && type === 'chart'">
-			<lq-chart
+			<UIChart
 				:unix="JSON.parse(formData.timestamp)"
 				:labels="pushAwesomeData('labels')"
 				:data="pushAwesomeData('values')" />
@@ -35,7 +35,7 @@
 import Vue from 'vue';
 import axios from 'axios';
 import Table from './Table.vue';
-import Chart from './Chart.vue';
+import UIChart from './UI/UIChart.vue';
 import EmailList from './Email/EmailList.vue';
 import { mapGetters, mapActions } from 'vuex';
 
@@ -43,7 +43,7 @@ export default {
 	name: 'DataDisplay',
 	components: {
 		'lq-table': Table,
-		'lq-chart': Chart,
+		UIChart,
 		EmailList
 	},
 	props: {
