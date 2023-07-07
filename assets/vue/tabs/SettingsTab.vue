@@ -16,12 +16,10 @@
 					<lq-field
 						label="Limit the number of rows to display at the table."
 						helper="The allowed rows value must be between 1 and 5.">
-						<input
+						<UIInput
 							type="number"
 							min="1"
 							max="5"
-							id="lq-table-rows"
-							class="small-text"
 							required
 							v-model="formData.tablerows" />
 					</lq-field>
@@ -31,15 +29,13 @@
 			<lq-settings title="Timestamp">
 				<template v-slot:right>
 					<lq-field isRadioGroup="true">
-						<label class="leighton-quito-radio">
-							<input type="radio" id="unix" name="timestamp" value="true" v-model="formData.timestamp">
+						<UIRadio name="timestamp" value="true" v-model="formData.timestamp">
 							Unix Time
-						</label>
+						</UIRadio>
 
-						<label class="leighton-quito-radio">
-							<input type="radio" id="human-date" name="timestamp" value="false" v-model="formData.timestamp">
+						<UIRadio name="timestamp" value="false" v-model="formData.timestamp">
 							Human Date
-						</label>
+						</UIRadio>
 					</lq-field>
 				</template>
 			</lq-settings>
@@ -48,11 +44,12 @@
 				<template v-slot:right>
 					<lq-field>
 						<div v-for="(email, index) in formData.emails" v-bind:key="`allowed-email-${index}`">
-							<input
+							<UIInput
 								type="email"
 								:value="email.value"
-								class="leighton-quito-input leighton-quito-field__item"
+								placeholder="Add a new email"
 								readonly />
+
 							<UIButton
 								type="button"
 								buttonIcon="no-alt"
@@ -63,7 +60,8 @@
 					</lq-field>
 
 					<lq-field label="Add an email address">
-						<input type="email" class="leighton-quito-input leighton-quito-field__item" />
+						<UIInput type="email" placeholder="Add a new email" />
+
 						<UIButton
 							type="button"
 							buttonDesign="primary">
@@ -88,11 +86,15 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import UIButton from '../components/UI/UIButton.vue';
+import UIInput from '../components/UI/UIInput.vue';
+import UIRadio from '../components/UI/UIRadio.vue';
 
 export default {
 	name: 'SettingsTab',
 	components: {
-		UIButton
+		UIButton,
+		UIInput,
+		UIRadio
 	},
 	data () {
 		return {}
