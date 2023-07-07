@@ -10,14 +10,20 @@
 <script>
 export default {
 	name: 'UINotice',
+	props: {
+		mode: {
+			Type: String,
+			default: null
+		}
+	},
 	computed: {
 		setNoticeClass: function () {
 			let setClass = '';
 
-			switch (this.type) {
+			switch (this.mode) {
 				case 'loading':
 				case 'error':
-					setClass = 'leighton-quito-notice--' + this.type;
+					setClass = 'leighton-quito-notice--' + this.mode;
 					break;
 
 				default:
