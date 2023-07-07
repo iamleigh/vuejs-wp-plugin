@@ -92,7 +92,7 @@ import UIRadio from '../components/UI/UIRadio.vue';
 import UIField from '../components/UI/UIField.vue';
 
 export default {
-	name: 'SettingsTab',
+	name: 'TabSettings',
 	components: {
 		UISection,
 		UIButton,

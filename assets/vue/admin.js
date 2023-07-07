@@ -5,9 +5,9 @@ import store from '../store/index';
 import VueRouter from 'vue-router';
 import App from './App.vue';
 import Navigation from './tabs/Navigation.vue';
-import TableTab from './tabs/TableTab.vue';
-import GraphTab from './tabs/GraphTab.vue';
-import SettingsTab from './tabs/SettingsTab.vue';
+import TabTable from './tabs/TabTable.vue';
+import TabGraph from './tabs/TabGraph.vue';
+import TabSettings from './tabs/TabSettings.vue';
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
@@ -15,15 +15,15 @@ Vue.use(VueRouter);
 const routes = [
 	{
 		path: '/',
-		components: { default: TableTab, tab: Navigation },
+		components: { default: TabTable, tab: Navigation },
 	},
 	{
 		path: '/graph',
-		components: { default: GraphTab, tab: Navigation },
+		components: { default: TabGraph, tab: Navigation },
 	},
 	{
 		path: '/settings',
-		components: { default: SettingsTab, tab: Navigation },
+		components: { default: TabSettings, tab: Navigation },
 	},
 ];
 

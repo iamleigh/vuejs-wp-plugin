@@ -1,13 +1,11 @@
 <template>
 	<div
-		id="leighton-quito-tab-table"
+		id="leighton-quito-tab-graph"
 		class="leighton-quito-tabs__content"
-		aria-labelledby="leighton-quito-table">
-		<h2>Table Tab</h2>
+		aria-labelledby="leighton-quito-graph">
+		<h2>Graph Tab</h2>
 
-		<DataPreview type="table" />
-
-		<DataPreview type="list" />
+		<DataPreview type="chart" />
 	</div>
 </template>
 
@@ -15,7 +13,7 @@
 import DataPreview from '../components/Data/DataPreview.vue';
 
 export default {
-	name: 'TableTab',
+	name: 'TabGraph',
 	components: {
 		DataPreview
 	}
