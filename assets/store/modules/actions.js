@@ -10,6 +10,10 @@ export const actions = {
 		commit('ADD_EMAIL', emailNew);
 	},
 
+	REMOVE_EMAIL: async ({ commit }, payload) => {
+		commit('REMOVE_EMAIL', payload);
+	},
+
 	SAVE_SETTINGS: async ({ commit }, payload) => {
 		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/settings`;
 
