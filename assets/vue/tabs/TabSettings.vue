@@ -59,15 +59,7 @@
 						</div>
 					</UIField>
 
-					<UIField label="Add an email address">
-						<UIInput type="email" placeholder="Add a new email" />
-
-						<UIButton
-							type="button"
-							buttonDesign="primary">
-							Add Email
-						</UIButton>
-					</UIField>
+					<EmailNew @add-task="scrollToBottom()" />
 				</template>
 			</UISection>
 
@@ -90,6 +82,7 @@ import UIButton from '../components/UI/UIButton.vue';
 import UIInput from '../components/UI/UIInput.vue';
 import UIRadio from '../components/UI/UIRadio.vue';
 import UIField from '../components/UI/UIField.vue';
+import EmailNew from '../components/Email/EmailNew.vue';
 
 export default {
 	name: 'TabSettings',
@@ -98,7 +91,8 @@ export default {
 		UIButton,
 		UIInput,
 		UIRadio,
-		UIField
+		UIField,
+		EmailNew
 	},
 	data () {
 		return {}
@@ -132,6 +126,9 @@ export default {
 		},
 		fetchSettings: function () {
 			this.FETCH_SETTINGS();
+		},
+		scrollToBottom: function () {
+			this.$refs.taskList.scrollToBottom();
 		}
 	}
 }

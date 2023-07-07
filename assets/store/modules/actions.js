@@ -1,6 +1,15 @@
 import axios from 'axios';
 
 export const actions = {
+	ADD_EMAIL: async ({ commit }, payload) => {
+		const emailNew = {
+			id: payload.id,
+			name: payload.name,
+		};
+
+		commit('ADDED_EMAIL', emailNew);
+	},
+
 	SAVE_SETTINGS: async ({ commit }, payload) => {
 		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/settings`;
 
