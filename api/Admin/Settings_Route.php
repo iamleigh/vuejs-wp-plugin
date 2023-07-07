@@ -83,14 +83,18 @@ class Settings_Route extends WP_REST_Controller {
 	public function create_items( $request ) {
 		$tablerows = isset( $request['tablerows'] ) ? sanitize_text_field( $request['tablerows'] ) : '';
 		$timestamp = isset( $request['timestamp'] ) ? sanitize_text_field( $request['timestamp'] ) : '';
+		$emails = isset( $request['emails'] ) && is_array( $request['emails'] ) ? $request['emails'] : array();
 
-		if ( isset( $request['emails'] ) && is_array( $request['emails'] ) ) {
-			foreach( $request['emails'] as $key => $email ) {
-				$email[ 'id' ] = isset( $request['email'][ 'id' ] ) ? sanitize_email( $email ) : '';
-				$email[ 'value' ] = isset( $request['email'][ 'value' ] ) ? sanitize_email( $email ) : '';
+		if ( isset( $emails ) && is_array( $emails ) ) {
+			foreach( $emails as $key => $email ) {
+				$keys = array_keys($emails[$key]);
+				$keys = array_map('sanitize_key', $keys);
+
+				$values = array_values($emails[$key]);
+				$values = array_map('sanitize_text_field', $values);
+
+				$emails[$key] = array_combine($keys, $values);
 			}
-		} else {
-			$emails = array( $this->admin_email );
 		}
 
 		// Save options data into WordPress
