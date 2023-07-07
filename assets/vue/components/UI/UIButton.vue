@@ -61,9 +61,7 @@ export default {
 			return 'button';
 		},
 		hasButtonIcon: function () {
-			const icon = this.buttonIcon;
-
-			if (this.icon) {
+			if (this.buttonIcon) {
 				return true;
 			}
 
