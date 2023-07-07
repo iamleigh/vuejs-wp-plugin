@@ -8,7 +8,6 @@ import Navigation from './tabs/Navigation.vue';
 import TableTab from './tabs/TableTab.vue';
 import GraphTab from './tabs/GraphTab.vue';
 import SettingsTab from './tabs/SettingsTab.vue';
-import SettingsRow from './components/SettingsRow.vue';
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
@@ -32,9 +31,6 @@ const routes = [
 const router = new VueRouter({
 	routes,
 });
-
-// Register components
-Vue.component('lq-settings', SettingsRow);
 
 new Vue({
 	el: '#lq-admin-app',

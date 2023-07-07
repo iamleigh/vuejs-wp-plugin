@@ -11,7 +11,7 @@
 			:disabled="isSaving"
 			@submit="saveSettings">
 
-			<lq-settings title="Rows">
+			<UISection title="Rows">
 				<template v-slot:right>
 					<UIField
 						label="Limit the number of rows to display at the table."
@@ -24,9 +24,9 @@
 							v-model="formData.tablerows" />
 					</UIField>
 				</template>
-			</lq-settings>
+			</UISection>
 
-			<lq-settings title="Timestamp">
+			<UISection title="Timestamp">
 				<template v-slot:right>
 					<UIField role="radiogroup">
 						<UIRadio name="timestamp" value="true" v-model="formData.timestamp">
@@ -38,9 +38,9 @@
 						</UIRadio>
 					</UIField>
 				</template>
-			</lq-settings>
+			</UISection>
 
-			<lq-settings title="Emails">
+			<UISection title="Emails">
 				<template v-slot:right>
 					<UIField>
 						<div v-for="(email, index) in formData.emails" v-bind:key="`allowed-email-${index}`">
@@ -69,7 +69,7 @@
 						</UIButton>
 					</UIField>
 				</template>
-			</lq-settings>
+			</UISection>
 
 			<UIButton
 				type="submit"
@@ -85,6 +85,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import UISection from '../components/UI/UISection.vue';
 import UIButton from '../components/UI/UIButton.vue';
 import UIInput from '../components/UI/UIInput.vue';
 import UIRadio from '../components/UI/UIRadio.vue';
@@ -93,6 +94,7 @@ import UIField from '../components/UI/UIField.vue';
 export default {
 	name: 'SettingsTab',
 	components: {
+		UISection,
 		UIButton,
 		UIInput,
 		UIRadio,

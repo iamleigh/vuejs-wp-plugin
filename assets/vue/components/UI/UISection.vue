@@ -20,6 +20,7 @@
 
 <script>
 export default {
+	name: 'UISection',
 	props: {
 		title: {
 			Type: String,
