@@ -4,36 +4,37 @@
 			<p>Whoops! Something just happened. Check on the console for more info.</p>
 		</div>
 
-		<div v-if="!error && loading" class="leighton-quito-notice leighton-quito-notice--loading">
+		<div v-else-if="loading" class="leighton-quito-notice leighton-quito-notice--loading">
 			<p>Loading content</p>
 		</div>
 
-		<div v-if="!error && !loading && type === 'table'">
-			<h3>{{ tableData.title }}</h3>
+		<DataBlock
+			v-else
+			:title="setBlockTitle">
 			<lq-table
+				v-if="'table' === type"
 				:unix="JSON.parse(formData.timestamp)"
 				:limit="JSON.parse(formData.tablerows)"
 				:headers="tableData.data.headers"
 				:rows="tableData.data.rows" />
-		</div>
 
-		<div v-if="!error && !loading && type === 'chart'">
 			<UIChart
+				v-else-if="'chart' === type"
 				:unix="JSON.parse(formData.timestamp)"
 				:labels="pushAwesomeData('labels')"
 				:data="pushAwesomeData('values')" />
-		</div>
 
-		<div v-if="!error && !loading && type === 'list'">
-			<h3>Allowed Emails</h3>
-			<EmailList :emails="formData.emails" />
-		</div>
+			<EmailList
+				v-else-if="'list' === type"
+				:emails="formData.emails" />
+		</DataBlock>
 	</div>
 </template>
 
 <script>
 import Vue from 'vue';
 import axios from 'axios';
+import DataBlock from './Data/DataBlock.vue';
 import Table from './Table.vue';
 import UIChart from './UI/UIChart.vue';
 import EmailList from './Email/EmailList.vue';
@@ -44,7 +45,8 @@ export default {
 	components: {
 		'lq-table': Table,
 		UIChart,
-		EmailList
+		EmailList,
+		DataBlock
 	},
 	props: {
 		type: {
@@ -85,6 +87,15 @@ export default {
 			get() {
 				return JSON.parse(this.chart);
 			}
+		},
+		setBlockTitle: function () {
+			if ('table' === this.type) {
+				return this.tableData.title;
+			} else if ('list' === this.type) {
+				return 'Allowed Emails';
+			}
+
+			return;
 		}
 	},
 	methods: {
