@@ -42,6 +42,10 @@ export default {
 		buttonDesign: {
 			Type: String,
 			default: 'primary'
+		},
+		buttonLoading: {
+			Type: Boolean,
+			default: false
 		}
 	},
 	computed: {
@@ -83,6 +87,10 @@ export default {
 						`The only available "design" values for the UIButton component are "primary" and "secondary".`
 					);
 					break;
+			}
+
+			if (this.buttonLoading) {
+				setClass += ' loading';
 			}
 
 			return setClass;
