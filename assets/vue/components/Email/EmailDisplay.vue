@@ -10,7 +10,7 @@
 
 <script>
 export default {
-	name: 'EmailList',
+	name: 'EmailDisplay',
 	props: {
 		emails: {
 			Type: Array,

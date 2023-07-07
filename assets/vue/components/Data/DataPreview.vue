@@ -24,7 +24,7 @@
 				:labels="pushAwesomeData('labels')"
 				:data="pushAwesomeData('values')" />
 
-			<EmailList
+			<EmailDisplay
 				v-else-if="'list' === type"
 				:emails="formData.emails" />
 		</DataBlock>
@@ -36,7 +36,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import { mapGetters, mapActions } from 'vuex';
 import DataBlock from './DataBlock.vue';
-import EmailList from '../Email/EmailList.vue';
+import EmailDisplay from '../Email/EmailDisplay.vue';
 import UINotice from '../UI/UINotice.vue';
 import UIChart from '../UI/UIChart.vue';
 import UITable from '../UI/UITable.vue';
@@ -47,7 +47,7 @@ export default {
 		UINotice,
 		UIChart,
 		UITable,
-		EmailList,
+		EmailDisplay,
 		DataBlock
 	},
 	props: {
