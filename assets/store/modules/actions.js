@@ -4,10 +4,10 @@ export const actions = {
 	ADD_EMAIL: async ({ commit }, payload) => {
 		const emailNew = {
 			id: payload.id,
-			name: payload.name,
+			value: payload.value,
 		};
 
-		commit('ADDED_EMAIL', emailNew);
+		commit('ADD_EMAIL', emailNew);
 	},
 
 	SAVE_SETTINGS: async ({ commit }, payload) => {
