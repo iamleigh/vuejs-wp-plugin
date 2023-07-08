@@ -69,9 +69,9 @@ class Settings_Route extends WP_REST_Controller {
 		);
 
 		$response = [
-			'tablerows' => get_option( 'lq_settings_tablerows', $tablerows ),
-			'timestamp' => get_option( 'lq_settings_timestamp', $timestamp ),
-			'emails'    => get_option( 'lq_settings_emails', $emails )
+			'tablerows' => get_option( 'leighton_quito_settings_tablerows', $tablerows ),
+			'timestamp' => get_option( 'leighton_quito_settings_timestamp', $timestamp ),
+			'emails'    => get_option( 'leighton_quito_settings_emails', $emails )
 		];
 
 		return rest_ensure_response( $response );
@@ -100,15 +100,15 @@ class Settings_Route extends WP_REST_Controller {
 		}
 
 		// Save options data into WordPress
-		update_option( 'lq_settings_tablerows', $tablerows );
-		update_option( 'lq_settings_timestamp', $timestamp );
-		update_option( 'lq_settings_emails', $emails );
+		update_option( 'leighton_quito_settings_tablerows', $tablerows );
+		update_option( 'leighton_quito_settings_timestamp', $timestamp );
+		update_option( 'leighton_quito_settings_emails', $emails );
 
 		// Submit successful response
 		$response = [
-			'tablerows' => get_option( 'lq_settings_tablerows' ),
-			'timestamp' => get_option( 'lq_settings_timestamp' ),
-			'emails'    => get_option( 'lq_settings_emails' )
+			'tablerows' => get_option( 'leighton_quito_settings_tablerows' ),
+			'timestamp' => get_option( 'leighton_quito_settings_timestamp' ),
+			'emails'    => get_option( 'leighton_quito_settings_emails' )
 		];
 
 		return rest_ensure_response( $response );

@@ -64,13 +64,13 @@ class Core {
 	 * @since 1.0.0
 	 */
 	public function activate() {
-		$is_installed = get_option( 'lq_is_installed' );
+		$is_installed = get_option( 'leighton_quito_is_installed' );
 
 		if ( ! $is_installed ) {
-			update_option( 'lq_is_installed', time() );
+			update_option( 'leighton_quito_is_installed', time() );
 		}
 
-		update_option( 'lq_is_installed', LQ_VERSION );
+		update_option( 'leighton_quito_is_installed', LQ_VERSION );
 	}
 
 	/**
