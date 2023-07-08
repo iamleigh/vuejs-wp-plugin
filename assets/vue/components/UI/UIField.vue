@@ -2,7 +2,7 @@
 	<div
 		role="none"
 		class="leighton-quito-field"
-		:class="status.error ? 'leighton-quito-field--error' : ''">
+		:class="setFieldClass">
 		<label v-if="label" class="leighton-quito-field__label">
 			{{ label }}
 		</label>
@@ -48,7 +48,8 @@ export default {
 		status: {
 			Type: Object,
 			default: () => ({
-				error: false
+				error: false,
+				loading: false
 			})
 		}
 	},
@@ -58,6 +59,17 @@ export default {
 		},
 		hasHelper: function () {
 			return this.helper ? true : false;
+		},
+		setFieldClass: function () {
+			let setClass = '';
+
+			if (this.status.loading) {
+				setClass += 'leighton-quito-field--loading';
+			} else if (this.status.error) {
+				setClass += 'leighton-quito-field--error';
+			}
+
+			return setClass;
 		}
 	}
 }
