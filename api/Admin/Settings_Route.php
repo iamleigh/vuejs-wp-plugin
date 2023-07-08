@@ -10,13 +10,6 @@ class Settings_Route extends WP_REST_Controller {
 	protected $rest_base;
 
 	/**
-	 * Admin Email
-	 *
-	 * @since 1.0.0
-	 */
-	public $admin_email;
-
-	/**
 	 * Constructor
 	 *
 	 * @since 1.0.0
@@ -24,7 +17,6 @@ class Settings_Route extends WP_REST_Controller {
 	public function __construct() {
 		$this->namespace = 'lq/v1';
 		$this->rest_base = 'settings';
-		$this->admin_email = esc_html( get_bloginfo( 'admin_email' ) );
 	}
 
 	/**
@@ -66,10 +58,20 @@ class Settings_Route extends WP_REST_Controller {
 	 * @since 1.0.0
 	 */
 	public function get_items( $request ) {
+		// Define default values
+		$tablerows = 5;
+		$timestamp = 'true';
+		$emails = array(
+			0 => array(
+				'id' => '1',
+				'value' => esc_html( get_bloginfo( 'admin_email' ) ),
+			)
+		);
+
 		$response = [
-			'tablerows' => get_option( 'lq_settings_tablerows' ),
-			'timestamp' => get_option( 'lq_settings_timestamp' ),
-			'emails'    => get_option( 'lq_settings_emails' )
+			'tablerows' => get_option( 'lq_settings_tablerows', $tablerows ),
+			'timestamp' => get_option( 'lq_settings_timestamp', $timestamp ),
+			'emails'    => get_option( 'lq_settings_emails', $emails )
 		];
 
 		return rest_ensure_response( $response );
