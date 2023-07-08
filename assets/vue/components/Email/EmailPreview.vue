@@ -3,7 +3,6 @@
 		<UIInput
 			type="email"
 			:value="emailItem.value"
-			placeholder="Add a new email"
 			readonly />
 
 		<UIButton
@@ -12,7 +11,7 @@
 			buttonDesign="tertiary"
 			:disabled="hideRemove"
 			@button-click="REMOVE_EMAIL(emailItem.id)">
-			Remove Email
+			{{ msgData.buttonRemove }}
 		</UIButton>
 	</div>
 </template>
@@ -34,8 +33,16 @@ export default {
 			required: true
 		}
 	},
+	mounted () {
+		this.fetchMessages()
+	},
 	computed: {
-		...mapGetters([ 'GET_TOTAL_EMAIL_LIST' ]),
+		...mapGetters([ 'GET_MESSAGES', 'GET_TOTAL_EMAIL_LIST' ]),
+		msgData: {
+			get () {
+				return this.GET_MESSAGES;
+			}
+		},
 		hideRemove: function () {
 			if (parseInt(this.GET_TOTAL_EMAIL_LIST) === 1) {
 				return true;
@@ -45,7 +52,10 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions([ 'REMOVE_EMAIL' ])
+		...mapActions([ 'FETCH_MESSAGES', 'REMOVE_EMAIL' ]),
+		fetchMessages: function () {
+			this.FETCH_MESSAGES();
+		}
 	}
 }
 </script>

@@ -46,4 +46,18 @@ export const actions = {
 				console.log(err);
 			});
 	},
+
+	FETCH_MESSAGES: async ({ commit }, payload) => {
+		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/messages`;
+
+		axios
+			.get(url)
+			.then((res) => {
+				payload = res.data;
+				commit('UPDATE_MESSAGES', res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	},
 };

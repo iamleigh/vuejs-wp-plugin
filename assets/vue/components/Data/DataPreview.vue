@@ -5,7 +5,7 @@
 		</UINotice>
 
 		<UINotice v-else-if="loading" mode="loading">
-			<p>Loading content</p>
+			<p>Loading data...</p>
 		</UINotice>
 
 		<DataBlock
@@ -70,14 +70,20 @@ export default {
 	},
 	mounted () {
 		this.fetchSettings(),
+		this.fetchMessages(),
 		this.getAwesomeData(),
 		this.pushAwesomeData()
 	},
 	computed: {
-		...mapGetters([ 'GET_GENERAL_SETTINGS' ]),
+		...mapGetters([ 'GET_GENERAL_SETTINGS', 'GET_MESSAGES' ]),
 		formData: {
 			get() {
-				return this.GET_GENERAL_SETTINGS
+				return this.GET_GENERAL_SETTINGS;
+			}
+		},
+		msgData: {
+			get() {
+				return this.GET_MESSAGES;
 			}
 		},
 		tableData: {
@@ -94,16 +100,19 @@ export default {
 			if ('table' === this.type) {
 				return this.tableData.title;
 			} else if ('list' === this.type) {
-				return 'Allowed Emails';
+				return this.msgData.emailsTitle;
 			}
 
 			return;
 		}
 	},
 	methods: {
-		...mapActions([ 'FETCH_SETTINGS' ]),
+		...mapActions([ 'FETCH_SETTINGS', 'FETCH_MESSAGES' ]),
 		fetchSettings: function () {
 			this.FETCH_SETTINGS();
+		},
+		fetchMessages: function () {
+			this.FETCH_MESSAGES();
 		},
 		getAwesomeData: async function () {
 			const lqCachedChart = localStorage.getItem('lqCachedChart');

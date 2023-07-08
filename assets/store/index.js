@@ -16,7 +16,7 @@ export default new Vuex.Store({
 				emails: [],
 			},
 		},
-		buttonLabel: 'Save Settings',
+		messages: {},
 		saving: false,
 	},
 	actions,

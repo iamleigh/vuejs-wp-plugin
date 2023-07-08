@@ -1,10 +1,10 @@
 <template>
 	<UIField
-		error="Invalid email"
+		:error="msgData.emailsError"
 		:status="status">
 		<UIInput
 			type="email"
-			placeholder="New email"
+			:placeholder="msgData.emailsAdd"
 			v-model="emailNew.value"
 			@keyup.enter="createEmailNew()" />
 
@@ -13,7 +13,7 @@
 			buttonDesign="secondary"
 			buttonIcon="plus"
 			@button-click="createEmailNew()">
-			Add Email
+			{{ msgData.buttonAdd }}
 		</UIButton>
 	</UIField>
 </template>
@@ -42,8 +42,16 @@ export default {
 			}
 		}
 	},
+	mounted () {
+		this.fetchMessages()
+	},
 	computed: {
-		...mapGetters(['GET_EMAIL_LAST']),
+		...mapGetters([ 'GET_MESSAGES', 'GET_EMAIL_LAST' ]),
+		msgData: {
+			get() {
+				return this.GET_MESSAGES;
+			}
+		},
 		createEmailId: function () {
 			if ('undefined' !== typeof this.GET_EMAIL_LAST) {
 				return parseInt(this.GET_EMAIL_LAST.id) + 1;
@@ -56,7 +64,10 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions(['ADD_EMAIL']),
+		...mapActions([ 'FETCH_MESSAGES', 'ADD_EMAIL']),
+		fetchMessages: function () {
+			this.FETCH_MESSAGES();
+		},
 		cleanEmailNew: function () {
 			this.emailNew.value = '';
 		},

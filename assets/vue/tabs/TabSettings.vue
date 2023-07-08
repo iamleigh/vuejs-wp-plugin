@@ -3,7 +3,7 @@
 		id="leighton-quito-tab-settings"
 		class="leighton-quito-tabs__content"
 		aria-labelledby="leighton-quito-settings">
-		<h2>Edit Settings</h2>
+		<h2>{{ msgData.settingsTitle }}</h2>
 
 		<form
 			id="leighton-quito-settings-form"
@@ -11,11 +11,11 @@
 			:disabled="isSaving"
 			@submit="saveSettings">
 
-			<UISection title="Rows">
+			<UISection :title="msgData.rowsTitle">
 				<template v-slot:right>
 					<UIField
-						label="Limit the number of rows to display at the table."
-						helper="The allowed rows value must be between 1 and 5.">
+						:label="msgData.rowsLabel"
+						:helper="msgData.rowsHelper">
 						<UIInput
 							type="number"
 							min="1"
@@ -26,21 +26,21 @@
 				</template>
 			</UISection>
 
-			<UISection title="Timestamp">
+			<UISection :title="msgData.timeTitle">
 				<template v-slot:right>
 					<UIField role="radiogroup">
 						<UIRadio name="timestamp" value="true" v-model="formData.timestamp">
-							Unix Time
+							{{ msgData.timeUnix }}
 						</UIRadio>
 
 						<UIRadio name="timestamp" value="false" v-model="formData.timestamp">
-							Human Date
+							{{ msgData.timeDate }}
 						</UIRadio>
 					</UIField>
 				</template>
 			</UISection>
 
-			<UISection title="Emails">
+			<UISection :title="msgData.emailsTitle">
 				<template v-slot:right>
 					<EmailList ref="emailList" />
 					<EmailNew
@@ -54,7 +54,7 @@
 				buttonDesign="primary"
 				:buttonLoading="isSaving"
 				:disabled="isSaving">
-				{{ buttonLabel }}
+				{{ msgData.buttonSave }}
 			</UIButton>
 
 		</form>
@@ -86,13 +86,14 @@ export default {
 		return {}
 	},
 	mounted () {
+		this.fetchMessages(),
 		this.fetchSettings()
 	},
 	computed: {
 		...mapGetters([
+			'GET_MESSAGES',
 			'GET_GENERAL_SETTINGS',
 			'GET_TOTAL_EMAIL_LIST',
-			'GET_BUTTON_LABEL',
 			'GET_SAVING_STATE'
 		]),
 		formData: {
@@ -100,9 +101,9 @@ export default {
 				return this.GET_GENERAL_SETTINGS;
 			}
 		},
-		buttonLabel: {
+		msgData: {
 			get() {
-				return this.GET_BUTTON_LABEL;
+				return this.GET_MESSAGES;
 			}
 		},
 		isSaving: {
@@ -119,13 +120,16 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions([ 'FETCH_SETTINGS', 'SAVE_SETTINGS' ]),
-		saveSettings: function (e) {
-			this.SAVE_SETTINGS( this.formData );
-			e.preventDefault();
+		...mapActions([ 'FETCH_MESSAGES', 'FETCH_SETTINGS', 'SAVE_SETTINGS' ]),
+		fetchMessages: function () {
+			this.FETCH_MESSAGES();
 		},
 		fetchSettings: function () {
 			this.FETCH_SETTINGS();
+		},
+		saveSettings: function (e) {
+			this.SAVE_SETTINGS( this.formData );
+			e.preventDefault();
 		},
 		scrollToBottom: function () {
 			this.$refs.taskList.scrollToBottom();

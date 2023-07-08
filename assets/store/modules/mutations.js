@@ -18,4 +18,8 @@ export const mutations = {
 	SAVING_SETTINGS: (state) => {
 		state.saving = true;
 	},
+
+	UPDATE_MESSAGES: (state, payload) => {
+		state.messages = payload;
+	},
 };
