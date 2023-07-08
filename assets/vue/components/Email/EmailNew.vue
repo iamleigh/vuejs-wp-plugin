@@ -1,8 +1,10 @@
 <template>
-	<div>
+	<UIField
+		error="Invalid email"
+		:status="status">
 		<UIInput
 			type="email"
-			placeholder="New Email"
+			placeholder="New email"
 			v-model="emailNew.value"
 			@keyup.enter="createEmailNew()" />
 
@@ -13,17 +15,19 @@
 			@button-click="createEmailNew()">
 			Add Email
 		</UIButton>
-	</div>
+	</UIField>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import UIField from '../UI/UIField.vue';
 import UIButton from '../UI/UIButton.vue';
 import UIInput from '../UI/UIInput.vue';
 
 export default {
 	name: 'EmailNew',
 	components: {
+		UIField,
 		UIButton,
 		UIInput
 	},
@@ -31,6 +35,10 @@ export default {
 		return {
 			emailNew: {
 				value: ''
+			},
+			status: {
+				error: false,
+				loading: false
 			}
 		}
 	},
@@ -61,9 +69,27 @@ export default {
 				value: emailValue
 			}
 
-			if ('' !== emailValue) {
-				this.ADD_EMAIL(email);
+			// Enable loading state
+			this.status.loading = true;
+
+			// Validate email
+			if (!/^[^@]+@\w+(\.\w+)+\w$/.test(email.value)) {
+				// Disable loading state
+				this.status.loading = false;
+
+				// Enable error state
+				this.status.error = true;
+				return;
 			}
+
+			// Disable error state
+			this.status.error = false;
+
+			// Disable loading state
+			this.status.loading = false;
+
+			// Perform add email action
+			this.ADD_EMAIL(email);
 
 			this.cleanEmailNew();
 			this.emitAddEmail();
