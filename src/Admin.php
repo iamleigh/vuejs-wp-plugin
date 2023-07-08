@@ -193,6 +193,14 @@ class Admin {
 		?>
 
 		<div id="leighton-quito-plugin" class="wrap">
+			<noscript>
+				<div class="leighton-quito-tabs__content">
+					<div class="notice wp-mail-smtp-notice notice-error">
+						<p>Whoops! The plugin couldn't load because your browser doesn't support Javascript.</p>
+					</div>
+				</div>
+			</noscript>
+
 			<div id="lq-admin-app"></div>
 		</div>
 
