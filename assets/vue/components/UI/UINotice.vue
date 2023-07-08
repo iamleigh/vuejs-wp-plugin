@@ -1,7 +1,7 @@
 <template>
 	<div
 		role="alert"
-		class="leighton-quito-notice"
+		class="notice wp-mail-smtp-notice"
 		:class="setNoticeClass">
 		<slot />
 	</div>
@@ -23,7 +23,7 @@ export default {
 			switch (this.mode) {
 				case 'loading':
 				case 'error':
-					setClass = 'leighton-quito-notice--' + this.mode;
+					setClass = 'notice-' + this.mode;
 					break;
 
 				default:
