@@ -11,7 +11,7 @@ export default new Vuex.Store({
 	state: {
 		settings: {
 			general: {
-				tablerows: '5',
+				tablerows: '',
 				timestamp: true,
 				emails: [],
 			},
