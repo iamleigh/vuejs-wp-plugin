@@ -2,21 +2,22 @@
 	<div
 		role="none"
 		class="leighton-quito-field"
-		:class="hasError ? 'leighton-quito-field--error' : ''">
+		:class="status.error ? 'leighton-quito-field--error' : ''">
 		<label v-if="label" class="leighton-quito-field__label">
 			{{ label }}
 		</label>
 
 		<div
+			role="none"
 			class="leighton-quito-field__content"
 			v-bind="$attrs">
 			<slot />
 		</div>
 
 		<span
-			v-if="hasError && errorMessage"
+			v-if="status.error && error"
 			class="leighton-quito-field__error">
-			{{ errorMessage }}
+			{{ error }}
 		</span>
 
 		<span
@@ -40,13 +41,15 @@ export default {
 			Type: String,
 			default: null
 		},
-		errorMessage: {
+		error: {
 			Type: String,
 			default: null
 		},
-		hasError: {
-			Type: Boolean,
-			default: false
+		status: {
+			Type: Object,
+			default: () => ({
+				error: false
+			})
 		}
 	},
 	computed: {
