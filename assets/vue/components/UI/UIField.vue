@@ -2,7 +2,8 @@
 	<div
 		role="none"
 		class="leighton-quito-field"
-		:class="setFieldClass">
+		:class="setFieldClass"
+		:disabled="status.loading">
 		<label v-if="label" class="leighton-quito-field__label">
 			{{ label }}
 		</label>
