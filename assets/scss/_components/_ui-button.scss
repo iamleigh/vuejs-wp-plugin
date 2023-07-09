@@ -1,11 +1,13 @@
+@use '../_utils/utils' as *;
+
 /// -----------------------------------------------------------------------------
-/// 🟢 Button
+/// 🟢 UI Button
 ///
-/// Give styles to the button component.
+/// Give styles to the `UIButton` component.
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-#leighton-quito-plugin .leighton-quito-button {
+@include block(button) {
 	cursor: pointer;
 	padding: 8px 12px;
 	border: 0;
@@ -20,7 +22,7 @@
 		pointer-events: none;
 	}
 
-	&--primary {
+	@include modifier(primary) {
 		background: #e27730;
 		color: #fff;
 
@@ -34,7 +36,7 @@
 		}
 	}
 
-	&--secondary {
+	@include modifier(secondary) {
 		background: #738e9e;
 		color: #fff;
 
