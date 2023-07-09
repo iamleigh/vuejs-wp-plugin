@@ -51,6 +51,15 @@
 		}
 	}
 
+	@include modifier(tertiary) {
+		background: transparent;
+		color: $color-neutral-60;
+
+		&:hover {
+			color: #d63638;
+		}
+	}
+
 	&:disabled {
 		opacity: 0.5;
 		pointer-events: none;
