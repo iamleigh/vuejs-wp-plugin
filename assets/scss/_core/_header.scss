@@ -18,6 +18,10 @@
 	border: 0 solid #E27730;
 	border-top-width: 3px;
 
+	@media screen and (max-width: 600px) {
+		border-top-width: 49px; // #wpbody (padding-top: 46px) + .leighton-quito-header (border-top: 3px)
+	}
+
 	@include element(image) {
 		flex: 0 0 auto;
 	}

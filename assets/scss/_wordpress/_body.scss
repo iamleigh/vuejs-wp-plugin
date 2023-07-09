@@ -1,10 +1,10 @@
 /// -----------------------------------------------------------------------------
 /// 🟢 WordPress
 ///
-/// Overwrite WordPress default styles.
+/// Overwrites WordPress body area (`#wpbody`).
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-@forward '../_wordpress/content';
-@forward '../_wordpress/body';
-@forward '../_wordpress/wrapper';
+#wpbody {
+	padding-top: 0 !important;
+}
