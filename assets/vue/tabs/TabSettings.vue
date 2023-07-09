@@ -6,7 +6,7 @@
 			:disabled="isSaving"
 			@submit="saveSettings">
 
-			<UIRow :title="msgData.rowsTitle">
+			<UIRow :heading="msgData.rowsTitle">
 				<template v-slot:right>
 					<UIField
 						:label="msgData.rowsLabel"
@@ -21,7 +21,7 @@
 				</template>
 			</UIRow>
 
-			<UIRow :title="msgData.timeTitle">
+			<UIRow :heading="msgData.timeTitle">
 				<template v-slot:right>
 					<UIField role="radiogroup">
 						<UIRadio name="timestamp" value="true" v-model="formData.timestamp">
@@ -35,7 +35,7 @@
 				</template>
 			</UIRow>
 
-			<UIRow :title="msgData.emailsTitle">
+			<UIRow :heading="msgData.emailsTitle">
 				<template v-slot:right>
 					<EmailList ref="emailList" />
 					<EmailNew
