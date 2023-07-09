@@ -1,24 +1,18 @@
+@use '../_utils/utils' as *;
+
 /// -----------------------------------------------------------------------------
 /// 🟢 WordPress
 ///
-/// Overwrite WordPress default styles.
+/// Overwrites WordPress content wrapper (`.wrap`) styles.
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-
-// Overwrites main content area
-#wpcontent {
-	position: relative;
-	padding-left: 0 !important;
-}
-
-// Overwrites content wrapper styles
 #leighton-quito-plugin {
 	margin: 0 0 20px;
-	color: #3c434a;
+	color: #3C434A;
 
 	h2, label {
-		color: #222;
+		color: $color-neutral-10;
 		font-weight: 600;
 	}
 

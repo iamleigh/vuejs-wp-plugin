@@ -1,0 +1,11 @@
+/// -----------------------------------------------------------------------------
+/// 🟢 WordPress
+///
+/// Overwrites WordPress main content area (`#wpcontent`).
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+#wpcontent {
+	position: relative;
+	padding-left: 0 !important;
+}
