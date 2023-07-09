@@ -5,6 +5,7 @@
   "description": "Awesome Motive Developer Applicant Challenge, Part 1",
   "main": "index.js",
   "scripts": {
+    "tokens": "style-dictionary build",
     "dev": "npm run development",
     "development": "mix",
     "watch": "mix watch",
@@ -35,6 +36,7 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
+    "style-dictionary": "^3.8.0",
     "vue-loader": "^15.10.1",
     "vue-template-compiler": "^2.6.11",
     "vuex": "^3.5.1",
