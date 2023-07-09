@@ -43,7 +43,7 @@ export default {
 	data () {
 		return {
 			chartData: {
-				labels: this.unix ? this.labels : this.convertLabels(),
+				labels: 'true' === this.unix ? this.labels : this.convertLabels(),
 				datasets: [{
 					data: this.data,
 					backgroundColor: '#809EB0',

@@ -13,14 +13,14 @@
 			:title="setBlockTitle">
 			<UITable
 				v-if="'table' === type"
-				:unix="JSON.parse(formData.timestamp)"
-				:limit="JSON.parse(formData.tablerows)"
+				:unix="formData.timestamp"
+				:limit="formData.tablerows"
 				:headers="tableData.data.headers"
 				:rows="tableData.data.rows" />
 
 			<UIChart
 				v-else-if="'chart' === type"
-				:unix="JSON.parse(formData.timestamp)"
+				:unix="formData.timestamp"
 				:labels="pushAwesomeData('labels')"
 				:data="pushAwesomeData('values')" />
 

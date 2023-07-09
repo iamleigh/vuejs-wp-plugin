@@ -22,7 +22,7 @@
 					<strong>{{ item.title }}</strong>
 				</td>
 				<td>{{ item.pageviews }}</td>
-				<td>{{ unix ? item.date : humanDate(item.date) }}</td>
+				<td>{{ 'true' === unix ? item.date : humanDate(item.date) }}</td>
 			</tr>
 		</tbody>
 	</table>
