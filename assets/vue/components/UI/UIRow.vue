@@ -22,7 +22,7 @@
 
 <script>
 export default {
-	name: 'UISettingsRow',
+	name: 'UIRow',
 	props: {
 		title: {
 			Type: String,

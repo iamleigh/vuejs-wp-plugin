@@ -6,7 +6,7 @@
 			:disabled="isSaving"
 			@submit="saveSettings">
 
-			<UISettingsRow :title="msgData.rowsTitle">
+			<UIRow :title="msgData.rowsTitle">
 				<template v-slot:right>
 					<UIField
 						:label="msgData.rowsLabel"
@@ -19,9 +19,9 @@
 							v-model="formData.tablerows" />
 					</UIField>
 				</template>
-			</UISettingsRow>
+			</UIRow>
 
-			<UISettingsRow :title="msgData.timeTitle">
+			<UIRow :title="msgData.timeTitle">
 				<template v-slot:right>
 					<UIField role="radiogroup">
 						<UIRadio name="timestamp" value="true" v-model="formData.timestamp">
@@ -33,16 +33,16 @@
 						</UIRadio>
 					</UIField>
 				</template>
-			</UISettingsRow>
+			</UIRow>
 
-			<UISettingsRow :title="msgData.emailsTitle">
+			<UIRow :title="msgData.emailsTitle">
 				<template v-slot:right>
 					<EmailList ref="emailList" />
 					<EmailNew
 						v-if="!hideEmail"
 						@add-task="scrollToBottom()" />
 				</template>
-			</UISettingsRow>
+			</UIRow>
 
 			<UIButton
 				type="submit"
@@ -59,7 +59,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import Content from './Content.vue';
-import UISettingsRow from '../components/UI/UISettingsRow.vue';
+import UIRow from '../components/UI/UIRow.vue';
 import UIButton from '../components/UI/UIButton.vue';
 import UIInput from '../components/UI/UIInput.vue';
 import UIRadio from '../components/UI/UIRadio.vue';
@@ -71,7 +71,7 @@ export default {
 	name: 'TabSettings',
 	components: {
 		Content,
-		UISettingsRow,
+		UIRow,
 		UIButton,
 		UIInput,
 		UIRadio,
