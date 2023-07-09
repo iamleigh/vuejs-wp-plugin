@@ -1,21 +1,26 @@
 <template>
 	<div
 		v-if="hasTitle || hasLeftContent || hasRightContent"
-		class="leighton-quito-settings-row">
-		<div class="leighton-quito-settings-row__group">
-			<div
-				v-if="hasTitle || hasLeftContent"
-				role="presentation"
-				class="leighton-quito-settings-row__left">
-				<div v-if="hasTitle" class="leighton-quito-settings-row__title">{{ title }}</div>
-				<slot name="left" />
-			</div>
+		role="none"
+		class="leighton-quito-row">
+		<div
+			v-if="hasTitle || hasLeftContent"
+			role="presentation"
+			class="leighton-quito-row__left">
+			<component
+				v-if="hasTitle"
+				:is="checkTitleTag"
+				class="leighton-quito-row__title">
+				{{ checkTitleValue }}
+			</component>
+			<slot name="left" />
+		</div>
 
-			<div
-				v-if="hasRightContent"
-				class="leighton-quito-settings-row__right">
-				<slot name="right" />
-			</div>
+		<div
+			v-if="hasRightContent"
+			role="presentation"
+			class="leighton-quito-row__right">
+			<slot name="right" />
 		</div>
 	</div>
 </template>
@@ -28,6 +33,14 @@ export default {
 			Type: String,
 			default: null
 		},
+		heading: {
+			Type: String,
+			default: null
+		},
+		label: {
+			Type: String,
+			default: null
+		},
 	},
 	computed: {
 		hasLeftContent: function () {
@@ -37,13 +50,29 @@ export default {
 			return !!this.$slots.right;
 		},
 		hasTitle: function () {
-			const title = this.title;
-
-			if ( title !== null && title !== '' ) {
+			if ( this.title || this.label || this.heading ) {
 				return true;
 			}
 
 			return false;
+		},
+		checkTitleTag: function () {
+			if (this.label) {
+				return 'label';
+			} else if (this.heading) {
+				return 'h3';
+			}
+
+			return 'span';
+		},
+		checkTitleValue: function () {
+			if (this.label) {
+				return this.label;
+			} else if (this.heading) {
+				return this.heading;
+			}
+
+			return this.title;
 		}
 	}
 }

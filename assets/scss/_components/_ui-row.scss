@@ -1,0 +1,60 @@
+@use '../_utils/utils' as *;
+
+/// -----------------------------------------------------------------------------
+/// 🟢 UI Row
+///
+/// Give styles to the `UIRow` component.
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+@include block(row) {
+	margin: 0;
+	padding: 0;
+	border: 0 solid #DCDCDE;
+
+	&:not(:last-child) {
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		border-bottom-width: 1px;
+		box-shadow: 0 1px 0 0 #F6F6F7;
+	}
+
+	@include bp(min-width, md) {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	@include element(title) {
+		display: block;
+		margin: 0 0 10px;
+		padding: 0;
+		border: 0;
+		color: $color-neutral-10;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 18px;
+		letter-spacing: 0;
+	}
+
+	@include element(left) {
+		display: block;
+
+		@include bp(min-width, md) {
+			width: 205px;
+			flex: 0 0 auto;
+		}
+	}
+
+	@include element(right) {
+		display: block;
+
+		@include bp(min-width, md) {
+			min-width: 1px;
+			flex: 1;
+
+			&:not(:only-child) {
+				margin-left: 20px;
+			}
+		}
+	}
+}
