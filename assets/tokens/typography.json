@@ -1,0 +1,116 @@
+{
+  "font": {
+    "weight": {
+      "md": {
+        "value": "400",
+        "type": "fontWeights"
+      },
+      "lg": {
+        "value": "700",
+        "type": "fontWeights"
+      }
+    },
+    "size": {
+      "base": {
+        "value": "16px",
+        "type": "fontSizes"
+      },
+      "body": {
+        "sm": {
+          "value": "14px",
+          "type": "fontSizes"
+        },
+        "md": {
+          "value": "16px",
+          "type": "fontSizes"
+        },
+        "lg": {
+          "value": "18px",
+          "type": "fontSizes"
+        }
+      },
+      "heading": {
+        "one": {
+          "value": "32px",
+          "type": "fontSizes"
+        },
+        "two": {
+          "value": "24px",
+          "type": "fontSizes"
+        },
+        "three": {
+          "value": "18px",
+          "type": "fontSizes"
+        }
+      },
+      "feature": {
+        "md": {
+          "value": "24px",
+          "type": "fontSizes"
+        }
+      }
+    },
+    "height": {
+      "body": {
+        "sm": {
+          "value": "18px",
+          "type": "lineHeights"
+        },
+        "md": {
+          "value": "24px",
+          "type": "lineHeights"
+        },
+        "lg": {
+          "value": "26px",
+          "type": "lineHeights"
+        }
+      },
+      "heading": {
+        "one": {
+          "value": "40px",
+          "type": "lineHeights"
+        },
+        "two": {
+          "value": "36px",
+          "type": "lineHeights"
+        },
+        "three": {
+          "value": "26px",
+          "type": "lineHeights"
+        }
+      },
+      "feature": {
+        "md": {
+          "value": "30px",
+          "type": "lineHeights"
+        }
+      }
+    },
+    "family": {
+      "primary": {
+        "value": "\"Lato\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "type": "fontFamilies"
+      },
+      "secondary": {
+        "value": "\"Arvo\", serif",
+        "type": "fontFamilies"
+      },
+      "tertiary": {
+        "value": "\"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, \"Lucida Grande\", sans-serif",
+        "type": "fontFamilies"
+      },
+      "code": {
+        "value": "source-code-pro, Menlo, Monaco, Consolas, \"Courier New\", monospace",
+        "type": "fontFamilies"
+      },
+      "backup": {
+        "value": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+        "type": "fontFamilies"
+      },
+      "icons": {
+        "value": "\"amicons\"",
+        "type": "fontFamilies"
+      }
+    }
+  }
+}

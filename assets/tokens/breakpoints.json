@@ -1,0 +1,16 @@
+{
+  "bp": {
+    "sm": {
+      "value": "480px",
+      "type": "sizing"
+    },
+    "md": {
+      "value": "783px",
+      "type": "sizing"
+    },
+    "lg": {
+      "value": "1200px",
+      "type": "sizing"
+    }
+  }
+}
