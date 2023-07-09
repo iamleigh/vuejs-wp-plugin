@@ -1,10 +1,5 @@
 <template>
-	<div
-		id="leighton-quito-tab-settings"
-		class="leighton-quito-tabs__content"
-		aria-labelledby="leighton-quito-settings">
-		<h2>{{ msgData.settingsTitle }}</h2>
-
+	<Content id="settings" :title="msgData.settingsTitle">
 		<form
 			id="leighton-quito-settings-form"
 			:class="`leighton-quito-form${isSaving ? ' leighton-quito--disabled' : ''}`"
@@ -58,11 +53,12 @@
 			</UIButton>
 
 		</form>
-	</div>
+	</Content>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import Content from './Content.vue';
 import UISection from '../components/UI/UISection.vue';
 import UIButton from '../components/UI/UIButton.vue';
 import UIInput from '../components/UI/UIInput.vue';
@@ -74,6 +70,7 @@ import EmailNew from '../components/Email/EmailNew.vue';
 export default {
 	name: 'TabSettings',
 	components: {
+		Content,
 		UISection,
 		UIButton,
 		UIInput,

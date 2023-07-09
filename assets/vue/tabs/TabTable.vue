@@ -1,23 +1,19 @@
 <template>
-	<div
-		id="leighton-quito-tab-table"
-		class="leighton-quito-tabs__content"
-		aria-labelledby="leighton-quito-table">
-		<h2>{{ msgData.tableTitle }}</h2>
-
+	<Content id="table" :title="msgData.tableTitle">
 		<DataPreview type="table" />
-
 		<DataPreview type="list" />
-	</div>
+	</Content>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import Content from './Content.vue';
 import DataPreview from '../components/Data/DataPreview.vue';
 
 export default {
 	name: 'TabTable',
 	components: {
+		Content,
 		DataPreview
 	},
 	mounted () {

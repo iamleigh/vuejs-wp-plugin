@@ -1,21 +1,18 @@
 <template>
-	<div
-		id="leighton-quito-tab-graph"
-		class="leighton-quito-tabs__content"
-		aria-labelledby="leighton-quito-graph">
-		<h2>{{ msgData.graphTitle }}</h2>
-
+	<Content id="graph" :title="msgData.graphTitle">
 		<DataPreview type="chart" />
-	</div>
+	</Content>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import Content from './Content.vue';
 import DataPreview from '../components/Data/DataPreview.vue';
 
 export default {
 	name: 'TabGraph',
 	components: {
+		Content,
 		DataPreview
 	},
 	mounted () {
