@@ -4,8 +4,10 @@
 		:id="`leighton-quito-tab-${id}`"
 		class="leighton-quito-tabs__content"
 		:aria-labelledby="`leighton-quito-${id}`">
-		<h2 v-if="hasTitle">{{ title }}</h2>
-		<slot />
+		<div role="none" class="leighton-quito-body">
+			<h2 v-if="hasTitle" class="leighton-quito-body__title">{{ title }}</h2>
+			<slot />
+		</div>
 	</div>
 </template>
 
