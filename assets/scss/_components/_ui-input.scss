@@ -7,24 +7,16 @@
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-// #leighton-quito-plugin .leighton-quito-input {
-@include block(input) {
-	width: 400px;
-	margin: 0;
-	padding: 7px 12px;
-	border: 1px solid $color-neutral-60;
-	border-radius: 4px;
-	background: $color-neutral-100;
-	box-shadow: none;
-	color: $color-neutral-30;
-	line-height: 19px;
+#leighton-quito-plugin {
+	@include block(input) {
+		margin: 0;
+		padding: 7px 12px;
+		font-size: 14px;
+		line-height: 19px;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
-
-	&:read-only {
-		opacity: 0.5;
-		pointer-events: none;
+		&:read-only {
+			opacity: 0.5;
+			pointer-events: none;
+		}
 	}
 }
