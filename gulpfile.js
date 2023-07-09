@@ -1,6 +1,8 @@
 /**
  * Supported Packages
  * List here all dependencies necessary to run required tasks.
+ *
+ * @since 1.0.0
  */
 const fs = require("fs");
 const gulp = require("gulp");
@@ -14,6 +16,13 @@ const gettext = require("gulp-gettext");
 
 const pkg = require("./package.json");
 
+/**
+ * Makepot
+ *
+ * @desc Gulp task to create POT files.
+ *
+ * @since 1.0.0
+ */
 gulp.task("makepot", () =>
 	gulp
 		.src(sourcePhp.php)
@@ -28,10 +37,31 @@ gulp.task("makepot", () =>
 		.pipe(gulp.dest(`languages/${pkg.name}.pot`))
 );
 
+/**
+ * Get Text
+ *
+ * @desc Grab languages files.
+ *
+ * @since 1.0.0
+ */
 gulp.task("gettext", () => gulp.src("languages/*.po").pipe(gettext()).pipe(gulp.dest("languages")));
 
+/**
+ * Translate (i18n)
+ *
+ * @desc Run `makepot` and `gettext` tasks in parallel.
+ *
+ * @since 1.0.0
+ */
 gulp.task("i18n", gulp.parallel(["makepot", "gettext"]));
 
+/**
+ * Package
+ *
+ * @desc Pack the plugin for release.
+ *
+ * @since 1.0.0
+ */
 gulp.task(
 	"package",
 	gulp.series(
