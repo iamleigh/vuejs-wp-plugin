@@ -298,6 +298,29 @@
   pointer-events: none;
 }
 
+.leighton-quito-field {
+  display: block;
+}
+.leighton-quito-field__label {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+.leighton-quito-field__helper {
+  color: #555555;
+  font-style: italic;
+}
+.leighton-quito-field__content {
+  margin: 10px 0;
+}
+.leighton-quito-field__content:first-child {
+  margin-top: 0;
+}
+.leighton-quito-field__content:last-child {
+  margin-bottom: 0;
+}
+
 .leighton-quito-section {
   margin: 0;
   padding: 0;

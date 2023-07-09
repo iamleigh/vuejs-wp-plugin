@@ -1,0 +1,36 @@
+@use '../_utils/utils' as *;
+
+/// -----------------------------------------------------------------------------
+/// 🟢 UI Field
+///
+/// Give styles to the `UIField` component.
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+@include block(field) {
+	display: block;
+
+	@include element(label) {
+		margin: 0;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.5em;
+	}
+
+	@include element(helper) {
+		color: $color-neutral-30;
+		font-style: italic;
+	}
+
+	@include element(content) {
+		margin: 10px 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
