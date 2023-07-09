@@ -181,6 +181,24 @@
   color: #5F5E5E;
 }
 
+.leighton-quito-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  background: #395360;
+}
+.leighton-quito-logo__image {
+  width: 42px;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0 0 10px;
+  border: 0;
+}
+
 .leighton-quito-tabs__menu {
   min-height: 58px;
   display: flex;
