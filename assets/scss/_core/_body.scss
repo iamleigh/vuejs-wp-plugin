@@ -1,0 +1,20 @@
+@use '../_utils/utils' as *;
+
+/// -----------------------------------------------------------------------------
+/// 🟢 Body
+///
+/// Give styles to the plugin body placed inside the table content.
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+@include block(body) {
+	margin: 20px 0 0;
+
+	@include element(title) {
+		margin: 0 0 30px;
+		color: $color-neutral-10;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 26px;
+	}
+}
