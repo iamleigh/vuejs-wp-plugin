@@ -33,7 +33,7 @@ export const actions = {
 			});
 	},
 
-	FETCH_SETTINGS: async ({ commit }) => {
+	FETCH_SETTINGS: async ({ commit }, payload) => {
 		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/settings`;
 
 		axios
@@ -47,7 +47,7 @@ export const actions = {
 			});
 	},
 
-	FETCH_MESSAGES: async ({ commit }) => {
+	FETCH_MESSAGES: async ({ commit }, payload) => {
 		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/messages`;
 
 		axios
