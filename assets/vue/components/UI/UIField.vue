@@ -9,8 +9,8 @@
 		</label>
 
 		<div
-			:role="radiogroup ? 'radiogroup' : 'none'"
-			:class="radiogroup ? 'leighton-quito-field__radiogroup' : 'leighton-quito-field__content'"
+			:role="'radiogroup' === role ? 'radiogroup' : 'none'"
+			:class="setContentClass"
 			v-bind="$attrs">
 			<slot />
 		</div>
@@ -34,8 +34,12 @@ export default {
 	name: 'UIField',
 	inheritAttrs: false,
 	props: {
-		radiogroup: {
+		required: {
 			Type: Boolean,
+			default: false
+		},
+		role: {
+			Type: String,
 			default: false
 		},
 		label: {
@@ -68,10 +72,33 @@ export default {
 		setFieldClass: function () {
 			let setClass = '';
 
+			if (this.required) {
+				setClass += 'form-required';
+
+				if (this.status.error) {
+					setClass += ' form-invalid';
+				}
+
+				if (this.status.loading) {
+					setClass += ' ';
+				}
+			}
+
 			if (this.status.loading) {
 				setClass += 'leighton-quito-field--loading';
-			} else if (this.status.error) {
-				setClass += 'leighton-quito-field--error';
+			}
+
+			return setClass;
+		},
+		setContentClass: function () {
+			let setClass = '';
+
+			if ('radiogroup' === this.role) {
+				setClass += 'leighton-quito-field__radiogroup';
+			} else if ('emailgroup' === this.role) {
+				setClass += 'leighton-quito-email-list__item';
+			} else {
+				setClass += 'leighton-quito-field__content';
 			}
 
 			return setClass;

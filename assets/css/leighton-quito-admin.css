@@ -271,6 +271,13 @@
   background: #395360;
   box-shadow: 0 0 0 1px #fff, 0 0 0 3px #395360;
 }
+.leighton-quito-button--tertiary {
+  background: transparent;
+  color: #999999;
+}
+.leighton-quito-button--tertiary:hover {
+  color: #d63638;
+}
 .leighton-quito-button:disabled {
   opacity: 0.5;
   pointer-events: none;
@@ -319,7 +326,7 @@
   font-style: italic;
 }
 .leighton-quito-field__content {
-  margin: 10px 0;
+  margin: 10px 0 5px;
 }
 .leighton-quito-field__content:first-child {
   margin-top: 0;
@@ -403,4 +410,28 @@
   .leighton-quito-row__right:not(:only-child) {
     margin-left: 20px;
   }
+}
+
+.leighton-quito-email-list {
+  display: block;
+  margin: 0;
+}
+.leighton-quito-email-list:not(:last-child) {
+  margin-bottom: 20px;
+}
+.leighton-quito-email-list__item {
+  display: flex;
+  flex-flow: row wrap;
+}
+.leighton-quito-email-list__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+.leighton-quito-email-list__item .leighton-quito-input {
+  min-width: 1px;
+  max-width: 400px;
+  flex: 1 1 auto;
+}
+.leighton-quito-email-list__item .leighton-quito-button {
+  flex: 0 0 auto;
+  margin-left: 10px;
 }

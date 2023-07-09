@@ -6,43 +6,50 @@
 			:disabled="isSaving"
 			@submit="saveSettings">
 
-			<UIRow :heading="msgData.rowsTitle">
-				<template v-slot:right>
-					<UIField
-						:label="msgData.rowsLabel"
-						:helper="msgData.rowsHelper">
-						<UIInput
-							type="number"
-							min="1"
-							max="5"
-							required
-							v-model="formData.tablerows" />
-					</UIField>
-				</template>
-			</UIRow>
+			<UISection>
+				<UIRow :heading="msgData.rowsTitle">
+					<template v-slot:right>
+						<UIField
+							:label="msgData.rowsLabel"
+							:helper="msgData.rowsHelper"
+							:required="true">
+							<UIInput
+								type="number"
+								min="1"
+								max="5"
+								required
+								v-model="formData.tablerows" />
+						</UIField>
+					</template>
+				</UIRow>
+			</UISection>
 
-			<UIRow :heading="msgData.timeTitle">
-				<template v-slot:right>
-					<UIField :radiogroup="true">
-						<UIRadio name="timestamp" value="true" v-model="formData.timestamp">
-							{{ msgData.timeUnix }}
-						</UIRadio>
+			<UISection>
+				<UIRow :heading="msgData.timeTitle">
+					<template v-slot:right>
+						<UIField role="radiogroup">
+							<UIRadio name="timestamp" value="true" v-model="formData.timestamp">
+								{{ msgData.timeUnix }}
+							</UIRadio>
 
-						<UIRadio name="timestamp" value="false" v-model="formData.timestamp">
-							{{ msgData.timeDate }}
-						</UIRadio>
-					</UIField>
-				</template>
-			</UIRow>
+							<UIRadio name="timestamp" value="false" v-model="formData.timestamp">
+								{{ msgData.timeDate }}
+							</UIRadio>
+						</UIField>
+					</template>
+				</UIRow>
+			</UISection>
 
-			<UIRow :heading="msgData.emailsTitle">
-				<template v-slot:right>
-					<EmailList ref="emailList" />
-					<EmailNew
-						v-if="!hideEmail"
-						@add-task="scrollToBottom()" />
-				</template>
-			</UIRow>
+			<UISection>
+				<UIRow :heading="msgData.emailsTitle">
+					<template v-slot:right>
+						<EmailList ref="emailList" />
+						<EmailNew
+							v-if="!hideEmail"
+							@add-task="scrollToBottom()" />
+					</template>
+				</UIRow>
+			</UISection>
 
 			<UIButton
 				type="submit"
@@ -59,6 +66,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import Content from './Content.vue';
+import UISection from '../components/UI/UISection.vue';
 import UIRow from '../components/UI/UIRow.vue';
 import UIButton from '../components/UI/UIButton.vue';
 import UIInput from '../components/UI/UIInput.vue';
@@ -71,6 +79,7 @@ export default {
 	name: 'TabSettings',
 	components: {
 		Content,
+		UISection,
 		UIRow,
 		UIButton,
 		UIInput,

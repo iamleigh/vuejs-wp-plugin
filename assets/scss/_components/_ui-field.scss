@@ -27,7 +27,7 @@
 	}
 
 	@include element(content) {
-		margin: 10px 0;
+		margin: 10px 0 5px;
 
 		&:first-child {
 			margin-top: 0;
