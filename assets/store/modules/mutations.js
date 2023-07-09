@@ -4,7 +4,9 @@ export const mutations = {
 	},
 
 	REMOVE_EMAIL: (state, payload) => {
-		state.settings.general.emails = state.settings.general.emails.filter((item) => item.id !== payload);
+		state.settings.general.emails = state.settings.general.emails.filter(
+			(item) => item.id !== payload
+		);
 	},
 
 	UPDATE_SETTINGS: (state, payload) => {

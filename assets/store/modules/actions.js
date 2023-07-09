@@ -25,7 +25,7 @@ export const actions = {
 				timestamp: payload.timestamp,
 				emails: payload.emails,
 			})
-			.then((res) => {
+			.then(() => {
 				commit('SAVED_SETTINGS');
 			})
 			.catch((err) => {
@@ -33,7 +33,7 @@ export const actions = {
 			});
 	},
 
-	FETCH_SETTINGS: async ({ commit }, payload) => {
+	FETCH_SETTINGS: async ({ commit }) => {
 		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/settings`;
 
 		axios
@@ -47,7 +47,7 @@ export const actions = {
 			});
 	},
 
-	FETCH_MESSAGES: async ({ commit }, payload) => {
+	FETCH_MESSAGES: async ({ commit }) => {
 		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/messages`;
 
 		axios

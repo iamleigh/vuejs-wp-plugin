@@ -12,7 +12,9 @@ export const getters = {
 	},
 
 	GET_EMAIL_LAST: (state) => {
-		return state.settings.general.emails[state.settings.general.emails.length - 1];
+		return state.settings.general.emails[
+			state.settings.general.emails.length - 1
+		];
 	},
 
 	GET_SAVING_STATE: (state) => {

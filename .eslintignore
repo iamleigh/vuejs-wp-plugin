@@ -1,0 +1,5 @@
+# Ignore all files in the `JS` folder
+assets/js/**.js
+
+# Special requests
+assets/store/modules/actions.js
