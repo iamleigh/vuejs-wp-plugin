@@ -25,6 +25,7 @@ wpcs/*
 
 # Ignore build directory
 dist/*
+challenge/*
 
 # Ignore build package
 *.zip
