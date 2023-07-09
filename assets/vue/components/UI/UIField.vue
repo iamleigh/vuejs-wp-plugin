@@ -9,8 +9,8 @@
 		</label>
 
 		<div
-			role="none"
-			class="leighton-quito-field__content"
+			:role="radiogroup ? 'radiogroup' : 'none'"
+			:class="radiogroup ? 'leighton-quito-field__radiogroup' : 'leighton-quito-field__content'"
 			v-bind="$attrs">
 			<slot />
 		</div>
@@ -34,6 +34,10 @@ export default {
 	name: 'UIField',
 	inheritAttrs: false,
 	props: {
+		radiogroup: {
+			Type: Boolean,
+			default: false
+		},
 		label: {
 			Type: String,
 			default: null

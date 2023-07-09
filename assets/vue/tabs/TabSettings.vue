@@ -23,7 +23,7 @@
 
 			<UIRow :heading="msgData.timeTitle">
 				<template v-slot:right>
-					<UIField role="radiogroup">
+					<UIField :radiogroup="true">
 						<UIRadio name="timestamp" value="true" v-model="formData.timestamp">
 							{{ msgData.timeUnix }}
 						</UIRadio>

@@ -37,4 +37,9 @@
 			margin-bottom: 0;
 		}
 	}
+
+	@include element(radiogroup) {
+		display: flex;
+		flex-direction: column;
+	}
 }
