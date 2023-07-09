@@ -298,6 +298,17 @@
   pointer-events: none;
 }
 
+.leighton-quito-radio {
+  width: auto;
+  flex: 0 0 auto;
+  margin-right: auto;
+  font-size: 14px;
+  line-height: 20px;
+}
+.leighton-quito-radio:not(:last-child) {
+  margin-bottom: 12px;
+}
+
 .leighton-quito-field {
   display: block;
 }
@@ -322,6 +333,10 @@
 }
 .leighton-quito-field__content:last-child {
   margin-bottom: 0;
+}
+.leighton-quito-field__radiogroup {
+  display: flex;
+  flex-direction: column;
 }
 
 .leighton-quito-section {
