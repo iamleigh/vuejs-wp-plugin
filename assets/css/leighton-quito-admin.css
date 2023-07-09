@@ -122,7 +122,6 @@
   box-shadow: none;
 }
 .leighton-quito-tabs__content {
-  max-width: 1010px;
   padding: 0 20px;
 }
 
@@ -223,8 +222,6 @@
 }
 
 #leighton-quito-plugin .leighton-quito-settings-row {
-  display: flex;
-  flex-flow: row wrap;
   margin: 0;
   padding: 0;
   border: 0 solid #dcdcde;
@@ -237,6 +234,11 @@
   padding-bottom: 30px;
   border-bottom-width: 1px;
   box-shadow: 0 1px 0 0 #f6f7f7;
+}
+#leighton-quito-plugin .leighton-quito-settings-row__group {
+  max-width: 1005px;
+  display: flex;
+  flex-flow: row wrap;
 }
 #leighton-quito-plugin .leighton-quito-settings-row__left {
   width: 205px;

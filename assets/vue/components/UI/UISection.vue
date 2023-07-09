@@ -2,18 +2,20 @@
 	<div
 		v-if="hasTitle || hasLeftContent || hasRightContent"
 		class="leighton-quito-settings-row">
-		<div
-			v-if="hasTitle || hasLeftContent"
-			role="presentation"
-			class="leighton-quito-settings-row__left">
-			<div v-if="hasTitle" class="leighton-quito-settings-row__title">{{ title }}</div>
-			<slot name="left" />
-		</div>
+		<div class="leighton-quito-settings-row__group">
+			<div
+				v-if="hasTitle || hasLeftContent"
+				role="presentation"
+				class="leighton-quito-settings-row__left">
+				<div v-if="hasTitle" class="leighton-quito-settings-row__title">{{ title }}</div>
+				<slot name="left" />
+			</div>
 
-		<div
-			v-if="hasRightContent"
-			class="leighton-quito-settings-row__right">
-			<slot name="right" />
+			<div
+				v-if="hasRightContent"
+				class="leighton-quito-settings-row__right">
+				<slot name="right" />
+			</div>
 		</div>
 	</div>
 </template>
