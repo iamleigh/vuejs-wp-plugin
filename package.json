@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@iamleigh/leighton-quito",
+  "name": "leighton-quito",
   "version": "1.0.0",
   "description": "Awesome Motive Developer Applicant Challenge, Part 1",
   "main": "index.js",
