@@ -121,3 +121,34 @@ gulp.task(
 			})
 	)
 );
+
+/**
+ * Challenge Package
+ *
+ * @desc Pack the plugin to submit for challenge.
+ *
+ * @since 1.0.0
+ */
+gulp.task(
+	"challenge",
+	gulp.series(
+		() =>
+			gulp
+				.src(["challenge", pkg.name, `${pkg.name}-challenge.*.zip`], { read: false, allowEmpty: true })
+				.pipe(clean()),
+
+		() => gulp.src(["**/*", "!dist/**/*", "!challenge/**/*", "!node_modules/**/*"]).pipe(copy(pkg.name)),
+
+		() =>
+			gulp
+				.src(pkg.name + "/**/*", { base: "." })
+				.pipe(archiver(`${pkg.name}-challenge.${pkg.version}.zip`))
+				.pipe(gulp.dest(".")),
+
+		(done) =>
+			fs.rename(pkg.name, "challenge", (err) => {
+				if (err) throw err;
+				done();
+			})
+	)
+);
