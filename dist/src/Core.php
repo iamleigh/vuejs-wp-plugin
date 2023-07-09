@@ -1,5 +1,4 @@
 <?php
-
 namespace LeightonQuito;
 
 use LeightonQuito\Admin;
