@@ -22,3 +22,9 @@ wpcs/*
 
 # Ignore log files
 *.log
+
+# Ignore build directory
+dist/*
+
+# Ignore build package
+*.zip
