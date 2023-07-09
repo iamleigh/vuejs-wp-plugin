@@ -1,3 +1,5 @@
+@use '../_utils/utils' as *;
+
 /// -----------------------------------------------------------------------------
 /// 🟢 Logo
 ///
@@ -5,16 +7,16 @@
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-.leighton-quito-logo {
+@include block(logo) {
 	width: 60px;
 	height: 60px;
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
-	background: #395360;
+	background: $color-secondary;
 
-	&__image {
+	@include element(image) {
 		width: 42px;
 		height: auto;
 		display: block;

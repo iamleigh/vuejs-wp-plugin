@@ -1,3 +1,5 @@
+@use '../_utils/utils' as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400&family=Signika&display=swap');
 
 /// -----------------------------------------------------------------------------
@@ -7,7 +9,7 @@
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-.leighton-quito-header {
+@include block(header) {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
@@ -16,38 +18,38 @@
 	border: 0 solid #E27730;
 	border-top-width: 3px;
 
-	&__image {
+	@include element(image) {
 		flex: 0 0 auto;
 	}
 
-	&__slogan {
+	@include element(slogan) {
 		display: block;
 		margin-left: 14px;
 	}
 
-	&__title,
-	&__subtitle {
+	@include element(title) {
 		margin: 0;
 		padding: 0;
-		font-family: 'Jost', sans-serif;
-		font-weight: 400;
-	}
-
-	&__title {
 		color: #23282C;
+		font-weight: 400;
 		font-size: 28px;
 		line-height: 32px;
+		font-family: 'Jost', sans-serif;
 		letter-spacing: 0.5px;
 	}
 
-	&__subtitle {
+	@include element(subtitle) {
+		margin: 0;
+		padding: 0;
 		color: #999999;
+		font-weight: 400;
 		font-size: 14px;
 		line-height: 22px;
+		font-family: 'Jost', sans-serif;
 		letter-spacing: 0;
 
 		strong {
-			color: #B85A1B;
+			color: $color-primary;
 			font-family: 'Signika', sans-serif;
 			font-weight: 400;
 			font-size: 18px;
