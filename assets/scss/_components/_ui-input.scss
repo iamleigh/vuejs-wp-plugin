@@ -1,19 +1,22 @@
+@use '../_utils/utils' as *;
+
 /// -----------------------------------------------------------------------------
-/// 🟢 Input
+/// 🟢 UI Input
 ///
-/// Give styles to the input component.
+/// Give styles to the `UIInput` component.
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-#leighton-quito-plugin .leighton-quito-input {
+// #leighton-quito-plugin .leighton-quito-input {
+@include block(input) {
 	width: 400px;
-	margin: 0 0 10px;
+	margin: 0;
 	padding: 7px 12px;
-	border: 1px solid #999;
+	border: 1px solid $color-neutral-60;
 	border-radius: 4px;
-	background: #fff;
+	background: $color-neutral-100;
 	box-shadow: none;
-	color: #555;
+	color: $color-neutral-30;
 	line-height: 19px;
 
 	&:last-child {
