@@ -1,7 +1,9 @@
 <template>
 	<UIField
+		role="emailgroup"
 		:error="msgData.emailsError"
-		:status="status">
+		:status="status"
+		:required="true">
 		<UIInput
 			type="email"
 			:placeholder="msgData.emailsAdd"
@@ -11,7 +13,6 @@
 		<UIButton
 			type="button"
 			buttonDesign="secondary"
-			buttonIcon="plus"
 			@button-click="createEmailNew()">
 			{{ msgData.buttonAdd }}
 		</UIButton>

@@ -1,18 +1,17 @@
 <template>
-	<div ref="emailListWrapper">
-		<transition-group
-			tag="ul"
-			v-if="GET_TOTAL_EMAIL_LIST > 0">
-			<li
-				v-for="email in GET_EMAIL_LIST"
-				:key="email.id">
-				<EmailPreview :email-item="email" />
-			</li>
-		</transition-group>
-		<div v-else>
-			<p>There are no emails</p>
-		</div>
-	</div>
+	<transition-group
+		v-if="GET_TOTAL_EMAIL_LIST > 0"
+		tag="div"
+		role="list"
+		class="leighton-quito-email-list"
+		ref="emailListWrapper">
+		<EmailPreview
+			v-for="email in GET_EMAIL_LIST"
+			:key="email.id"
+			role="listitem"
+			:email-item="email"
+			class="leighton-quito-email-list__item" />
+	</transition-group>
 </template>
 
 <script>
@@ -29,17 +28,6 @@ export default {
 			'GET_EMAIL_LIST',
 			'GET_TOTAL_EMAIL_LIST'
 		])
-	},
-	mounted () {
-		this.scrollToBottom();
-	},
-	methods: {
-		scrollToBottom: function () {
-			this.$nextTick(() => {
-				const element = this.$refs.emailListWrapper;
-				element.scrollTop = element.scrollHeight;
-			});
-		}
 	}
 }
 </script>
