@@ -1,0 +1,120 @@
+# Copyright (C) 2023 Leighton Quito
+# This file is distributed under the same license as the Leighton Quito package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Leighton Quito\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-07-09 13:00+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/iamleigh/leighton-quito-amp/issues\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: leighton-quito.php:5, src/Admin.php:153, src/Admin.php:154
+msgid "Leighton Quito"
+msgstr ""
+
+#: leighton-quito.php:6
+msgid "https://github.com/iamleigh/leighton-quito-amp"
+msgstr ""
+
+#: leighton-quito.php:7
+msgid "Awesome Motive Developer Applicant Challenge, Part 1."
+msgstr ""
+
+#: leighton-quito.php:8
+msgid "Leighton Quito (iamleigh)"
+msgstr ""
+
+#: leighton-quito.php:9
+msgid "https://github.com/iamleigh"
+msgstr ""
+
+#. translators: %1$s - Site PHP version.; %2$s - Recommended PHP version.; %3$s WPBeginner URL for recommended WordPress hosting.
+#: leighton-quito.php:91
+msgid "Your site is running PHP %1$s, an <strong>insecure version</strong> that is no longer supported by this plugin. Please, contact your web hosting provider to update your site to PHP %2$s or later version, or switch to a <a href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">recommended WordPress hosting company</a>."
+msgstr ""
+
+#. translators: %s - Plugin name.
+#: leighton-quito.php:112
+msgid "<strong>%s plugin is disabled</strong> on your site until you fix the issue."
+msgstr ""
+
+#. translators: %s - Recommended WordPress version.
+#: leighton-quito.php:146
+msgid "Your site is running an <strong>old version</strong> of WordPress that is no longer supported by this plugin. Please update your WordPress site to WordPress %s or later version."
+msgstr ""
+
+#. translators: %s - Plugin name.
+#: leighton-quito.php:160
+msgid "<strong>%s plugin is disabled</strong> on your site until WordPress is updated to the required version."
+msgstr ""
+
+#: src/Admin.php:164, src/Admin.php:165
+msgid "Settings"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:138
+msgid "Table Tab"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:139
+msgid "Graph Tab"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:140
+msgid "Settings Tab"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:141
+msgid "Table Rows"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:142
+msgid "Limit the number of rows to display at the table."
+msgstr ""
+
+#: api/Admin/Settings_Route.php:143
+msgid "The allowed rows value must be between 1 and 5."
+msgstr ""
+
+#: api/Admin/Settings_Route.php:144
+msgid "Timestamp"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:145
+msgid "Unix"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:146
+msgid "Date"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:147
+msgid "Allowed Emails"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:148
+msgid "Typedown an email"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:149
+msgid "Invalid email address."
+msgstr ""
+
+#: api/Admin/Settings_Route.php:150
+msgid "Save Settings"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:151
+msgid "Add Email"
+msgstr ""
+
+#: api/Admin/Settings_Route.php:152
+msgid "Remove Email"
+msgstr ""

@@ -11,7 +11,8 @@
     "watch": "mix watch",
     "prod": "npm run production",
     "production": "mix --production",
-    "package": "gulp package"
+    "package": "gulp package",
+    "translate": "gulp i18n"
   },
   "keywords": [],
   "author": {
