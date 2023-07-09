@@ -1,0 +1,34 @@
+@use '../_utils/utils' as *;
+
+/// -----------------------------------------------------------------------------
+/// 🟢 UI Section
+///
+/// Give styles to the `UISection` component.
+///
+/// @author Leighton Quito (iamleigh.com)
+/// -----------------------------------------------------------------------------
+@include block(section) {
+	margin: 0;
+	padding: 0;
+	border: 0 solid #DCDCDE;
+	color: $color-neutral-10;
+
+	&:not(:last-child) {
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		border-bottom-width: 1px;
+		box-shadow: 0 1px 0 0 #F6F7F7;
+	}
+
+	@include element(title) {
+		margin: 0 0 10px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	@include element(content) {
+		max-width: 1005px;
+		margin: 0;
+	}
+}
