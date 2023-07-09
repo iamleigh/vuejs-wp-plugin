@@ -1,10 +1,9 @@
 /// -----------------------------------------------------------------------------
-/// 🟢 "Leighton Quito" Plugin
+/// 🟢 WordPress
 ///
-/// Import styles to use in the plugin admin area.
+/// Overwrite WordPress default styles.
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-@forward './_blocks/wordpress';
-@forward './_blocks/core';
-@forward './_blocks/components';
+@forward '../_wordpress/content';
+@forward '../_wordpress/wrapper';
