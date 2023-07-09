@@ -10,6 +10,10 @@
 @include block(field) {
 	display: block;
 
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
 	@include element(label) {
 		margin: 0;
 		font-weight: 400;

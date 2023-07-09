@@ -301,6 +301,9 @@
 .leighton-quito-field {
   display: block;
 }
+.leighton-quito-field:not(:last-child) {
+  margin-bottom: 20px;
+}
 .leighton-quito-field__label {
   margin: 0;
   font-weight: 400;
