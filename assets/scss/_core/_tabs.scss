@@ -1,12 +1,14 @@
+@use '../_utils/utils' as *;
+
 /// -----------------------------------------------------------------------------
 /// 🟢 Tabs
 ///
-/// Give styles to the tabs component.
+/// Give styles to the tabs navigation component.
 ///
 /// @author Leighton Quito (iamleigh.com)
 /// -----------------------------------------------------------------------------
-.leighton-quito-tabs {
-	&__menu {
+@include block(tabs) {
+	@include element(menu) {
 		min-height: 58px;
 		display: flex;
 		flex-flow: row wrap;
@@ -16,7 +18,7 @@
 		font-size: 14px;
 	}
 
-	&__item {
+	@include element(item) {
 		display: block;
 		flex: 0 0 auto;
 		margin: 0;
@@ -48,8 +50,7 @@
 		}
 	}
 
-	&__content {
-		// max-width: 1010px;
+	@include element(content) {
 		padding: 0 20px;
 	}
 }
