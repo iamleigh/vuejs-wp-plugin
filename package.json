@@ -12,7 +12,8 @@
     "prod": "npm run production",
     "production": "mix --production",
     "package": "gulp package",
-    "translate": "gulp i18n"
+    "translate": "gulp i18n",
+    "release": "npm run tokens && npm run prod && npm run translate && npm run package"
   },
   "keywords": [],
   "author": {
