@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+require('laravel-mix-stylelint');
 
 /**
  * Public path to generate assets
@@ -28,4 +29,5 @@ mix.js('assets/vue/admin.js', 'assets/js').sourceMaps(false).vue({ version: 2 })
  *
  * @since 1.0.0
  */
+mix.stylelint();
 mix.sass('assets/scss/leighton-quito-admin.scss', 'assets/css/leighton-quito-admin.css');
