@@ -14,7 +14,27 @@ const archiver = require("gulp-archiver");
 const makepot = require("gulp-wp-pot");
 const gettext = require("gulp-gettext");
 
+const phpcs = require("gulp-phpcs"); // @todo: Include in a `test` task
+const phpunit = require("gulp-phpunit"); // @todo: Include in a `test` task
+
+/**
+ * Package (pkg)
+ *
+ * @desc Call `package.json` file.
+ *
+ * @since 1.0.0
+ */
 const pkg = require("./package.json");
+
+/**
+ * Development Paths & Files
+ *
+ * @since 1.0.0
+ */
+const srcFiles = {
+	phpcs: ["leighton-quito.php", "leighton-quito-loader.php"],
+	makepot: ["leighton-quito.php", "leighton-quito-loader.php", "src/**/*.php", "api/**/*.php"],
+};
 
 /**
  * Makepot
@@ -25,7 +45,7 @@ const pkg = require("./package.json");
  */
 gulp.task("makepot", () =>
 	gulp
-		.src(sourcePhp.php)
+		.src(srcFiles.makepot)
 		.pipe(
 			makepot({
 				domain: pkg.name,

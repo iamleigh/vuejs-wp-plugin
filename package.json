@@ -3,7 +3,7 @@
   "name": "leighton-quito",
   "version": "1.0.0",
   "description": "Awesome Motive Developer Applicant Challenge, Part 1",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "tokens": "style-dictionary build",
     "dev": "npm run development",
@@ -11,8 +11,7 @@
     "watch": "mix watch",
     "prod": "npm run production",
     "production": "mix --production",
-    "package": "gulp package",
-    "test": "gulp test"
+    "package": "gulp package"
   },
   "keywords": [],
   "author": {
@@ -23,6 +22,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "chart.js": "^4.3.0",
+    "php-parser": "^3.1.5",
     "vue": "^2.6.11",
     "vue-chartjs": "^5.2.0",
     "vue-router": "^3.1.3"
@@ -44,6 +44,8 @@
     "gulp-clean": "^0.4.0",
     "gulp-copy": "^4.0.1",
     "gulp-gettext": "^0.3.0",
+    "gulp-phpcs": "^3.1.0",
+    "gulp-phpunit": "^0.26.0",
     "gulp-wp-pot": "^2.5.0",
     "laravel-mix": "^6.0.49",
     "laravel-mix-eslint": "^0.2.0",
