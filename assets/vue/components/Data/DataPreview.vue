@@ -1,5 +1,5 @@
 <template>
-	<div role="none" class="leighton-quito-field">
+	<UISection :title="!error && !loading ? setBlockTitle : ''">
 		<UINotice v-if="error" mode="error">
 			<p>Whoops! Something just happened. Check on the console for more info.</p>
 		</UINotice>
@@ -8,9 +8,7 @@
 			<p>Loading data...</p>
 		</UINotice>
 
-		<DataBlock
-			v-else
-			:title="setBlockTitle">
+		<DataBlock v-else>
 			<UITable
 				v-if="'table' === type"
 				:unix="formData.timestamp"
@@ -28,13 +26,14 @@
 				v-else-if="'list' === type"
 				:emails="formData.emails" />
 		</DataBlock>
-	</div>
+	</UISection>
 </template>
 
 <script>
 import Vue from 'vue';
 import axios from 'axios';
 import { mapGetters, mapActions } from 'vuex';
+import UISection from '../UI/UISection.vue';
 import DataBlock from './DataBlock.vue';
 import EmailDisplay from '../Email/EmailDisplay.vue';
 import UINotice from '../UI/UINotice.vue';
@@ -44,6 +43,7 @@ import UITable from '../UI/UITable.vue';
 export default {
 	name: 'DataPreview',
 	components: {
+		UISection,
 		UINotice,
 		UIChart,
 		UITable,
@@ -103,7 +103,7 @@ export default {
 				return this.msgData.emailsTitle;
 			}
 
-			return;
+			return '';
 		}
 	},
 	methods: {
