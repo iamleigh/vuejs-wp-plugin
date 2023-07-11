@@ -34,7 +34,7 @@ class ComposerStaticInit54ba00e6a14375fbf9bc5140e169d192
         ),
         'LeightonQuito\\Api\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/api',
+            0 => __DIR__ . '/../..' . '/includes/api',
         ),
         'LeightonQuito\\' => 
         array (
