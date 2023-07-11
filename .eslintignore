@@ -2,4 +2,4 @@
 assets/js/**.js
 
 # Special requests
-assets/store/modules/actions.js
+assets/vue/store/modules/actions.js
