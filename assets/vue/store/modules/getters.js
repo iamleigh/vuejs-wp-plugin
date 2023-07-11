@@ -18,7 +18,7 @@ export const getters = {
 	},
 
 	GET_SAVING_STATE: (state) => {
-		return state.saving;
+		return state.settings.saving;
 	},
 
 	GET_MESSAGES: (state) => {

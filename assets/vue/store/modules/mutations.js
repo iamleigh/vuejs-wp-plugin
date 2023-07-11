@@ -14,11 +14,11 @@ export const mutations = {
 	},
 
 	SAVED_SETTINGS: (state) => {
-		state.saving = false;
+		state.settings.saving = false;
 	},
 
 	SAVING_SETTINGS: (state) => {
-		state.saving = true;
+		state.settings.saving = true;
 	},
 
 	UPDATE_MESSAGES: (state, payload) => {
