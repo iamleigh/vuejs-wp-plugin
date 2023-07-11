@@ -1,0 +1,151 @@
+# Copyright (C) 2023 Leighton Quito
+# This file is distributed under the same license as the Leighton Quito package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Leighton Quito\n"
+"Report-Msgid-Bugs-To: https://github.com/iamleigh/leighton-quito-amp/issues\n"
+"POT-Creation-Date: 2023-07-11 12:13+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_EC\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
+"_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;"
+"esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.3.2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: leighton-quito.php:5, includes/Admin.php:153, includes/Admin.php:154
+msgid "Leighton Quito"
+msgstr "Leighton Quito"
+
+#: leighton-quito.php:6
+msgid "https://github.com/iamleigh/leighton-quito-amp"
+msgstr "https://github.com/iamleigh/leighton-quito-amp"
+
+#: leighton-quito.php:7
+msgid "Awesome Motive Developer Applicant Challenge, Part 1."
+msgstr "Awesome Motive Desafío de Aplicante a Desarrollador, Parte 1."
+
+#: leighton-quito.php:8
+msgid "Leighton Quito (iamleigh)"
+msgstr "Leighton Quito (iamleigh)"
+
+#: leighton-quito.php:9
+msgid "https://github.com/iamleigh"
+msgstr "https://github.com/iamleigh"
+
+#. translators: %1$s - Site PHP version.; %2$s - Recommended PHP version.; %3$s WPBeginner URL for recommended WordPress hosting.
+#: leighton-quito.php:91
+msgid ""
+"Your site is running PHP %1$s, an <strong>insecure version</strong> that is "
+"no longer supported by this plugin. Please, contact your web hosting "
+"provider to update your site to PHP %2$s or later version, or switch to a <a "
+"href=\"%3$s\" target=\"_blank\" rel=\"noopener noreferrer\">recommended "
+"WordPress hosting company</a>."
+msgstr ""
+"Tu sitio web está usando PHP %1$s, una <strong>versión insegura</strong> que "
+"ya no es compatible con este plugin. Por favor, contacta a tu proveedor de "
+"hosting y solicita que actualicen tu sitio web a PHP %2$s o una versión "
+"posterior. También puedes optar por cambiar a una <a href=“%3$s” "
+"target=“_blank” rel=“noopener noreferrer”>compañía de hosting recomendada "
+"por WordPress</a>."
+
+#. translators: %s - Plugin name.
+#: leighton-quito.php:112
+msgid ""
+"<strong>%s plugin is disabled</strong> on your site until you fix the issue."
+msgstr ""
+"<strong>El plugin %s está deshabilitado</strong> en tu sitio web hasta que "
+"soluciones el problema."
+
+#. translators: %s - Recommended WordPress version.
+#: leighton-quito.php:146
+msgid ""
+"Your site is running an <strong>old version</strong> of WordPress that is no "
+"longer supported by this plugin. Please update your WordPress site to "
+"WordPress %s or later version."
+msgstr ""
+"Tu sitio web está usando una <strong>versión antigua</strong> de WordPress "
+"que ya no  es compatible con este plugin. Por favor, actualiza tu sitio web "
+"a WordPress %s o una versión posterior."
+
+#. translators: %s - Plugin name.
+#: leighton-quito.php:160
+msgid ""
+"<strong>%s plugin is disabled</strong> on your site until WordPress is "
+"updated to the required version."
+msgstr ""
+"<strong>El plugin %s está deshabilitado</strong> en tu sitio web hasta que "
+"actualices a la versión requerida de WordPress."
+
+#: includes/Admin.php:164, includes/Admin.php:165
+msgid "Settings"
+msgstr "Ajustes"
+
+#: includes/Api/Admin/Messages_Route.php:57
+msgid "Table Tab"
+msgstr "Tabla"
+
+#: includes/Api/Admin/Messages_Route.php:58
+msgid "Graph Tab"
+msgstr "Gráfico"
+
+#: includes/Api/Admin/Messages_Route.php:59
+msgid "Settings Tab"
+msgstr "Ajustes"
+
+#: includes/Api/Admin/Messages_Route.php:60
+msgid "Table Rows"
+msgstr "Filas de la Tabla"
+
+#: includes/Api/Admin/Messages_Route.php:61
+msgid "Limit the number of rows to display at the table."
+msgstr "Limita el número de filas para mostrar en la tabla."
+
+#: includes/Api/Admin/Messages_Route.php:62
+msgid "The allowed rows value must be between 1 and 5."
+msgstr "La cantidad de filas permitidas está entre 1 y 5."
+
+#: includes/Api/Admin/Messages_Route.php:63
+msgid "Timestamp"
+msgstr "Timestamp"
+
+#: includes/Api/Admin/Messages_Route.php:64
+msgid "Unix"
+msgstr "Unix"
+
+#: includes/Api/Admin/Messages_Route.php:65
+msgid "Date"
+msgstr "Fecha"
+
+#: includes/Api/Admin/Messages_Route.php:66
+msgid "Allowed Emails"
+msgstr "Correos Electrónicos Permitidos"
+
+#: includes/Api/Admin/Messages_Route.php:67
+msgid "Typedown an email"
+msgstr "Escribe un correo"
+
+#: includes/Api/Admin/Messages_Route.php:68
+msgid "Invalid email address."
+msgstr "La dirección de correo electrónico no es válida."
+
+#: includes/Api/Admin/Messages_Route.php:69
+msgid "Save Settings"
+msgstr "Guardar Ajustes"
+
+#: includes/Api/Admin/Messages_Route.php:70
+msgid "Add Email"
+msgstr "Agregar Email"
+
+#: includes/Api/Admin/Messages_Route.php:71
+msgid "Remove Email"
+msgstr "Borrar Email"
