@@ -38,7 +38,7 @@ class ComposerStaticInit54ba00e6a14375fbf9bc5140e169d192
         ),
         'LeightonQuito\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/includes',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

@@ -33,7 +33,7 @@ const pkg = require("./package.json");
  */
 const srcFiles = {
 	phpcs: ["leighton-quito.php", "leighton-quito-loader.php"],
-	makepot: ["leighton-quito.php", "leighton-quito-loader.php", "src/**/*.php", "api/**/*.php"],
+	makepot: ["leighton-quito.php", "leighton-quito-loader.php", "includes/**/*.php", "api/**/*.php"],
 };
 
 /**
@@ -100,7 +100,7 @@ gulp.task(
 					"assets/images/**/*",
 					"assets/js/**/*",
 					"languages/**",
-					"src/**/*",
+					"includes/**/*",
 					"vendor/autoload.php",
 					"vendor/bin/**/*",
 					"vendor/composer/**/*",
