@@ -24,4 +24,8 @@ export const getters = {
 	GET_MESSAGES: (state) => {
 		return state.messages;
 	},
+
+	GET_DATA: (state) => {
+		return state.data;
+	},
 };

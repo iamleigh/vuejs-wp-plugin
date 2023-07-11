@@ -24,4 +24,8 @@ export const mutations = {
 	UPDATE_MESSAGES: (state, payload) => {
 		state.messages = payload;
 	},
+
+	UPDATE_DATA: (state, payload) => {
+		state.data = payload;
+	},
 };

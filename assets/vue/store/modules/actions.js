@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const actions = {
 	ADD_EMAIL: async ({ commit }, payload) => {
@@ -7,17 +7,17 @@ export const actions = {
 			value: payload.value,
 		};
 
-		commit('ADD_EMAIL', emailNew);
+		commit("ADD_EMAIL", emailNew);
 	},
 
 	REMOVE_EMAIL: async ({ commit }, payload) => {
-		commit('REMOVE_EMAIL', payload);
+		commit("REMOVE_EMAIL", payload);
 	},
 
 	SAVE_SETTINGS: async ({ commit }, payload) => {
 		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/settings`;
 
-		commit('SAVING_SETTINGS');
+		commit("SAVING_SETTINGS");
 
 		axios
 			.post(url, {
@@ -26,7 +26,7 @@ export const actions = {
 				emails: payload.emails,
 			})
 			.then(() => {
-				commit('SAVED_SETTINGS');
+				commit("SAVED_SETTINGS");
 			})
 			.catch((err) => {
 				console.log(err);
@@ -40,7 +40,7 @@ export const actions = {
 			.get(url)
 			.then((res) => {
 				payload = res.data;
-				commit('UPDATE_SETTINGS', res.data);
+				commit("UPDATE_SETTINGS", res.data);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -54,7 +54,21 @@ export const actions = {
 			.get(url)
 			.then((res) => {
 				payload = res.data;
-				commit('UPDATE_MESSAGES', res.data);
+				commit("UPDATE_MESSAGES", res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	},
+
+	FETCH_DATA: async ({ commit }, payload) => {
+		const url = `${lqAdminLocalizer.apiUrl}/lq/v1/data`;
+
+		axios
+			.get(url)
+			.then((res) => {
+				payload = res.data;
+				commit("UPDATE_DATA", res.data);
 			})
 			.catch((err) => {
 				console.log(err);

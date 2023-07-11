@@ -1,23 +1,15 @@
 <template>
-	<UISection :title="!error && !loading ? setBlockTitle : ''">
-		<UINotice v-if="error" mode="error">
-			<p>Whoops! Something just happened. Check on the console for more info.</p>
-		</UINotice>
-
-		<UINotice v-else-if="loading" mode="loading">
-			<p>Loading data...</p>
-		</UINotice>
-
-		<DataBlock v-else>
+	<UISection :title="setBlockTitle">
+		<DataBlock>
 			<UITable
-				v-if="'table' === type"
+				v-if="('table' === type && 'undefined' !== typeof getData.table)"
 				:unix="formData.timestamp"
 				:limit="formData.tablerows"
-				:headers="tableData.data.headers"
-				:rows="tableData.data.rows" />
+				:headers="getData.table.data.headers"
+				:rows="getData.table.data.rows" />
 
 			<UIChart
-				v-else-if="'chart' === type"
+				v-else-if="('chart' === type && 'undefined' !== typeof getData.graph)"
 				:unix="formData.timestamp"
 				:labels="pushAwesomeData('labels')"
 				:data="pushAwesomeData('values')" />
@@ -31,14 +23,13 @@
 
 <script>
 import Vue from 'vue';
-import axios from 'axios';
 import { mapGetters, mapActions } from 'vuex';
 import UISection from '../UI/UISection.vue';
-import DataBlock from './DataBlock.vue';
-import EmailDisplay from '../Email/EmailDisplay.vue';
 import UINotice from '../UI/UINotice.vue';
 import UIChart from '../UI/UIChart.vue';
 import UITable from '../UI/UITable.vue';
+import DataBlock from './DataBlock.vue';
+import EmailDisplay from '../Email/EmailDisplay.vue';
 
 export default {
 	name: 'DataPreview',
@@ -60,22 +51,14 @@ export default {
 			default: !Vue.config.devtools
 		}
 	},
-	data () {
-		return {
-			chart: {},
-			table: {},
-			loading: true,
-			error: false
-		}
-	},
 	mounted () {
 		this.fetchSettings(),
 		this.fetchMessages(),
-		this.getAwesomeData(),
+		this.fetchData(),
 		this.pushAwesomeData()
 	},
 	computed: {
-		...mapGetters([ 'GET_GENERAL_SETTINGS', 'GET_MESSAGES' ]),
+		...mapGetters([ 'GET_GENERAL_SETTINGS', 'GET_MESSAGES', 'GET_DATA' ]),
 		formData: {
 			get() {
 				return this.GET_GENERAL_SETTINGS;
@@ -86,19 +69,16 @@ export default {
 				return this.GET_MESSAGES;
 			}
 		},
-		tableData: {
+		getData: {
 			get() {
-				return JSON.parse(this.table);
-			}
-		},
-		chartData: {
-			get() {
-				return JSON.parse(this.chart);
+				return this.GET_DATA;
 			}
 		},
 		setBlockTitle: function () {
 			if ('table' === this.type) {
-				return this.tableData.title;
+				if ('undefined' !== typeof this.getData.table) {
+					return this.getData.table.title;
+				}
 			} else if ('list' === this.type) {
 				return this.msgData.emailsTitle;
 			}
@@ -107,66 +87,27 @@ export default {
 		}
 	},
 	methods: {
-		...mapActions([ 'FETCH_SETTINGS', 'FETCH_MESSAGES' ]),
+		...mapActions([ 'FETCH_SETTINGS', 'FETCH_MESSAGES', 'FETCH_DATA' ]),
 		fetchSettings: function () {
 			this.FETCH_SETTINGS();
 		},
 		fetchMessages: function () {
 			this.FETCH_MESSAGES();
 		},
-		getAwesomeData: async function () {
-			const lqCachedChart = localStorage.getItem('lqCachedChart');
-			const lqCachedTable = localStorage.getItem('lqCachedTable');
-			const lqCachedStamp = localStorage.getItem('lqCachedStamp');
-
-			if (lqCachedChart && lqCachedTable && lqCachedStamp) {
-				const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
-				const currentTime = new Date().getTime();
-				const isDataValid = currentTime - lqCachedStamp < oneHour;
-
-				if (isDataValid) {
-					// Remove the loading state
-					this.loading = false;
-
-					// Use the cached data
-					this.chart = lqCachedChart;
-					this.table = lqCachedTable;
-
-					return;
-				}
-			}
-
-			// Make the API call
-			await axios
-				.get('https://miusage.com/v1/challenge/2/static/')
-				.then((res) => {
-					// Cache the response and timestamp
-					localStorage.setItem('lqCachedChart', JSON.stringify(res.data.graph));
-					localStorage.setItem('lqCachedTable', JSON.stringify(res.data.table));
-					localStorage.setItem('lqCachedStamp', new Date().getTime());
-
-					// Use the fetched data
-					this.chart = JSON.stringify(res.data.graph);
-					this.table = JSON.stringify(res.data.table);
-				})
-				.catch((err) => {
-					console.log(err);
-					this.error = true;
-				})
-				.finally(() => {
-					this.loading = false;
-				});
+		fetchData: function () {
+			this.FETCH_DATA();
 		},
 		pushAwesomeData: function ( type ) {
-			const data = this.chartData;
+			const data = this.getData.graph;
 			const labels = [];
 			const values = [];
 
-			if (Object.keys(data).length > 0) {
-				for (const item in data) {
-					labels.push(data[item].date);
-					// labels.push(this.human_date(data[item].date))
-					values.push(data[item].value);
+			if ('undefined' !== typeof data) {
+				if (Object.keys(data).length > 0) {
+					for (const item in data) {
+						labels.push(data[item].date);
+						values.push(data[item].value);
+					}
 				}
 			}
 
