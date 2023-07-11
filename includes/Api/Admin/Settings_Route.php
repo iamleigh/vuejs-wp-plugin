@@ -60,7 +60,7 @@ class Settings_Route extends WP_REST_Controller {
 	public function get_items( $request ) {
 		// Define default values
 		$tablerows = 5;
-		$timestamp = 'true';
+		$timestamp = 'false';
 		$emails = array(
 			0 => array(
 				'id' => '1',
